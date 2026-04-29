@@ -9,8 +9,8 @@ export const site = {
   addressNote: "At the corner of Rt 115 & 116",
   phone: "(401) 615-1956",
   email: "info@stillwaterri.org",
-  sermonAudio: "https://www.sermonaudio.com/",
-  facebook: "https://www.facebook.com/",
+  sermonAudio: "https://www.sermonaudio.com/broadcasters/stillwaterri/",
+  facebook: "https://www.facebook.com/groups/671903697328042",
 };
 
 export const navItems = [
