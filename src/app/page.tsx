@@ -54,8 +54,8 @@ function Hero() {
         sizes="100vw"
         className="object-cover object-[58%_48%]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(19,36,33,0.96),rgba(19,36,33,0.74)_46%,rgba(19,36,33,0.18))]" />
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(19,36,33,0.82),rgba(19,36,33,0.04)_50%,rgba(19,36,33,0.36))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.95),rgba(13,75,105,0.72)_46%,rgba(94,183,222,0.2))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.84),rgba(58,155,197,0.1)_50%,rgba(8,43,62,0.34))]" />
 
       <div className="section-shell relative flex min-h-[84svh] flex-col justify-end pb-8 pt-32 sm:pb-10">
         <div className="max-w-4xl pb-10">
@@ -164,7 +164,7 @@ function Welcome() {
             sizes="(min-width: 1024px) 52vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(19,36,33,0.88),rgba(19,36,33,0))] p-6 pt-28 text-white sm:p-8">
+          <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.88),rgba(58,155,197,0))] p-6 pt-28 text-white sm:p-8">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-sky">
               Psalm 23
             </p>

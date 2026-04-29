@@ -4,17 +4,17 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-libre);
 
-  --color-ink: #132421;
-  --color-ink-soft: #384a47;
-  --color-paper: #fffdf7;
-  --color-cream: #f6f0e4;
-  --color-mist: #dcebea;
-  --color-sky: #9ed9db;
-  --color-fern: #466b55;
-  --color-moss: #283d34;
-  --color-clay: #b45f45;
-  --color-gold: #d7a947;
-  --color-rule: #d8d2c7;
+  --color-ink: #0c2b3d;
+  --color-ink-soft: #33596a;
+  --color-paper: #f8fcff;
+  --color-cream: #eaf7ff;
+  --color-mist: #d7effb;
+  --color-sky: #9edfff;
+  --color-fern: #2a83a8;
+  --color-moss: #17465c;
+  --color-clay: #1f9bd2;
+  --color-gold: #ffd36a;
+  --color-rule: #b8d9e7;
 }
 
 html {
@@ -51,7 +51,7 @@ body {
 }
 
 .soft-shadow {
-  box-shadow: 0 26px 80px rgb(19 36 33 / 0.14);
+  box-shadow: 0 26px 80px rgb(31 155 210 / 0.16);
 }
 
 .footer-link {
