@@ -205,10 +205,10 @@ function Verse() {
     <section className="bg-ink py-20 text-white sm:py-24">
       <div className="section-shell text-center">
         <p className="text-sm font-black uppercase tracking-[0.22em] text-sky">
-          Site Verse — {siteVerse.reference}
+          Church Verse — {siteVerse.reference}
         </p>
         <blockquote className="mx-auto mt-8 max-w-4xl">
-          <p className="serif text-balance text-3xl font-semibold italic leading-snug text-white sm:text-4xl lg:text-5xl">
+          <p className="serif text-balance text-xl font-normal italic leading-relaxed text-white/92 sm:text-2xl lg:text-3xl">
             “{siteVerse.text}”
           </p>
         </blockquote>
