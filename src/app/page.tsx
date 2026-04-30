@@ -79,11 +79,11 @@ function Hero() {
               <ArrowRight aria-hidden="true" className="size-4" />
             </a>
             <a
-              href={site.sermonAudio}
+              href="/sermons"
               className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
             >
               <PlayCircle aria-hidden="true" className="size-4" />
-              Listen Live
+              Listen to Sermons
             </a>
           </div>
         </div>
@@ -365,11 +365,11 @@ function Contact() {
               Directions
             </a>
             <a
-              href={site.sermonAudio}
+              href="/sermons"
               className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
             >
               <PlayCircle aria-hidden="true" className="size-4" />
-              SermonAudio
+              Listen to Sermons
             </a>
           </div>
         </div>

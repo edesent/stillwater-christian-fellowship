@@ -14,11 +14,11 @@ export const site = {
 };
 
 export const navItems = [
-  ["Visit", "#visit"],
-  ["Ministries", "#ministries"],
-  ["Worship", "#worship"],
-  ["Leadership", "#leadership"],
-  ["Contact", "#contact"],
+  ["Visit", "/#visit"],
+  ["Ministries", "/#ministries"],
+  ["Sermons", "/sermons"],
+  ["Leadership", "/#leadership"],
+  ["Contact", "/#contact"],
 ] as const;
 
 export const services = [

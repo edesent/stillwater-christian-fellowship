@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { navItems, site } from "@/lib/site";
 
@@ -5,7 +6,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/12 bg-ink/82 text-white backdrop-blur-xl">
       <div className="section-shell flex min-h-20 items-center justify-between gap-5">
-        <a href="#home" className="group flex items-center gap-3">
+        <Link href="/" className="group flex items-center gap-3">
           <span className="grid size-11 place-items-center border border-sky/55 bg-white/8 text-lg font-black text-sky">
             SW
           </span>
@@ -17,7 +18,7 @@ export function Header() {
               Christian Fellowship
             </span>
           </span>
-        </a>
+        </Link>
 
         <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">
           {navItems.map(([label, href]) => (
