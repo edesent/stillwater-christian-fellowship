@@ -10,18 +10,33 @@ export type Sermon = {
   sermonAudioUrl: string;
 };
 
-const FEED_URL = "https://feed.sermonaudio.com/broadcasters/stillwaterri";
+export type SermonFeed = {
+  coverImage: string;
+  sermons: Sermon[];
+};
 
-export async function getSermons(): Promise<Sermon[]> {
+const FEED_URL = "https://feed.sermonaudio.com/broadcasters/stillwaterri";
+const FALLBACK_COVER =
+  "https://vps.sermonaudio.com/resize_image/sources/podcast/1440/1440/stillwaterri.1744304730.jpg";
+
+export async function getSermons(): Promise<SermonFeed> {
   const res = await fetch(FEED_URL, { next: { revalidate: 3600 } });
-  if (!res.ok) return [];
+  if (!res.ok) return { coverImage: FALLBACK_COVER, sermons: [] };
   const xml = await res.text();
   return parseFeed(xml);
 }
 
-function parseFeed(xml: string): Sermon[] {
+function parseFeed(xml: string): SermonFeed {
+  const channelMatch = xml.match(/<channel>([\s\S]*?)(?=<item>|<\/channel>)/);
+  const channelXml = channelMatch ? channelMatch[1] : "";
+  const coverImage =
+    pickAttr(channelXml, "itunes:image", "href") ||
+    pick(channelXml, "url") ||
+    FALLBACK_COVER;
+
   const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-  return items.map(parseItem).filter((s): s is Sermon => s !== null);
+  const sermons = items.map(parseItem).filter((s): s is Sermon => s !== null);
+  return { coverImage: decode(coverImage), sermons };
 }
 
 function parseItem(itemXml: string): Sermon | null {

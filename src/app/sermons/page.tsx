@@ -13,22 +13,34 @@ export const metadata: Metadata = {
 };
 
 export default async function SermonsPage() {
-  const sermons = await getSermons();
+  const { coverImage, sermons } = await getSermons();
   const [latest, ...rest] = sermons;
 
   return (
     <>
       <main className="overflow-hidden bg-paper">
         <Header />
-        <Hero latest={latest} count={sermons.length} />
-        {sermons.length === 0 ? <Empty /> : <Archive sermons={rest} />}
+        <Hero latest={latest} count={sermons.length} coverImage={coverImage} />
+        {sermons.length === 0 ? (
+          <Empty />
+        ) : (
+          <Archive sermons={rest} coverImage={coverImage} />
+        )}
       </main>
       <Footer />
     </>
   );
 }
 
-function Hero({ latest, count }: { latest: Sermon | undefined; count: number }) {
+function Hero({
+  latest,
+  count,
+  coverImage,
+}: {
+  latest: Sermon | undefined;
+  count: number;
+  coverImage: string;
+}) {
   return (
     <section className="relative bg-ink text-white">
       <Image
@@ -54,22 +66,39 @@ function Hero({ latest, count }: { latest: Sermon | undefined; count: number }) 
           Water. {count > 0 ? `${count} sermons available — newest first.` : null}
         </p>
 
-        {latest ? <LatestCard sermon={latest} /> : null}
+        {latest ? <LatestCard sermon={latest} coverImage={coverImage} /> : null}
       </div>
     </section>
   );
 }
 
-function LatestCard({ sermon }: { sermon: Sermon }) {
+function LatestCard({
+  sermon,
+  coverImage,
+}: {
+  sermon: Sermon;
+  coverImage: string;
+}) {
   return (
     <article className="mt-12 grid gap-0 border border-white/16 bg-white/8 backdrop-blur-md md:grid-cols-[0.95fr_1.05fr]">
       <div className="border-b border-white/14 p-7 sm:p-9 md:border-b-0 md:border-r">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
           Latest Message
         </p>
-        <h2 className="serif mt-5 text-balance text-3xl font-bold leading-tight sm:text-4xl">
-          {sermon.title}
-        </h2>
+        <div className="mt-5 flex items-start gap-5">
+          <div className="relative size-20 shrink-0 overflow-hidden border border-white/20 bg-ink sm:size-24">
+            <Image
+              src={coverImage}
+              alt=""
+              fill
+              sizes="96px"
+              className="object-cover"
+            />
+          </div>
+          <h2 className="serif text-balance text-3xl font-bold leading-tight sm:text-4xl">
+            {sermon.title}
+          </h2>
+        </div>
         <dl className="mt-7 grid gap-4 text-sm text-white/78 sm:grid-cols-2">
           <Meta icon={<Mic />} label="Speaker" value={sermon.speaker} />
           <Meta
@@ -127,7 +156,13 @@ function Meta({
   );
 }
 
-function Archive({ sermons }: { sermons: Sermon[] }) {
+function Archive({
+  sermons,
+  coverImage,
+}: {
+  sermons: Sermon[];
+  coverImage: string;
+}) {
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="section-shell">
@@ -148,7 +183,11 @@ function Archive({ sermons }: { sermons: Sermon[] }) {
 
         <ul className="mt-12 grid gap-3">
           {sermons.map((sermon) => (
-            <SermonRow key={sermon.id} sermon={sermon} />
+            <SermonRow
+              key={sermon.id}
+              sermon={sermon}
+              coverImage={coverImage}
+            />
           ))}
         </ul>
       </div>
@@ -156,13 +195,28 @@ function Archive({ sermons }: { sermons: Sermon[] }) {
   );
 }
 
-function SermonRow({ sermon }: { sermon: Sermon }) {
+function SermonRow({
+  sermon,
+  coverImage,
+}: {
+  sermon: Sermon;
+  coverImage: string;
+}) {
   return (
     <li className="border border-rule bg-paper">
       <details className="group">
         <summary className="flex cursor-pointer list-none items-start gap-5 p-5 transition hover:bg-mist/40 sm:items-center sm:p-6">
-          <div className="grid size-11 shrink-0 place-items-center border border-rule bg-cream text-clay transition group-open:border-sky group-open:bg-sky group-open:text-ink">
-            <Headphones aria-hidden="true" className="size-5" />
+          <div className="relative size-16 shrink-0 overflow-hidden border border-rule bg-mist sm:size-20">
+            <Image
+              src={coverImage}
+              alt=""
+              fill
+              sizes="80px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 grid place-items-center bg-ink/40 text-white opacity-0 transition group-hover:opacity-100 group-open:opacity-100">
+              <Headphones aria-hidden="true" className="size-5" />
+            </div>
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-clay">
