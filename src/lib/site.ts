@@ -4,7 +4,7 @@ export const site = {
   name: "Still Water Christian Fellowship",
   shortName: "Still Water",
   description:
-    "A modern church website concept for Still Water Christian Fellowship in Hope, Rhode Island.",
+    "Still Water Christian Fellowship is a Bible-believing, Christ-honoring, Independent Baptist Church in the Village of Hope, Rhode Island.",
   address: "51 Main St, Hope, RI",
   addressNote: "At the corner of Rt 115 & 116",
   phone: "(401) 615-1956",
@@ -51,16 +51,16 @@ export const services = [
 
 export const visitorNotes = [
   {
-    title: "Clear Bible teaching",
-    body: "Sunday mornings center on God's Word shared in a simple, relevant, and understandable way.",
+    title: "Bible-believing",
+    body: "You will find people and a pastor who love the Bible and take seriously the command to teach and preach God's Word to every person.",
   },
   {
-    title: "Room for every generation",
-    body: "Blended worship honors the church's musical roots while welcoming current expressions of praise.",
+    title: "Christ-honoring",
+    body: "Our desire is to shine the light of the Gospel to Hope and the surrounding area with joy, conviction, and compassion.",
   },
   {
-    title: "Fellowship after service",
-    body: "Church fellowship follows the Sunday morning service, giving guests an easy next step to meet people.",
+    title: "A church family",
+    body: "SWCF is a family of imperfect people who have experienced our mighty Lord do the miraculous.",
   },
 ] as const;
 

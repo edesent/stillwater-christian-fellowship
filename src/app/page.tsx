@@ -68,8 +68,8 @@ function Hero() {
             Still Water Christian Fellowship
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-            A church family where faith and love meet in Hope, centered on
-            Scripture, worship, fellowship, and the life-changing Gospel of Jesus.
+            A Bible-believing, Christ-honoring, Independent Baptist Church
+            shining the light of the Gospel in the Village of Hope, Rhode Island.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
@@ -120,12 +120,12 @@ function Visit() {
               Visit This Week
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Simple rhythms for Sunday and midweek.
+              We hope you will visit with us soon.
             </h2>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
-              Come for adult discipleship, stay for worship, and linger for church
-              fellowship after the morning service. Communion is observed the first
-              Sunday of the month.
+              When you come, you will find a church family and pastor who love the
+              Bible. The preaching of the Word of God is filled with passion, zeal,
+              and the fullness of the Holy Ghost.
             </p>
           </div>
 
@@ -180,12 +180,12 @@ function Welcome() {
             What We Are About
           </p>
           <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-            Learning to recognize God&apos;s voice through his Word.
+            Shining the light of the Gospel from darkness to light.
           </h2>
           <p className="mt-6 text-lg leading-8 text-ink-soft">
-            Still Water places a high priority on reading and understanding the
-            Bible because Scripture reveals who God is, his plan for our lives, and
-            the hope found in Jesus Christ.
+            Thank you for your interest in Still Water Christian Fellowship. It
+            would be our great joy to share with you what Jesus Christ can do for
+            you.
           </p>
           <div className="mt-8 grid gap-4">
             {visitorNotes.map((note) => (
