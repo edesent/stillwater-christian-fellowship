@@ -15,13 +15,14 @@ import {
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import {
-  beliefs,
-  leaders,
+  elders,
   ministries,
+  pastors,
   services,
   site,
   siteUrl,
   siteVerse,
+  statementOfFaith,
   visitorNotes,
 } from "@/lib/site";
 
@@ -34,9 +35,11 @@ export default function Home() {
         <Hero />
         <Visit />
         <Welcome />
+        <Pastor />
         <Ministries />
         <Worship />
         <Leadership />
+        <Beliefs />
         <Contact />
       </main>
       <Footer />
@@ -67,7 +70,10 @@ function Hero() {
           <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.02] sm:text-7xl lg:text-8xl">
             Still Water Christian Fellowship
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
+          <p className="serif mt-6 max-w-3xl text-balance text-2xl font-semibold italic leading-tight text-sky sm:text-3xl">
+            Proclaiming the Gospel truth of Jesus Christ to a lost world.
+          </p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
             A Bible-believing, Christ-honoring, Independent Baptist Church
             shining the light of the Gospel in the Village of Hope, Rhode Island.
           </p>
@@ -201,6 +207,67 @@ function Welcome() {
   );
 }
 
+function Pastor() {
+  const seniorPastor = pastors[0];
+
+  return (
+    <section id="pastor" className="bg-cream py-20 sm:py-28">
+      <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="relative overflow-hidden bg-mist soft-shadow">
+          <div className="relative aspect-square">
+            <Image
+              src={seniorPastor.image}
+              alt={`${seniorPastor.name}, ${seniorPastor.role}`}
+              fill
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="object-cover object-[50%_38%]"
+            />
+          </div>
+        </div>
+
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+            Our Pastor
+          </p>
+          <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+            Pastor Robert Levesque
+          </h2>
+          <p className="mt-6 text-lg font-black uppercase tracking-[0.14em] text-fern">
+            Senior Pastor
+          </p>
+          <p className="mt-6 text-lg leading-8 text-ink-soft">
+            Pastor Levesque shepherds Still Water Christian Fellowship with a love
+            for the Bible, a burden for souls, and a desire to see the light of the
+            Gospel shine throughout Hope and the surrounding area.
+          </p>
+          <p className="mt-5 text-lg leading-8 text-ink-soft">
+            When you visit, you will hear the Word of God preached with conviction,
+            compassion, and confidence in what Jesus Christ can do for you.
+          </p>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="border border-rule bg-paper p-5">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
+                Ministry Heart
+              </p>
+              <p className="serif mt-3 text-2xl font-bold leading-tight text-ink">
+                Bible preaching with passion and zeal.
+              </p>
+            </div>
+            <div className="border border-rule bg-paper p-5">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
+                Invitation
+              </p>
+              <p className="serif mt-3 text-2xl font-bold leading-tight text-ink">
+                Come see what Christ can do.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Ministries() {
   return (
     <section id="ministries" className="bg-ink py-20 text-white sm:py-28">
@@ -220,7 +287,7 @@ function Ministries() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {ministries.map((ministry) => (
             <article key={ministry.title} className="bg-white text-ink">
               <div className="relative aspect-square overflow-hidden bg-mist">
@@ -306,39 +373,118 @@ function Leadership() {
               Shepherding with Scripture and care.
             </h2>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {beliefs.map((belief) => (
-              <p
-                key={belief}
-                className="border border-rule bg-cream px-5 py-4 text-sm font-semibold leading-7 text-ink-soft"
+          <p className="max-w-xl text-lg leading-8 text-ink-soft">
+            Still Water is led by faithful pastors and elders who labor in the
+            Word, watch over the flock, and serve the church in love.
+          </p>
+        </div>
+
+        <div className="mt-14">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+            Pastors
+          </p>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {pastors.map((pastor) => (
+              <article
+                key={pastor.name}
+                className="flex items-center gap-5 border border-rule bg-white p-6"
               >
-                {belief}
-              </p>
+                <Initials name={pastor.name} />
+                <div>
+                  <h3 className="serif text-3xl font-bold leading-tight text-ink">
+                    {pastor.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-clay">
+                    {pastor.role}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {leaders.map((leader) => (
-            <article key={leader.name} className="border border-rule bg-white">
-              <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                <Image
-                  src={leader.image}
-                  alt={leader.name}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="serif text-3xl font-bold text-ink">{leader.name}</h3>
-                <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-clay">
-                  {leader.role}
-                </p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+            Elders
+          </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-3">
+            {elders.map((elder) => (
+              <article
+                key={elder.name}
+                className="flex items-center gap-4 border border-rule bg-cream p-5"
+              >
+                <Initials name={elder.name} muted />
+                <h3 className="serif text-xl font-bold leading-tight text-ink">
+                  {elder.name}
+                </h3>
+              </article>
+            ))}
+          </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Initials({ name, muted = false }: { name: string; muted?: boolean }) {
+  const initials = name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+  return (
+    <span
+      className={
+        muted
+          ? "grid size-12 shrink-0 place-items-center border border-rule bg-paper text-base font-black text-ink-soft"
+          : "grid size-14 shrink-0 place-items-center border border-sky/55 bg-mist text-lg font-black text-fern"
+      }
+      aria-hidden="true"
+    >
+      {initials}
+    </span>
+  );
+}
+
+function Beliefs() {
+  return (
+    <section id="beliefs" className="bg-mist py-20 sm:py-28">
+      <div className="section-shell">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+              Statement of Faith
+            </p>
+            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+              We Believe…
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-ink-soft">
+            The doctrines below are the convictions that anchor every sermon,
+            prayer, and ministry at Still Water.
+          </p>
+        </div>
+
+        <ol className="mt-12 grid gap-3">
+          {statementOfFaith.map((article, index) => (
+            <li
+              key={index}
+              className="flex gap-5 border border-rule bg-paper p-6 sm:gap-7 sm:p-7"
+            >
+              <span
+                className="serif shrink-0 text-3xl font-bold leading-none text-clay sm:text-4xl"
+                aria-hidden="true"
+              >
+                {(index + 1).toString().padStart(2, "0")}
+              </span>
+              <p className="text-base leading-8 text-ink-soft sm:text-lg">
+                {article}
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

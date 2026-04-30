@@ -20,8 +20,10 @@ export const siteVerse = {
 
 export const navItems = [
   ["Visit", "/#visit"],
+  ["Pastor", "/#pastor"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
+  ["Beliefs", "/#beliefs"],
   ["Leadership", "/#leadership"],
   ["Contact", "/#contact"],
 ] as const;
@@ -66,6 +68,11 @@ export const visitorNotes = [
 
 export const ministries = [
   {
+    title: "Steps To Salvation",
+    image: "/stillwater/bible-study.jpg",
+    body: "A clear, Scripture-rooted walk through the Gospel — sharing how anyone can come to know Jesus Christ as Savior.",
+  },
+  {
     title: "Youth Ministry",
     image: "/stillwater/youth.jpg",
     body: "Helping students grow in their knowledge of and relationship with Jesus Christ through teaching, discipleship, and service.",
@@ -87,27 +94,32 @@ export const ministries = [
   },
 ] as const;
 
-export const beliefs = [
-  "The Bible is God's all-sufficient truth for life and conduct.",
-  "Jesus Christ is the eternal Son of God, our forgiveness, redemption, hope, and salvation.",
-  "The Holy Spirit cleanses, renews, and empowers believers to live an overcoming life.",
-  "The church is called to reveal God's love, grace, and mercy in the world.",
+export const statementOfFaith = [
+  "That the Old and New Testaments are verbally inspired by God, inerrant and preserved; and they are of supreme and final authority in faith and life.",
+  "In one God, eternally existing in three persons: Father, Son, and the Holy Spirit.",
+  "That Jesus Christ was begotten by the Holy Spirit, born of Mary, a virgin, and is true God and true man.",
+  "That man was created in the image of God, that he sinned, and thereby, incurred not only physical death, but also the spiritual death (separation from God). That all human beings are born with a sinful nature and are sinners in thought, word, and deed.",
+  "That the Lord Jesus Christ died for our sins according to the Scriptures as a representative and substitutionary sacrifice, and that all who believe in Him are justified on the grounds of His shed blood.",
+  "In the “eternal security” of the believer: that it is impossible for one born into the family of God ever to be lost.",
+  "In the resurrection of the crucified body of our Lord, in His ascension into heaven, and in his present life there as High Priest and Advocate.",
+  "In “that blessed hope” — the personal, pre-millennial, pretribulation, and imminent return of our Lord and Savior Jesus Christ when the church will be “gathered together unto Him.”",
+  "In the literal fulfillment of the prophecies and promises of the Scriptures which foretell and assure the future regeneration and restoration of Israel as a nation.",
+  "That all who receive, by faith, the Lord Jesus Christ are born again of the Holy Spirit, and thereby, children of God.",
+  "In the bodily resurrection of the just and the unjust, the everlasting blessedness of the saved and the everlasting punishment of the lost.",
+  "That the Scriptural ordinances of the church are Baptism and the Lord’s Supper, and are to be administered by the local church; that Baptism by immersion should be administered to believers only as a symbol of their belief in the death, burial, and resurrection of our Lord and Savior Jesus Christ, and as a testimony to the world of that believer’s identification with Christ.",
 ] as const;
 
-export const leaders = [
+export const pastors = [
   {
-    name: "Ryan Baker",
-    role: "Pastor",
-    image: "/stillwater/pastor-ryan.jpg",
+    name: "Robert Levesque",
+    role: "Senior Pastor",
+    image: "/stillwater/pastor-stillwater.png",
   },
-  {
-    name: "Joe Campbell",
-    role: "Worship Pastor / Elder",
-    image: "/stillwater/worship.jpg",
-  },
-  {
-    name: "Joe Hadfield",
-    role: "Elder",
-    image: "/stillwater/bible-study.jpg",
-  },
+  { name: "Joseph Campbell", role: "Assistant Pastor" },
+] as const;
+
+export const elders = [
+  { name: "Joseph Hadfield" },
+  { name: "Carl Riecke" },
+  { name: "Roger Lavoie" },
 ] as const;
