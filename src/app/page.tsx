@@ -160,37 +160,40 @@ function Visit() {
 function Welcome() {
   return (
     <section className="bg-paper py-20 sm:py-28">
-      <div className="section-shell grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-        <div className="relative min-h-[560px] overflow-hidden bg-mist soft-shadow">
-          <Image
-            src="/stillwater/bible-study.jpg"
-            alt="A Bible study gathering at Still Water Christian Fellowship"
-            fill
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover"
-          />
+      <div className="section-shell">
+        <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+          <div className="relative min-h-[560px] overflow-hidden bg-mist soft-shadow">
+            <Image
+              src="/stillwater/bible-study.jpg"
+              alt="A Bible study gathering at Still Water Christian Fellowship"
+              fill
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+              What We Are About
+            </p>
+            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+              Shining the light of the Gospel from darkness to light.
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-ink-soft">
+              Thank you for your interest in Still Water Christian Fellowship. It
+              would be our great joy to share with you what Jesus Christ can do
+              for you.
+            </p>
+          </div>
         </div>
 
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
-            What We Are About
-          </p>
-          <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-            Shining the light of the Gospel from darkness to light.
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-ink-soft">
-            Thank you for your interest in Still Water Christian Fellowship. It
-            would be our great joy to share with you what Jesus Christ can do for
-            you.
-          </p>
-          <div className="mt-8 grid gap-4">
-            {visitorNotes.map((note) => (
-              <article key={note.title} className="border-l-4 border-sky bg-mist/58 p-5">
-                <h3 className="text-lg font-bold text-ink">{note.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-ink-soft">{note.body}</p>
-              </article>
-            ))}
-          </div>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {visitorNotes.map((note) => (
+            <article key={note.title} className="border-l-4 border-sky bg-mist/58 p-6">
+              <h3 className="text-lg font-bold text-ink">{note.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-ink-soft">{note.body}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
