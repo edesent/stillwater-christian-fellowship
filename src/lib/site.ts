@@ -77,22 +77,34 @@ export const services = [
   {
     day: "Sunday",
     time: "9:15 AM",
-    title: "Adult Discipleship Class",
+    title: "Adult Sunday School",
+    tagline: "Dig deeper into God's Word.",
   },
   {
     day: "Sunday",
     time: "10:30 AM",
     title: "Worship Service",
+    tagline: "Lifting up Christ and Him crucified.",
+    livestream: true,
   },
   {
     day: "Sunday",
-    time: "6:00 PM",
-    title: "Prayer Meeting",
+    time: "5:30 PM",
+    title: "Discipleship Bible Study",
   },
   {
     day: "Wednesday",
-    time: "7:00 PM",
+    time: "10:00 AM",
     title: "Bible Study",
+    tagline: "Verse by verse study.",
+  },
+  {
+    day: "Wednesday",
+    time: "6:00 PM",
+    title: "Prayer Meeting Service",
+    tagline:
+      "Pleading with and praising the Lord — encouragement and exhortation.",
+    livestream: true,
   },
 ] as const;
 

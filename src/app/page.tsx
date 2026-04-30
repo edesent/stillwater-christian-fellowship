@@ -93,7 +93,7 @@ function Hero() {
 
         <div className="grid border border-white/16 bg-white/10 backdrop-blur-md md:grid-cols-3">
           <HeroStat label="Sunday Worship" value="10:30 AM" />
-          <HeroStat label="Wednesday Bible Study" value="7:00 PM" />
+          <HeroStat label="Wednesday Bible Study" value="10:00 AM" />
           <div className="border-white/14 px-5 py-4 md:border-r md:last:border-r-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
               Location
@@ -139,23 +139,43 @@ function Visit() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {services.map((service) => (
-              <article key={service.title} className="border border-rule bg-paper p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-sm font-black uppercase tracking-[0.18em] text-fern">
-                    {service.day}
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => {
+              const tagline =
+                "tagline" in service ? service.tagline : undefined;
+              const livestream =
+                "livestream" in service ? service.livestream : false;
+              return (
+                <article
+                  key={`${service.day}-${service.time}`}
+                  className="flex flex-col border border-rule bg-paper p-6"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="text-sm font-black uppercase tracking-[0.18em] text-fern">
+                      {service.day}
+                    </p>
+                    <Clock3 aria-hidden="true" className="size-5 text-clay" />
+                  </div>
+                  <p className="serif mt-6 text-4xl font-bold text-ink">
+                    {service.time}
                   </p>
-                  <Clock3 aria-hidden="true" className="size-5 text-clay" />
-                </div>
-                <p className="serif mt-6 text-4xl font-bold text-ink">
-                  {service.time}
-                </p>
-                <h3 className="mt-4 text-base font-bold uppercase tracking-[0.13em] text-ink-soft">
-                  {service.title}
-                </h3>
-              </article>
-            ))}
+                  <h3 className="mt-4 text-base font-bold uppercase tracking-[0.13em] text-ink-soft">
+                    {service.title}
+                  </h3>
+                  {tagline ? (
+                    <p className="mt-3 text-sm leading-6 text-ink-soft">
+                      {tagline}
+                    </p>
+                  ) : null}
+                  {livestream ? (
+                    <p className="mt-auto pt-4 text-xs font-bold uppercase tracking-[0.16em] text-clay">
+                      <span className="mr-2 inline-block size-2 rounded-full bg-clay align-middle" />
+                      Livestreamed on SermonAudio, Facebook & YouTube
+                    </p>
+                  ) : null}
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -637,28 +657,28 @@ function JsonLd() {
             dayOfWeek: "Sunday",
             opens: "09:15",
             closes: "12:00",
-            description: "Adult Discipleship 9:15 AM, Worship 10:30 AM",
+            description: "Adult Sunday School 9:15 AM, Worship Service 10:30 AM",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: "Sunday",
-            opens: "18:00",
-            closes: "19:00",
-            description: "Prayer Meeting 6:00 PM",
+            opens: "17:30",
+            closes: "18:30",
+            description: "Discipleship Bible Study 5:30 PM",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: "Wednesday",
             opens: "10:00",
             closes: "11:00",
-            description: "Morning Devotions",
+            description: "Bible Study (verse by verse) 10:00 AM",
           },
           {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: "Wednesday",
-            opens: "19:00",
-            closes: "20:30",
-            description: "Bible Study",
+            opens: "18:00",
+            closes: "19:30",
+            description: "Prayer Meeting Service 6:00 PM",
           },
         ],
         denomination: "Independent Baptist",
@@ -686,13 +706,32 @@ function JsonLd() {
           {
             "@type": "Event",
             name: "Wednesday Bible Study",
-            description: "Midweek Bible study and teaching.",
+            description: "Midweek verse-by-verse Bible study.",
             eventSchedule: {
               "@type": "Schedule",
               repeatFrequency: "P1W",
               byDay: "https://schema.org/Wednesday",
-              startTime: "19:00",
-              endTime: "20:30",
+              startTime: "10:00",
+              endTime: "11:00",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+          {
+            "@type": "Event",
+            name: "Wednesday Prayer Meeting Service",
+            description:
+              "Pleading with and praising the Lord — encouragement and exhortation.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Wednesday",
+              startTime: "18:00",
+              endTime: "19:30",
             },
             location: { "@id": churchId },
             organizer: { "@id": churchId },
