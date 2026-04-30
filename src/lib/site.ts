@@ -19,15 +19,25 @@ export const siteVerse = {
   text: "...to open their eyes, and to turn them from darkness to light, and from the power of Satan unto God, that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me.",
 };
 
-export const navItems = [
+export type NavLink = readonly [string, string];
+export type NavDropdown = {
+  readonly label: string;
+  readonly children: readonly NavLink[];
+};
+export type NavItem = NavLink | NavDropdown;
+
+export function isDropdown(item: NavItem): item is NavDropdown {
+  return typeof item === "object" && !Array.isArray(item);
+}
+
+export const navItems: readonly NavItem[] = [
   ["Visit", "/#visit"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
-  ["Beliefs", "/beliefs"],
-  ["History", "/history"],
+  { label: "About", children: [["Beliefs", "/beliefs"], ["History", "/history"]] },
   ["Give", "/give"],
   ["Contact", "/#contact"],
-] as const;
+];
 
 export const churchHistory = {
   furnace: {
@@ -37,7 +47,7 @@ export const churchHistory = {
       "Located on the Pawtuxet River south of Salmon Hole, the river provided power for the massive bellows used to heat the furnaces. The surrounding woodlands were used for charcoal production and local farmers provided the stone that was heated and melted with the ore from Oaklawn Ave in Cranston. The ore, charcoal, and limestone were carted uphill in horse-drawn wagons. At this time about seventy men were employed there as founders, colliers (coalminers), woodchoppers, molders, firemen, carters and coalers of wood, diggers and carters of ore. Workers were paid poorly receiving about 1/4 of their pay in goods.",
       "By 1768 the Furnace was producing pig iron which was sold in England in exchange for English goods. Seventy-six cannons were cast for the war effort. One of these original cannons remains in front of the Hope Library.",
       "In 1806, Hope Furnace was sold at auction to Silvanus Hopkins and Jabez Bowen who renamed the mill the Hope Manufacturing Company. The Hope Manufacturing Company functioned as a cotton spinning mill. In 1820, power looms were introduced at the mill and by 1832 the Hope Manufacturing Company employed fifteen hundred workers with nearly a third being women and another third children and teenagers as young as age nine.",
-      "In 1821 the mill was purchased by Ephraim Talbot with “all lands, tenements, factories, building, privileges of water, also all the machinery, looms, tools or apparatus attached to the factory, die House, machine shop, weaving room, picking house, grist mill and the other buildings hereby conveyed, and about 29 acres” included.",
+      "In 1821 the mill was purchased by Ephraim Talbot with \"all lands, tenements, factories, building, privileges of water, also all the machinery, looms, tools or apparatus attached to the factory, die House, machine shop, weaving room, picking house, grist mill and the other buildings hereby conveyed, and about 29 acres\" included.",
       "By 1844, John Carter Brown, Moses B. Ives, Robert H. Ives, Charlotte R. Goddard and William Kelly bought the company. All were descendants of the Nicholas Brown family and built upon the Brown & Ives holdings that included the Blackstone Company in North Smithfield, the Lonsdale Water Power Company and the Lonsdale Mills in Lincoln. In 1847 the mill was incorporated as the Hope Company.",
     ],
   },
@@ -127,13 +137,13 @@ export const statementOfFaith = [
   "That Jesus Christ was begotten by the Holy Spirit, born of Mary, a virgin, and is true God and true man.",
   "That man was created in the image of God, that he sinned, and thereby, incurred not only physical death, but also the spiritual death (separation from God). That all human beings are born with a sinful nature and are sinners in thought, word, and deed.",
   "That the Lord Jesus Christ died for our sins according to the Scriptures as a representative and substitutionary sacrifice, and that all who believe in Him are justified on the grounds of His shed blood.",
-  "In the “eternal security” of the believer: that it is impossible for one born into the family of God ever to be lost.",
+  "In the \"eternal security\" of the believer: that it is impossible for one born into the family of God ever to be lost.",
   "In the resurrection of the crucified body of our Lord, in His ascension into heaven, and in his present life there as High Priest and Advocate.",
-  "In “that blessed hope” — the personal, pre-millennial, pretribulation, and imminent return of our Lord and Savior Jesus Christ when the church will be “gathered together unto Him.”",
+  "In \"that blessed hope\" — the personal, pre-millennial, pretribulation, and imminent return of our Lord and Savior Jesus Christ when the church will be \"gathered together unto Him.\"",
   "In the literal fulfillment of the prophecies and promises of the Scriptures which foretell and assure the future regeneration and restoration of Israel as a nation.",
   "That all who receive, by faith, the Lord Jesus Christ are born again of the Holy Spirit, and thereby, children of God.",
   "In the bodily resurrection of the just and the unjust, the everlasting blessedness of the saved and the everlasting punishment of the lost.",
-  "That the Scriptural ordinances of the church are Baptism and the Lord’s Supper, and are to be administered by the local church; that Baptism by immersion should be administered to believers only as a symbol of their belief in the death, burial, and resurrection of our Lord and Savior Jesus Christ, and as a testimony to the world of that believer’s identification with Christ.",
+  "That the Scriptural ordinances of the church are Baptism and the Lord's Supper, and are to be administered by the local church; that Baptism by immersion should be administered to believers only as a symbol of their belief in the death, burial, and resurrection of our Lord and Savior Jesus Christ, and as a testimony to the world of that believer's identification with Christ.",
 ] as const;
 
 export const pastors = [
