@@ -217,6 +217,7 @@ function Verse() {
 
 function Pastor() {
   const seniorPastor = pastors[0];
+  const assistantPastor = pastors[1];
 
   return (
     <section id="pastor" className="bg-cream py-20 sm:py-28">
@@ -252,24 +253,17 @@ function Pastor() {
             When you visit, you will hear the Word of God preached with conviction,
             compassion, and confidence in what Jesus Christ can do for you.
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <div className="border border-rule bg-paper p-5">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
-                Ministry Heart
-              </p>
-              <p className="serif mt-3 text-2xl font-bold leading-tight text-ink">
-                Bible preaching with passion and zeal.
-              </p>
-            </div>
-            <div className="border border-rule bg-paper p-5">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
-                Invitation
-              </p>
-              <p className="serif mt-3 text-2xl font-bold leading-tight text-ink">
-                Come see what Christ can do.
-              </p>
-            </div>
-          </div>
+          <article className="mt-8 border border-rule bg-paper p-5">
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
+              Assistant Pastor
+            </p>
+            <h3 className="serif mt-3 text-3xl font-bold leading-tight text-ink">
+              {assistantPastor.name}
+            </h3>
+            <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-fern">
+              {assistantPastor.role}
+            </p>
+          </article>
         </div>
       </div>
     </section>
