@@ -34,6 +34,7 @@ export default function Home() {
         <Hero />
         <Visit />
         <Welcome />
+        <Verse />
         <Pastor />
         <Ministries />
         <Worship />
@@ -169,14 +170,6 @@ function Welcome() {
             sizes="(min-width: 1024px) 52vw, 100vw"
             className="object-cover"
           />
-          <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.88),rgba(58,155,197,0))] p-6 pt-28 text-white sm:p-8">
-            <p className="text-sm font-black uppercase tracking-[0.2em] text-sky">
-              Site Verse - {siteVerse.reference}
-            </p>
-            <p className="serif mt-3 max-w-2xl text-2xl font-bold leading-snug sm:text-3xl">
-              {siteVerse.text}
-            </p>
-          </div>
         </div>
 
         <div>
@@ -200,6 +193,23 @@ function Welcome() {
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Verse() {
+  return (
+    <section className="bg-ink py-20 text-white sm:py-24">
+      <div className="section-shell text-center">
+        <p className="text-sm font-black uppercase tracking-[0.22em] text-sky">
+          Site Verse — {siteVerse.reference}
+        </p>
+        <blockquote className="mx-auto mt-8 max-w-4xl">
+          <p className="serif text-balance text-3xl font-semibold italic leading-snug text-white sm:text-4xl lg:text-5xl">
+            “{siteVerse.text}”
+          </p>
+        </blockquote>
       </div>
     </section>
   );
