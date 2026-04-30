@@ -19,7 +19,7 @@ import {
   services,
   site,
   siteUrl,
-  siteVerse,
+  churchVerses,
   visitorNotes,
 } from "@/lib/site";
 
@@ -209,17 +209,58 @@ function Welcome() {
 function Verse() {
   return (
     <section className="bg-ink py-20 text-white sm:py-24">
-      <div className="section-shell text-center">
-        <p className="text-sm font-black uppercase tracking-[0.22em] text-sky">
-          Church Verse — {siteVerse.reference}
-        </p>
-        <blockquote className="mx-auto mt-8 max-w-4xl">
-          <p className="serif text-balance text-xl font-normal italic leading-relaxed text-white/92 sm:text-2xl lg:text-3xl">
-            “{siteVerse.text}”
-          </p>
-        </blockquote>
+      <div className="section-shell">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
+          <VerseBlock
+            label={churchVerses.mission.label}
+            reference={churchVerses.mission.reference}
+            text={churchVerses.mission.text}
+          />
+          <VerseBlock
+            label={churchVerses.theme.label}
+            reference={churchVerses.theme.reference}
+            pullQuote={churchVerses.theme.pullQuote}
+            text={churchVerses.theme.text}
+          />
+        </div>
       </div>
     </section>
+  );
+}
+
+function VerseBlock({
+  label,
+  reference,
+  text,
+  pullQuote,
+}: {
+  label: string;
+  reference: string;
+  text: string;
+  pullQuote?: string;
+}) {
+  return (
+    <div className="border-l-4 border-sky pl-6 sm:pl-8">
+      <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
+        {label} — {reference}
+      </p>
+      {pullQuote ? (
+        <p className="serif mt-6 text-balance text-3xl font-semibold italic leading-tight text-white sm:text-4xl">
+          “{pullQuote}”
+        </p>
+      ) : null}
+      <blockquote className={pullQuote ? "mt-5" : "mt-7"}>
+        <p
+          className={
+            pullQuote
+              ? "text-base leading-7 text-white/72 sm:text-lg"
+              : "serif text-balance text-xl font-normal italic leading-relaxed text-white/92 sm:text-2xl"
+          }
+        >
+          {pullQuote ? text : `“${text}”`}
+        </p>
+      </blockquote>
+    </div>
   );
 }
 
@@ -450,6 +491,41 @@ function Contact() {
               <PlayCircle aria-hidden="true" className="size-4" />
               Listen to Sermons
             </a>
+          </div>
+
+          <div className="mt-10 border-t border-white/18 pt-8">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
+              What to Expect
+            </p>
+            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/65">
+              For first-time visitors
+            </p>
+            <dl className="mt-6 grid gap-5">
+              <div>
+                <dt className="serif text-xl font-bold text-white">Dress</dt>
+                <dd className="mt-2 text-sm leading-7 text-white/76">
+                  Come as you are — there is no formal dress code. You will
+                  feel right at home.
+                </dd>
+              </div>
+              <div>
+                <dt className="serif text-xl font-bold text-white">Worship</dt>
+                <dd className="mt-2 text-sm leading-7 text-white/76">
+                  We strive, by the Holy Spirit, to do all things decently and
+                  in order, seeking to glorify God. We sing out to His glory
+                  and use the Scriptures to lift up our Saviour.
+                </dd>
+              </div>
+              <div>
+                <dt className="serif text-xl font-bold text-white">
+                  After the Service
+                </dt>
+                <dd className="mt-2 text-sm leading-7 text-white/76">
+                  Stay for our Fellowship Feast right after the morning service
+                  — all are welcome to share a meal with us.
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
 

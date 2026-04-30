@@ -19,6 +19,20 @@ export const siteVerse = {
   text: "...to open their eyes, and to turn them from darkness to light, and from the power of Satan unto God, that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me.",
 };
 
+export const churchVerses = {
+  mission: {
+    label: "Mission Statement",
+    reference: "Acts 26:18",
+    text: "...to open their eyes, and to turn them from darkness to light, and from the power of Satan unto God, that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me.",
+  },
+  theme: {
+    label: "2026 Theme",
+    reference: "Hosea 6:3",
+    text: "Then shall we know, if we follow on to know the Lord: his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth.",
+    pullQuote: "Follow on to know the Lord.",
+  },
+} as const;
+
 export type NavLink = readonly [string, string];
 export type NavDropdown = {
   readonly label: string;
