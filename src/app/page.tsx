@@ -9,6 +9,7 @@ import {
   PlayCircle,
   Sparkles,
 } from "lucide-react";
+import { ChatButton } from "@/components/chat-button";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import {
@@ -476,14 +477,7 @@ function ConnectWithPastor() {
         personally reply.
       </p>
       <div className="mt-7 flex flex-wrap gap-3">
-        <button
-          type="button"
-          data-chat-launcher
-          className="inline-flex items-center gap-2 bg-fern px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-ink"
-        >
-          <MessageCircleHeart aria-hidden="true" className="size-4" />
-          Start a Chat
-        </button>
+        <ChatButton />
         <a
           href={`mailto:${site.email}?subject=Connect with Pastor Bob`}
           className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"

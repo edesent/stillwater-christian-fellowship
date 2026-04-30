@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
+import Script from "next/script";
 import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -94,7 +95,15 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${inter.variable} ${libreBaskerville.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://slackwebsitechat.vercel.app/widget/wbc-chat.js"
+          data-api="https://slackwebsitechat.vercel.app"
+          data-key="wbc_b1a2a3b9ed6fcd227f6b75b9dca684bd3bbcf6fcfda19a59"
+          strategy="afterInteractive"
+        />
+      </body>
     </html>
   );
 }
