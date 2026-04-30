@@ -7,14 +7,7 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="section-shell grid gap-10 py-14 md:grid-cols-[1.1fr_0.9fr] md:items-end">
         <div>
-          <Image
-            src="/stillwater/stillwater-ri-logo.png"
-            alt=""
-            width={88}
-            height={88}
-            className="size-20"
-          />
-          <p className="mt-6 text-sm font-bold uppercase tracking-[0.22em] text-sky">
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-sky">
             {site.name}
           </p>
           <h2 className="serif mt-4 max-w-2xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
@@ -22,6 +15,13 @@ export function Footer() {
           </h2>
         </div>
         <div className="grid gap-3 text-sm text-white/75">
+          <Image
+            src="/stillwater/stillwater-ri-logo.png"
+            alt=""
+            width={88}
+            height={88}
+            className="size-20 self-end justify-self-end"
+          />
           <a className="footer-link" href="https://maps.google.com/?q=51+Main+St+Hope+RI">
             <MapPin aria-hidden="true" className="size-4" />
             {site.address} - {site.addressNote}
