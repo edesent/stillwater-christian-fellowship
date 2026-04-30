@@ -18,6 +18,7 @@ export default async function SermonsPage() {
 
   return (
     <>
+      <SermonsJsonLd sermons={sermons} coverImage={coverImage} />
       <main className="overflow-hidden bg-paper">
         <Header />
         <Hero latest={latest} count={sermons.length} coverImage={coverImage} />
@@ -29,6 +30,83 @@ export default async function SermonsPage() {
       </main>
       <Footer />
     </>
+  );
+}
+
+function SermonsJsonLd({
+  sermons,
+  coverImage,
+}: {
+  sermons: Sermon[];
+  coverImage: string;
+}) {
+  const churchId = `${siteUrl}/#church`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Sermons",
+            item: `${siteUrl}/sermons`,
+          },
+        ],
+      },
+      {
+        "@type": "PodcastSeries",
+        name: `${site.name} Sermons`,
+        url: `${siteUrl}/sermons`,
+        description: `Recent sermons from ${site.name} in Hope, Rhode Island.`,
+        image: coverImage,
+        author: { "@id": churchId },
+        publisher: { "@id": churchId },
+      },
+      {
+        "@type": "ItemList",
+        name: `${site.name} — Sermon Archive`,
+        url: `${siteUrl}/sermons`,
+        numberOfItems: sermons.length,
+        itemListElement: sermons.slice(0, 25).map((sermon, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "PodcastEpisode",
+            name: sermon.title,
+            url: sermon.sermonAudioUrl,
+            datePublished: new Date(sermon.pubDate).toISOString(),
+            duration: sermon.durationSeconds
+              ? `PT${Math.floor(sermon.durationSeconds / 60)}M${sermon.durationSeconds % 60}S`
+              : undefined,
+            associatedMedia: {
+              "@type": "AudioObject",
+              contentUrl: sermon.audioUrl,
+              encodingFormat: "audio/mpeg",
+            },
+            author: {
+              "@type": "Person",
+              name: sermon.speaker,
+            },
+            inLanguage: "en",
+          },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
   );
 }
 

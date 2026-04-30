@@ -508,19 +508,142 @@ function ConnectWithPastor() {
 
 
 function JsonLd() {
+  const churchId = `${siteUrl}/#church`;
+  const websiteId = `${siteUrl}/#website`;
+  const pastorId = `${siteUrl}/#pastor-bob`;
+
   const data = {
     "@context": "https://schema.org",
-    "@type": "Church",
-    name: site.name,
-    url: siteUrl,
-    telephone: site.phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "51 Main St",
-      addressLocality: "Hope",
-      addressRegion: "RI",
-      addressCountry: "US",
-    },
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: siteUrl,
+        name: site.name,
+        description: site.description,
+        inLanguage: "en-US",
+        publisher: { "@id": churchId },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": ["Church", "LocalBusiness", "PlaceOfWorship"],
+        "@id": churchId,
+        name: site.name,
+        alternateName: site.shortName,
+        url: siteUrl,
+        description: site.description,
+        telephone: site.phone,
+        email: site.email,
+        priceRange: "Free",
+        image: [`${siteUrl}/stillwater/hero-water.jpg`],
+        logo: `${siteUrl}/stillwater/stillwater-ri-logo.png`,
+        sameAs: [site.facebook, site.sermonAudio],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "51 Main St",
+          addressLocality: "Hope",
+          addressRegion: "RI",
+          postalCode: "02831",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 41.72363,
+          longitude: -71.64019,
+        },
+        areaServed: [
+          { "@type": "Place", name: "Hope, Rhode Island" },
+          { "@type": "Place", name: "Scituate, Rhode Island" },
+          { "@type": "Place", name: "Coventry, Rhode Island" },
+          { "@type": "Place", name: "West Warwick, Rhode Island" },
+        ],
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "09:15",
+            closes: "12:00",
+            description: "Adult Discipleship 9:15 AM, Worship 10:30 AM",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "18:00",
+            closes: "19:00",
+            description: "Prayer Meeting 6:00 PM",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Wednesday",
+            opens: "10:00",
+            closes: "11:00",
+            description: "Morning Devotions",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Wednesday",
+            opens: "19:00",
+            closes: "20:30",
+            description: "Bible Study",
+          },
+        ],
+        denomination: "Independent Baptist",
+        founder: { "@id": pastorId },
+        employee: [{ "@id": pastorId }],
+        event: [
+          {
+            "@type": "Event",
+            name: "Sunday Worship Service",
+            description: "Weekly Sunday worship service with Bible preaching.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Sunday",
+              startTime: "10:30",
+              endTime: "12:00",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+          {
+            "@type": "Event",
+            name: "Wednesday Bible Study",
+            description: "Midweek Bible study and teaching.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Wednesday",
+              startTime: "19:00",
+              endTime: "20:30",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+        ],
+      },
+      {
+        "@type": "Person",
+        "@id": pastorId,
+        name: "Robert Levesque",
+        alternateName: "Pastor Bob",
+        jobTitle: "Senior Pastor",
+        affiliation: { "@id": churchId },
+        worksFor: { "@id": churchId },
+        sameAs: [site.sermonAudio],
+      },
+    ],
   };
 
   return (

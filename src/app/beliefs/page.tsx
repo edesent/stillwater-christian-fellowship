@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 export default function BeliefsPage() {
   return (
     <>
+      <BeliefsJsonLd />
       <main className="overflow-hidden bg-paper">
         <Header />
         <Hero />
@@ -21,6 +22,59 @@ export default function BeliefsPage() {
       </main>
       <Footer />
     </>
+  );
+}
+
+function BeliefsJsonLd() {
+  const churchId = `${siteUrl}/#church`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "What We Believe",
+            item: `${siteUrl}/beliefs`,
+          },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        name: `What We Believe — ${site.name}`,
+        url: `${siteUrl}/beliefs`,
+        description: `Statement of Faith for ${site.name} in Hope, Rhode Island.`,
+        inLanguage: "en-US",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": churchId },
+        primaryImageOfPage: `${siteUrl}/stillwater/bible-study.jpg`,
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Statement of Faith",
+          numberOfItems: statementOfFaith.length,
+          itemListElement: statementOfFaith.map((article, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: article,
+          })),
+        },
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
   );
 }
 
