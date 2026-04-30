@@ -8,7 +8,6 @@ import {
   HeartHandshake,
   MapPin,
   MessageCircleHeart,
-  Music2,
   PlayCircle,
   Sparkles,
 } from "lucide-react";
@@ -278,11 +277,6 @@ function Worship() {
             musical traditions of the church while joining them with modern
             expressions of worship.
           </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            <WorshipPoint icon={<BookOpen />} label="Truthful words" />
-            <WorshipPoint icon={<Music2 />} label="Generational unity" />
-            <WorshipPoint icon={<HeartHandshake />} label="Orderly praise" />
-          </div>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-fern soft-shadow">
           <Image
@@ -295,17 +289,6 @@ function Worship() {
         </div>
       </div>
     </section>
-  );
-}
-
-function WorshipPoint({ icon, label }: { icon: ReactElement; label: string }) {
-  return (
-    <div className="border border-rule bg-paper p-5">
-      <div className="text-clay [&_svg]:size-6">{icon}</div>
-      <p className="mt-5 text-sm font-black uppercase tracking-[0.14em] text-ink">
-        {label}
-      </p>
-    </div>
   );
 }
 
