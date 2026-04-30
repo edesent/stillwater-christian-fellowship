@@ -23,7 +23,7 @@ export const navItems = [
   ["Pastor", "/#pastor"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
-  ["Beliefs", "/#beliefs"],
+  ["Beliefs", "/beliefs"],
   ["Leadership", "/#leadership"],
   ["Contact", "/#contact"],
 ] as const;

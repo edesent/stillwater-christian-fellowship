@@ -22,7 +22,6 @@ import {
   site,
   siteUrl,
   siteVerse,
-  statementOfFaith,
   visitorNotes,
 } from "@/lib/site";
 
@@ -39,7 +38,6 @@ export default function Home() {
         <Ministries />
         <Worship />
         <Leadership />
-        <Beliefs />
         <Contact />
       </main>
       <Footer />
@@ -445,48 +443,6 @@ function Initials({ name, muted = false }: { name: string; muted?: boolean }) {
     >
       {initials}
     </span>
-  );
-}
-
-function Beliefs() {
-  return (
-    <section id="beliefs" className="bg-mist py-20 sm:py-28">
-      <div className="section-shell">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
-              Statement of Faith
-            </p>
-            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              We Believe…
-            </h2>
-          </div>
-          <p className="max-w-xl text-lg leading-8 text-ink-soft">
-            The doctrines below are the convictions that anchor every sermon,
-            prayer, and ministry at Still Water.
-          </p>
-        </div>
-
-        <ol className="mt-12 grid gap-3">
-          {statementOfFaith.map((article, index) => (
-            <li
-              key={index}
-              className="flex gap-5 border border-rule bg-paper p-6 sm:gap-7 sm:p-7"
-            >
-              <span
-                className="serif shrink-0 text-3xl font-bold leading-none text-clay sm:text-4xl"
-                aria-hidden="true"
-              >
-                {(index + 1).toString().padStart(2, "0")}
-              </span>
-              <p className="text-base leading-8 text-ink-soft sm:text-lg">
-                {article}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
   );
 }
 
