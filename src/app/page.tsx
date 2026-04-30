@@ -93,7 +93,15 @@ function Hero() {
         <div className="grid border border-white/16 bg-white/10 backdrop-blur-md md:grid-cols-3">
           <HeroStat label="Sunday Worship" value="10:30 AM" />
           <HeroStat label="Wednesday Bible Study" value="7:00 PM" />
-          <HeroStat label="Location" value="51 Main St" />
+          <div className="border-white/14 px-5 py-4 md:border-r md:last:border-r-0">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
+              Location
+            </p>
+            <p className="mt-1 text-sm font-semibold text-white/80">51 Main St</p>
+            <p className="serif text-3xl font-bold leading-tight text-white">
+              Hope, RI 02831
+            </p>
+          </div>
         </div>
       </div>
     </section>
