@@ -41,8 +41,8 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5">
-        <div className="section-shell text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
-          Copyright Still Water Christian Fellowship
+        <div className="section-shell text-center text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
+          © 2026 Still Water Christian Fellowship
         </div>
       </div>
     </footer>
