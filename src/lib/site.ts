@@ -91,6 +91,12 @@ export const ministries = [
     image: "/stillwater/mission.jpg",
     body: "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence.",
   },
+  {
+    title: "Child Evangelism Fellowship",
+    image: "/stillwater/New-CEF-1-645x1024.jpg",
+    imageContain: true,
+    body: "Partnering with CEF to reach boys and girls with the Good News of Jesus Christ through Good News Clubs and Bible-centered teaching.",
+  },
 ] as const;
 
 export const statementOfFaith = [

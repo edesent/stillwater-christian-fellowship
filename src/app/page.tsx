@@ -234,15 +234,27 @@ function Ministries() {
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {ministries.map((ministry) => (
+          {ministries.map((ministry) => {
+            const isLogo = "imageContain" in ministry && ministry.imageContain;
+            return (
             <article key={ministry.title} className="bg-white text-ink">
-              <div className="relative aspect-square overflow-hidden bg-mist">
+              <div
+                className={
+                  isLogo
+                    ? "relative aspect-square overflow-hidden bg-paper p-8"
+                    : "relative aspect-square overflow-hidden bg-mist"
+                }
+              >
                 <Image
                   src={ministry.image}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-500 hover:scale-105"
+                  className={
+                    isLogo
+                      ? "object-contain p-2"
+                      : "object-cover transition duration-500 hover:scale-105"
+                  }
                 />
               </div>
               <div className="p-5">
@@ -252,7 +264,8 @@ function Ministries() {
                 <p className="mt-3 text-sm leading-7 text-ink-soft">{ministry.body}</p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
