@@ -5,7 +5,14 @@ import { site } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="bg-ink text-white">
-      <div className="section-shell grid gap-10 py-14 md:grid-cols-[1.1fr_0.9fr] md:items-end">
+      <div className="section-shell flex flex-col items-center gap-10 py-14 text-center">
+        <Image
+          src="/stillwater/stillwater-ri-logo.png"
+          alt=""
+          width={160}
+          height={160}
+          className="size-36 sm:size-40"
+        />
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-sky">
             {site.name}
@@ -14,14 +21,7 @@ export function Footer() {
             Where faith and love meet in Hope.
           </h2>
         </div>
-        <div className="grid gap-3 text-sm text-white/75">
-          <Image
-            src="/stillwater/stillwater-ri-logo.png"
-            alt=""
-            width={88}
-            height={88}
-            className="size-20 self-end justify-self-end"
-          />
+        <div className="grid justify-items-center gap-3 text-sm text-white/75 sm:grid-cols-2">
           <a className="footer-link" href="https://maps.google.com/?q=51+Main+St+Hope+RI">
             <MapPin aria-hidden="true" className="size-4" />
             {site.address} - {site.addressNote}
