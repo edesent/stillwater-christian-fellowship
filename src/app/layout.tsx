@@ -20,7 +20,7 @@ const libreBaskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} | Hope, RI`,
+    default: site.name,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   publisher: site.name,
   alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} | Hope, RI`,
+    title: site.name,
     description: site.description,
     url: siteUrl,
     type: "website",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} | Hope, RI`,
+    title: site.name,
     description: site.description,
     images: ["/stillwater/hero-water.jpg"],
   },
