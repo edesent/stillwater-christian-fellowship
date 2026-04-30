@@ -13,6 +13,11 @@ export const site = {
   facebook: "https://www.facebook.com/groups/671903697328042",
 };
 
+export const siteVerse = {
+  reference: "Acts 26:18",
+  text: "...to open their eyes, and to turn them from darkness to light, and from the power of Satan unto God, that they may receive forgiveness of sins, and inheritance among them which are sanctified by faith that is in me.",
+};
+
 export const navItems = [
   ["Visit", "/#visit"],
   ["Ministries", "/#ministries"],

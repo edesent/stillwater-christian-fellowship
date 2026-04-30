@@ -21,6 +21,7 @@ import {
   services,
   site,
   siteUrl,
+  siteVerse,
   visitorNotes,
 } from "@/lib/site";
 
@@ -166,10 +167,10 @@ function Welcome() {
           />
           <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.88),rgba(58,155,197,0))] p-6 pt-28 text-white sm:p-8">
             <p className="text-sm font-black uppercase tracking-[0.2em] text-sky">
-              Psalm 23
+              Site Verse - {siteVerse.reference}
             </p>
-            <p className="serif mt-3 max-w-xl text-3xl font-bold leading-tight">
-              The Lord is my Shepherd, I shall not want.
+            <p className="serif mt-3 max-w-2xl text-2xl font-bold leading-snug sm:text-3xl">
+              {siteVerse.text}
             </p>
           </div>
         </div>
