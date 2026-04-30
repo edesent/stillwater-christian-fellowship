@@ -1,11 +1,8 @@
 import Image from "next/image";
-import type { ReactElement } from "react";
 import {
   ArrowRight,
-  BookOpen,
-  CalendarDays,
   Clock3,
-  HeartHandshake,
+  Mail,
   MapPin,
   MessageCircleHeart,
   PlayCircle,
@@ -433,50 +430,62 @@ function Contact() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <ContactTile
-            icon={<CalendarDays />}
-            title="Sunday"
-            body="Adult discipleship at 9:15 AM, worship at 10:30 AM, fellowship after service, and prayer at 6:00 PM."
-          />
-          <ContactTile
-            icon={<BookOpen />}
-            title="Wednesday"
-            body="Morning devotions at 10:00 AM and Wednesday night Bible Study at 7:00 PM."
-          />
-          <ContactTile
-            icon={<MessageCircleHeart />}
-            title="Care"
-            body="Prayer for the sick is observed on the second Sunday of the month."
-          />
-          <ContactTile
-            icon={<HeartHandshake />}
-            title="Community"
-            body="Women's Caring & Sharing, Brother 2 Brother, Good News Bible Club, and rescue mission outreach."
-          />
-        </div>
+        <ConnectWithPastor />
       </div>
     </section>
   );
 }
 
-function ContactTile({
-  icon,
-  title,
-  body,
-}: {
-  icon: ReactElement;
-  title: string;
-  body: string;
-}) {
+function ConnectWithPastor() {
+  const seniorPastor = pastors[0];
   return (
-    <article className="border border-rule bg-paper p-6">
-      <div className="text-clay [&_svg]:size-6">{icon}</div>
-      <h3 className="serif mt-6 text-3xl font-bold text-ink">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-ink-soft">{body}</p>
+    <article className="flex flex-col border border-rule bg-paper">
+      <div className="relative aspect-[5/4] overflow-hidden bg-mist">
+        <Image
+          src={seniorPastor.image}
+          alt={`${seniorPastor.name}, ${seniorPastor.role}`}
+          fill
+          sizes="(min-width: 1024px) 44vw, 100vw"
+          className="object-cover object-[50%_28%]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-7 sm:p-9">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+          Connect with Pastor Bob
+        </p>
+        <h3 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
+          Have a question? Start a chat.
+        </h3>
+        <p className="mt-5 text-base leading-7 text-ink-soft">
+          Pastor Bob would love to hear from you — whether you’re visiting,
+          asking about faith, or in need of prayer. Send a message and he will
+          personally reply.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <button
+            type="button"
+            data-chat-launcher
+            className="inline-flex items-center gap-2 bg-fern px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-ink"
+          >
+            <MessageCircleHeart aria-hidden="true" className="size-4" />
+            Start a Chat
+          </button>
+          <a
+            href={`mailto:${site.email}?subject=Connect with Pastor Bob`}
+            className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
+          >
+            <Mail aria-hidden="true" className="size-4" />
+            Email Instead
+          </a>
+        </div>
+        <p className="mt-auto pt-7 text-xs text-ink-soft">
+          Replies typically arrive within a day, often sooner.
+        </p>
+      </div>
     </article>
   );
 }
+
 
 function JsonLd() {
   const data = {
