@@ -1,7 +1,8 @@
 import Image from "next/image";
 import {
   ArrowRight,
-  Clock3,
+  CalendarRange,
+  Radio,
   Mail,
   MapPin,
   MessageCircleHeart,
@@ -92,8 +93,20 @@ function Hero() {
         </div>
 
         <div className="grid border border-white/16 bg-white/10 backdrop-blur-md md:grid-cols-3">
-          <HeroStat label="Sunday Worship" value="10:30 AM" />
-          <HeroStat label="Wednesday Bible Study" value="10:00 AM" />
+          <HeroDayStat
+            label="Sunday"
+            primary="10:30 AM"
+            primaryLabel="Worship"
+            secondary="5:30 PM"
+            secondaryLabel="Discipleship"
+          />
+          <HeroDayStat
+            label="Wednesday"
+            primary="10:00 AM"
+            primaryLabel="Bible Study"
+            secondary="6:00 PM"
+            secondaryLabel="Prayer Meeting"
+          />
           <div className="border-white/14 px-5 py-4 md:border-r md:last:border-r-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
               Location
@@ -109,13 +122,36 @@ function Hero() {
   );
 }
 
-function HeroStat({ label, value }: { label: string; value: string }) {
+function HeroDayStat({
+  label,
+  primary,
+  primaryLabel,
+  secondary,
+  secondaryLabel,
+}: {
+  label: string;
+  primary: string;
+  primaryLabel: string;
+  secondary: string;
+  secondaryLabel: string;
+}) {
   return (
     <div className="border-white/14 px-5 py-4 md:border-r md:last:border-r-0">
       <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
         {label}
       </p>
-      <p className="serif mt-1 text-3xl font-bold text-white">{value}</p>
+      <p className="serif mt-1 text-3xl font-bold leading-tight text-white">
+        {primary}
+        <span className="ml-2 align-middle text-xs font-bold uppercase tracking-[0.16em] text-sky">
+          {primaryLabel}
+        </span>
+      </p>
+      <p className="serif mt-1 text-sm font-semibold text-white/72">
+        {secondary}
+        <span className="ml-2 align-middle text-[0.65rem] font-bold uppercase tracking-[0.16em] text-white/55">
+          {secondaryLabel}
+        </span>
+      </p>
     </div>
   );
 }
@@ -139,47 +175,65 @@ function Visit() {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const tagline =
-                "tagline" in service ? service.tagline : undefined;
-              const livestream =
-                "livestream" in service ? service.livestream : false;
-              return (
-                <article
-                  key={`${service.day}-${service.time}`}
-                  className="flex flex-col border border-rule bg-paper p-6"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <p className="text-sm font-black uppercase tracking-[0.18em] text-fern">
-                      {service.day}
-                    </p>
-                    <Clock3 aria-hidden="true" className="size-5 text-clay" />
-                  </div>
-                  <p className="serif mt-6 text-4xl font-bold text-ink">
-                    {service.time}
-                  </p>
-                  <h3 className="mt-4 text-base font-bold uppercase tracking-[0.13em] text-ink-soft">
-                    {service.title}
-                  </h3>
-                  {tagline ? (
-                    <p className="mt-3 text-sm leading-6 text-ink-soft">
-                      {tagline}
-                    </p>
-                  ) : null}
-                  {livestream ? (
-                    <p className="mt-auto pt-4 text-xs font-bold uppercase tracking-[0.16em] text-clay">
-                      <span className="mr-2 inline-block size-2 rounded-full bg-clay align-middle" />
-                      Livestreamed on SermonAudio, Facebook & YouTube
-                    </p>
-                  ) : null}
-                </article>
-              );
-            })}
+          <div className="grid gap-5 md:grid-cols-2">
+            <DayCard day="Sunday" services={services.filter((s) => s.day === "Sunday")} />
+            <DayCard day="Wednesday" services={services.filter((s) => s.day === "Wednesday")} />
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+type ServiceItem = (typeof services)[number];
+
+function DayCard({ day, services }: { day: string; services: readonly ServiceItem[] }) {
+  return (
+    <article className="flex flex-col border border-rule bg-paper">
+      <div className="flex items-center justify-between gap-4 border-b border-rule bg-mist/50 px-6 py-4">
+        <p className="serif text-3xl font-bold leading-none text-ink">{day}</p>
+        <CalendarRange aria-hidden="true" className="size-5 text-clay" />
+      </div>
+      <ul className="divide-y divide-rule">
+        {services.map((service) => {
+          const tagline =
+            "tagline" in service ? service.tagline : undefined;
+          const livestream =
+            "livestream" in service ? service.livestream : false;
+          return (
+            <li key={service.time} className="flex gap-5 p-6">
+              <div className="shrink-0 text-right">
+                <p className="serif text-2xl font-bold leading-tight text-ink">
+                  {service.time.split(" ")[0]}
+                </p>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
+                  {service.time.split(" ")[1]}
+                </p>
+              </div>
+              <div className="min-w-0 flex-1">
+                <h3 className="text-base font-bold uppercase tracking-[0.12em] text-ink">
+                  {service.title}
+                </h3>
+                {tagline ? (
+                  <p className="mt-2 text-sm leading-6 text-ink-soft">
+                    {tagline}
+                  </p>
+                ) : null}
+                {livestream ? (
+                  <p
+                    className="mt-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay"
+                    title="Livestreamed on SermonAudio, Facebook & YouTube"
+                  >
+                    <Radio aria-hidden="true" className="size-3.5" />
+                    Livestream
+                  </p>
+                ) : null}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </article>
   );
 }
 
@@ -513,37 +567,28 @@ function Contact() {
             </a>
           </div>
 
-          <div className="mt-10 border-t border-white/18 pt-8">
+          <div className="mt-10 border-t border-white/18 pt-7">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
               What to Expect
             </p>
-            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/65">
-              For first-time visitors
-            </p>
-            <dl className="mt-6 grid gap-5">
-              <div>
-                <dt className="serif text-xl font-bold text-white">Dress</dt>
-                <dd className="mt-2 text-sm leading-7 text-white/76">
-                  Come as you are — there is no formal dress code. You will
-                  feel right at home.
-                </dd>
-              </div>
-              <div>
-                <dt className="serif text-xl font-bold text-white">Worship</dt>
-                <dd className="mt-2 text-sm leading-7 text-white/76">
-                  We strive, by the Holy Spirit, to do all things decently and
-                  in order, seeking to glorify God. We sing out to His glory
-                  and use the Scriptures to lift up our Saviour.
-                </dd>
-              </div>
-              <div>
-                <dt className="serif text-xl font-bold text-white">
-                  After the Service
+            <dl className="mt-5 grid gap-3 text-sm leading-6 text-white/82">
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  Dress
                 </dt>
-                <dd className="mt-2 text-sm leading-7 text-white/76">
-                  Stay for our Fellowship Feast right after the morning service
-                  — all are welcome to share a meal with us.
-                </dd>
+                <dd>Come as you are.</dd>
+              </div>
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  Worship
+                </dt>
+                <dd>Reverent, Bible-centered, about an hour.</dd>
+              </div>
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  After
+                </dt>
+                <dd>Stay for our Fellowship Feast — all welcome.</dd>
               </div>
             </dl>
           </div>
