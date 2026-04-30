@@ -20,7 +20,6 @@ export const siteVerse = {
 
 export const navItems = [
   ["Visit", "/#visit"],
-  ["Pastor", "/#pastor"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
   ["Beliefs", "/beliefs"],

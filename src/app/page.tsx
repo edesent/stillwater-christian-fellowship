@@ -35,7 +35,6 @@ export default function Home() {
         <Visit />
         <Welcome />
         <Verse />
-        <Pastor />
         <Ministries />
         <Worship />
         <Leadership />
@@ -215,61 +214,6 @@ function Verse() {
   );
 }
 
-function Pastor() {
-  const seniorPastor = pastors[0];
-  const assistantPastor = pastors[1];
-
-  return (
-    <section id="pastor" className="bg-cream py-20 sm:py-28">
-      <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div className="relative overflow-hidden bg-mist soft-shadow">
-          <div className="relative aspect-square">
-            <Image
-              src={seniorPastor.image}
-              alt={`${seniorPastor.name}, ${seniorPastor.role}`}
-              fill
-              sizes="(min-width: 1024px) 44vw, 100vw"
-              className="object-cover object-[50%_38%]"
-            />
-          </div>
-        </div>
-
-        <div>
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
-            Our Pastor
-          </p>
-          <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-            Pastor Robert Levesque
-          </h2>
-          <p className="mt-6 text-lg font-black uppercase tracking-[0.14em] text-fern">
-            Senior Pastor
-          </p>
-          <p className="mt-6 text-lg leading-8 text-ink-soft">
-            Pastor Levesque shepherds Still Water Christian Fellowship with a love
-            for the Bible, a burden for souls, and a desire to see the light of the
-            Gospel shine throughout Hope and the surrounding area.
-          </p>
-          <p className="mt-5 text-lg leading-8 text-ink-soft">
-            When you visit, you will hear the Word of God preached with conviction,
-            compassion, and confidence in what Jesus Christ can do for you.
-          </p>
-          <article className="mt-8 border border-rule bg-paper p-5">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
-              Assistant Pastor
-            </p>
-            <h3 className="serif mt-3 text-3xl font-bold leading-tight text-ink">
-              {assistantPastor.name}
-            </h3>
-            <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-fern">
-              {assistantPastor.role}
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Ministries() {
   return (
     <section id="ministries" className="bg-ink py-20 text-white sm:py-28">
@@ -363,8 +307,11 @@ function WorshipPoint({ icon, label }: { icon: ReactElement; label: string }) {
 }
 
 function Leadership() {
+  const seniorPastor = pastors[0];
+  const assistantPastor = pastors[1];
+
   return (
-    <section id="leadership" className="bg-paper py-20 sm:py-28">
+    <section id="leadership" className="bg-cream py-20 sm:py-28">
       <div className="section-shell">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
           <div>
@@ -381,27 +328,46 @@ function Leadership() {
           </p>
         </div>
 
-        <div className="mt-14">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
-            Pastors
-          </p>
-          <div className="mt-5 grid gap-4 md:grid-cols-2">
-            {pastors.map((pastor) => (
-              <article
-                key={pastor.name}
-                className="flex items-center gap-5 border border-rule bg-white p-6"
-              >
-                <Initials name={pastor.name} />
-                <div>
-                  <h3 className="serif text-3xl font-bold leading-tight text-ink">
-                    {pastor.name}
-                  </h3>
-                  <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-clay">
-                    {pastor.role}
-                  </p>
-                </div>
-              </article>
-            ))}
+        <div className="mt-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="relative overflow-hidden bg-mist soft-shadow">
+            <div className="relative aspect-square">
+              <Image
+                src={seniorPastor.image}
+                alt={`${seniorPastor.name}, ${seniorPastor.role}`}
+                fill
+                sizes="(min-width: 1024px) 44vw, 100vw"
+                className="object-cover object-[50%_38%]"
+              />
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+              Senior Pastor
+            </p>
+            <h3 className="serif mt-3 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+              Pastor Robert Levesque
+            </h3>
+            <p className="mt-6 text-lg leading-8 text-ink-soft">
+              Pastor Levesque shepherds Still Water Christian Fellowship with a love
+              for the Bible, a burden for souls, and a desire to see the light of the
+              Gospel shine throughout Hope and the surrounding area.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-ink-soft">
+              When you visit, you will hear the Word of God preached with conviction,
+              compassion, and confidence in what Jesus Christ can do for you.
+            </p>
+            <article className="mt-8 border border-rule bg-paper p-5">
+              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
+                Assistant Pastor
+              </p>
+              <h4 className="serif mt-3 text-3xl font-bold leading-tight text-ink">
+                {assistantPastor.name}
+              </h4>
+              <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-fern">
+                {assistantPastor.role}
+              </p>
+            </article>
           </div>
         </div>
 
