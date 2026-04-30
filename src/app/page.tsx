@@ -36,8 +36,8 @@ export default function Home() {
         <Verse />
         <Welcome />
         <Ministries />
-        <Worship />
         <Leadership />
+        <Worship />
         <Contact />
       </main>
       <Footer />
