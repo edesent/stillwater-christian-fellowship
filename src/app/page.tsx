@@ -5,6 +5,7 @@ import {
   Mail,
   MapPin,
   MessageCircleHeart,
+  Phone,
   PlayCircle,
   Sparkles,
 } from "lucide-react";
@@ -437,51 +438,49 @@ function Contact() {
 }
 
 function ConnectWithPastor() {
-  const seniorPastor = pastors[0];
   return (
-    <article className="flex flex-col border border-rule bg-paper">
-      <div className="relative aspect-[5/4] overflow-hidden bg-mist">
-        <Image
-          src={seniorPastor.image}
-          alt={`${seniorPastor.name}, ${seniorPastor.role}`}
-          fill
-          sizes="(min-width: 1024px) 44vw, 100vw"
-          className="object-cover object-[50%_28%]"
-        />
+    <article className="flex flex-col border border-rule bg-paper p-8 sm:p-10">
+      <div className="grid size-14 place-items-center border border-sky/55 bg-mist text-fern">
+        <MessageCircleHeart aria-hidden="true" className="size-7" />
       </div>
-      <div className="flex flex-1 flex-col p-7 sm:p-9">
-        <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
-          Connect with Pastor Bob
-        </p>
-        <h3 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
-          Have a question? Start a chat.
-        </h3>
-        <p className="mt-5 text-base leading-7 text-ink-soft">
-          Pastor Bob would love to hear from you — whether you’re visiting,
-          asking about faith, or in need of prayer. Send a message and he will
-          personally reply.
-        </p>
-        <div className="mt-7 flex flex-wrap gap-3">
-          <button
-            type="button"
-            data-chat-launcher
-            className="inline-flex items-center gap-2 bg-fern px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-ink"
-          >
-            <MessageCircleHeart aria-hidden="true" className="size-4" />
-            Start a Chat
-          </button>
-          <a
-            href={`mailto:${site.email}?subject=Connect with Pastor Bob`}
-            className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
-          >
-            <Mail aria-hidden="true" className="size-4" />
-            Email Instead
-          </a>
-        </div>
-        <p className="mt-auto pt-7 text-xs text-ink-soft">
-          Replies typically arrive within a day, often sooner.
-        </p>
+      <p className="mt-7 text-xs font-black uppercase tracking-[0.22em] text-clay">
+        Connect with Pastor Bob
+      </p>
+      <h3 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
+        Have a question? Start a chat.
+      </h3>
+      <p className="mt-5 text-base leading-7 text-ink-soft">
+        Pastor Bob would love to hear from you — whether you’re visiting,
+        asking about faith, or in need of prayer. Send a message and he will
+        personally reply.
+      </p>
+      <div className="mt-7 flex flex-wrap gap-3">
+        <button
+          type="button"
+          data-chat-launcher
+          className="inline-flex items-center gap-2 bg-fern px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-ink"
+        >
+          <MessageCircleHeart aria-hidden="true" className="size-4" />
+          Start a Chat
+        </button>
+        <a
+          href={`mailto:${site.email}?subject=Connect with Pastor Bob`}
+          className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
+        >
+          <Mail aria-hidden="true" className="size-4" />
+          Email
+        </a>
+        <a
+          href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}
+          className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
+        >
+          <Phone aria-hidden="true" className="size-4" />
+          Call
+        </a>
       </div>
+      <p className="mt-auto pt-7 text-xs text-ink-soft">
+        Replies typically arrive within a day, often sooner.
+      </p>
     </article>
   );
 }
