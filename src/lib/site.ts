@@ -132,14 +132,9 @@ export const visitorNotes = [
 
 export const ministries = [
   {
-    title: "Children's Ministry",
+    title: "Children's Ministry & VBS",
     image: "/stillwater/children-ministries.jpg",
-    body: "Teaching children the truth of God's Word through age-appropriate Bible lessons during Sunday services.",
-  },
-  {
-    title: "VBS",
-    image: "/stillwater/childresn-ministries2.jpg",
-    body: "Vacation Bible School — a week of music, lessons, and Gospel teaching for children in our community each summer.",
+    body: "Age-appropriate Bible lessons during Sunday services, plus a week of music, lessons, and Gospel teaching for community children at our annual Vacation Bible School.",
   },
   {
     title: "Ladies Caring & Sharing Ministry",
@@ -155,8 +150,14 @@ export const ministries = [
   },
   {
     title: "Soul Winners Ministry",
-    image: "/stillwater/mission.jpg",
+    image: "/stillwater/bible-study.jpg",
     body: "Going out into Hope and the surrounding area to share the Good News of Jesus Christ with our neighbors.",
+  },
+  {
+    title: "Providence Rescue Mission",
+    image: "/stillwater/mission.jpg",
+    body: "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence.",
+    schedule: "Last Monday of the month",
   },
   {
     title: "Visitation Ministry",
