@@ -142,13 +142,13 @@ export const ministries = [
     title: "Ladies Caring & Sharing Ministry",
     image: "/stillwater/ladies-fellowship.jpg",
     body: "Ladies of the church gather for prayer, encouragement, and meaningful fellowship.",
-    schedule: "1st Saturday of the month",
+    schedule: "1st Saturday of the month · 12:00 PM – 2:00 PM",
   },
   {
     title: "Men's Breakfast Discipleship Ministry",
     image: "/stillwater/mens-decipleship.jpg",
     body: "Men of the church gather for breakfast, fellowship, and Christ-centered discipleship.",
-    schedule: "3rd Saturday of the month",
+    schedule: "3rd Saturday of the month · 8:30 AM – 10:00 AM",
   },
   {
     title: "Soul Winners Ministry",
