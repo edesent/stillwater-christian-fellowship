@@ -130,22 +130,6 @@ export const ministries = [
     body: "A clear, Scripture-rooted walk through the Gospel — sharing how anyone can come to know Jesus Christ as Savior.",
   },
   {
-    title: "Youth Ministry",
-    image: "/stillwater/youth.jpg",
-    body: "Helping students grow in their knowledge of and relationship with Jesus Christ through teaching, discipleship, and service.",
-  },
-  {
-    title: "Still Water Kids",
-    image: "/stillwater/children-ministries.jpg",
-    body: "A fun, interactive children's ministry connecting kids to God, to one another, and to caring leaders.",
-  },
-  {
-    title: "Child Evangelism Fellowship",
-    image: "/stillwater/New-CEF-1-645x1024.jpg",
-    imageContain: true,
-    body: "Partnering with CEF to reach boys and girls with the Good News of Jesus Christ through Good News Clubs and Bible-centered teaching.",
-  },
-  {
     title: "Men's Discipleship & Breakfast",
     image: "/stillwater/mens-decipleship.jpg",
     body: "Men of the church gather for breakfast, fellowship, and Christ-centered discipleship.",
