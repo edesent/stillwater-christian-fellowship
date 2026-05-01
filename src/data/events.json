@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ladies-caring-sharing-may-2026",
+    "title": "Ladies Caring & Sharing",
+    "category": "Ladies Ministry",
+    "date": "2026-05-02",
+    "startTime": "9:00 AM",
+    "endTime": "11:00 AM",
+    "location": "Fellowship Hall",
+    "description": "A morning of prayer, encouragement, and fellowship for the ladies of the church. Light breakfast provided — please bring a friend."
+  },
+  {
+    "id": "mens-breakfast-may-2026",
+    "title": "Men's Breakfast Discipleship",
+    "category": "Men's Ministry",
+    "date": "2026-05-16",
+    "startTime": "8:00 AM",
+    "endTime": "9:30 AM",
+    "location": "Fellowship Hall",
+    "description": "Breakfast, Bible study, and Christ-centered fellowship for the men of Still Water. All visitors welcome."
+  },
+  {
+    "id": "providence-rescue-mission-may-2026",
+    "title": "Providence Rescue Mission",
+    "category": "Outreach",
+    "date": "2026-05-25",
+    "startTime": "5:30 PM",
+    "endTime": "8:00 PM",
+    "location": "Providence Rescue Mission, RI",
+    "description": "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence."
+  },
+  {
+    "id": "sunday-school-picnic-2026",
+    "title": "Sunday School Picnic",
+    "category": "Church Family",
+    "date": "2026-06-14",
+    "startTime": "12:30 PM",
+    "endTime": "3:00 PM",
+    "location": "Church Grounds",
+    "description": "Following the morning service — burgers, hot dogs, games for the kids, and fellowship for the whole church family."
+  },
+  {
+    "id": "vbs-2026",
+    "title": "Vacation Bible School",
+    "category": "Children's Ministry",
+    "date": "2026-08-10",
+    "endDate": "2026-08-14",
+    "startTime": "6:00 PM",
+    "endTime": "8:30 PM",
+    "location": "Still Water Christian Fellowship",
+    "description": "A week of music, lessons, crafts, and the Gospel of Jesus Christ for kids ages 4 through 12. Free and open to the community.",
+    "featured": true
+  },
+  {
+    "id": "pastor-anniversary-2026",
+    "title": "Pastor's Anniversary Sunday",
+    "category": "Special Service",
+    "date": "2026-09-06",
+    "startTime": "10:30 AM",
+    "endTime": "12:00 PM",
+    "location": "Sanctuary",
+    "description": "Join us as we give thanks to the Lord for another year of pastoral ministry under Pastor Bob Levesque. Special music and a Fellowship Feast to follow."
+  }
+]

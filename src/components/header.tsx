@@ -140,13 +140,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a
-            href="https://maps.google.com/?q=51+Main+St+Hope+RI"
+          <Link
+            href="/steps-to-salvation"
             className="hidden items-center gap-2 border border-white/18 bg-white px-4 py-2.5 text-sm font-bold text-ink transition hover:bg-sky md:inline-flex"
           >
-            <MapPin aria-hidden="true" className="size-4" />
-            {site.address}
-          </a>
+            Steps to Salvation
+          </Link>
 
           <button
             type="button"

@@ -15,6 +15,8 @@ import {
 import { ChatButton } from "@/components/chat-button";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { EventCard } from "@/components/event-card";
+import { upcomingEvents } from "@/lib/events";
 import {
   elders,
   ministries,
@@ -34,6 +36,7 @@ export default function Home() {
         <Header />
         <Hero />
         <Visit />
+        <Events />
         <Verse />
         <Welcome />
         <Ministries />
@@ -238,6 +241,49 @@ function DayCard({ day, services }: { day: string; services: readonly ServiceIte
         })}
       </ul>
     </article>
+  );
+}
+
+function Events() {
+  const events = upcomingEvents(3);
+  if (events.length === 0) return null;
+
+  return (
+    <section id="events" className="bg-paper py-20 sm:py-24">
+      <div className="section-shell">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+              Upcoming Events
+            </p>
+            <h2 className="serif mt-4 max-w-3xl text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+              What&rsquo;s coming up at Still Water.
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-ink-soft">
+            Beyond our weekly services, the Lord brings us together for special
+            gatherings, ministry meetings, and outreach. You are warmly invited
+            to every one.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {events.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <a
+            href="/events"
+            className="inline-flex items-center gap-2 border border-rule bg-cream px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-mist"
+          >
+            See All Events
+            <ArrowRight aria-hidden="true" className="size-4" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -640,7 +686,7 @@ function Contact() {
 function ConnectWithPastor() {
   return (
     <article className="flex flex-col border border-rule bg-paper p-8 sm:p-10">
-      <div className="grid size-14 place-items-center border border-sky/55 bg-mist text-fern">
+      <div className="grid size-14 place-items-center border border-sky/55 bg-[#f8fcff] text-fern">
         <MessageCircleHeart aria-hidden="true" className="size-7" />
       </div>
       <p className="mt-7 text-xs font-black uppercase tracking-[0.22em] text-clay">
