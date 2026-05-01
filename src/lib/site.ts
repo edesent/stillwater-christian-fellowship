@@ -136,24 +136,32 @@ export const ministries = [
   },
   {
     title: "Still Water Kids",
-    image: "/stillwater/kids.jpg",
+    image: "/stillwater/children-ministries.jpg",
     body: "A fun, interactive children's ministry connecting kids to God, to one another, and to caring leaders.",
-  },
-  {
-    title: "Men's & Women's Ministries",
-    image: "/stillwater/community.jpg",
-    body: "Monthly gatherings, friendships, prayer, and Christ-centered encouragement for adults.",
-  },
-  {
-    title: "Providence Rescue Mission",
-    image: "/stillwater/mission.jpg",
-    body: "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence.",
   },
   {
     title: "Child Evangelism Fellowship",
     image: "/stillwater/New-CEF-1-645x1024.jpg",
     imageContain: true,
     body: "Partnering with CEF to reach boys and girls with the Good News of Jesus Christ through Good News Clubs and Bible-centered teaching.",
+  },
+  {
+    title: "Men's Discipleship & Breakfast",
+    image: "/stillwater/mens-decipleship.jpg",
+    body: "Men of the church gather for breakfast, fellowship, and Christ-centered discipleship.",
+    schedule: "3rd Saturday of the month",
+  },
+  {
+    title: "Ladies Caring & Sharing",
+    image: "/stillwater/ladies-fellowship.jpg",
+    body: "Ladies of the church gather for prayer, encouragement, and meaningful fellowship.",
+    schedule: "1st Saturday of the month",
+  },
+  {
+    title: "Providence Rescue Mission",
+    image: "/stillwater/mission.jpg",
+    body: "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence.",
+    schedule: "Last Monday of the month",
   },
 ] as const;
 

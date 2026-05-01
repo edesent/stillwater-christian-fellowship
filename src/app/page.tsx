@@ -359,34 +359,47 @@ function Ministries() {
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {ministries.map((ministry) => {
             const isLogo = "imageContain" in ministry && ministry.imageContain;
+            const schedule =
+              "schedule" in ministry ? ministry.schedule : undefined;
             return (
-            <article key={ministry.title} className="bg-white text-ink">
-              <div
-                className={
-                  isLogo
-                    ? "relative aspect-square overflow-hidden bg-paper p-8"
-                    : "relative aspect-square overflow-hidden bg-mist"
-                }
+              <article
+                key={ministry.title}
+                className="flex flex-col bg-white text-ink"
               >
-                <Image
-                  src={ministry.image}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                <div
                   className={
                     isLogo
-                      ? "object-contain p-2"
-                      : "object-cover transition duration-500 hover:scale-105"
+                      ? "relative aspect-square overflow-hidden bg-paper p-8"
+                      : "relative aspect-square overflow-hidden bg-mist"
                   }
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="serif text-2xl font-bold leading-tight">
-                  {ministry.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-ink-soft">{ministry.body}</p>
-              </div>
-            </article>
+                >
+                  <Image
+                    src={ministry.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                    className={
+                      isLogo
+                        ? "object-contain p-2"
+                        : "object-cover transition duration-500 hover:scale-105"
+                    }
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="serif text-2xl font-bold leading-tight">
+                    {ministry.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-ink-soft">
+                    {ministry.body}
+                  </p>
+                  {schedule ? (
+                    <p className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay">
+                      <CalendarRange aria-hidden="true" className="size-3.5" />
+                      {schedule}
+                    </p>
+                  ) : null}
+                </div>
+              </article>
             );
           })}
         </div>
