@@ -134,7 +134,8 @@ export const ministries = [
   {
     title: "Children's Ministry & VBS",
     image: "/stillwater/children-ministries.jpg",
-    body: "Age-appropriate Bible lessons during Sunday services, plus a week of music, lessons, and Gospel teaching for community children at our annual Vacation Bible School.",
+    body: "Children's Church and Sunday School on Sunday mornings during the worship service — and Vacation Bible School each August, a week of music, lessons, and Gospel teaching for community kids.",
+    schedule: "Sundays · VBS in August",
   },
   {
     title: "Ladies Caring & Sharing Ministry",

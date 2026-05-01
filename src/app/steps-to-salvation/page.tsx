@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  ArrowRight,
   BookOpen,
   Mail,
   MessageCircleHeart,
@@ -40,8 +39,8 @@ export default function StepsToSalvationPage() {
       <main className="overflow-hidden bg-paper">
         <Header />
         <Hero />
-        <PastorInvitation />
         <RomansRoad />
+        <PastorInvitation />
         <NextSteps />
       </main>
       <Footer />
@@ -334,39 +333,6 @@ function NextSteps() {
           </article>
         </div>
 
-        <div className="mt-14 border-t border-white/14 pt-10">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-            <div>
-              <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
-                Visit This Sunday
-              </p>
-              <h3 className="serif mt-4 text-balance text-4xl font-bold leading-tight sm:text-5xl">
-                Come and see — you are welcome at Still Water.
-              </h3>
-              <p className="mt-5 max-w-xl text-base leading-7 text-white/72">
-                Sunday worship at 10:30 AM. {site.address}. Come as you are —
-                you will hear the Word of God preached with conviction,
-                compassion, and confidence in what Jesus Christ can do for you.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3 lg:justify-end">
-              <a
-                href="/#visit"
-                className="inline-flex items-center gap-2 bg-sky px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white"
-              >
-                Plan Your Visit
-                <ArrowRight aria-hidden="true" className="size-4" />
-              </a>
-              <a
-                href="/beliefs"
-                className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
-              >
-                <BookOpen aria-hidden="true" className="size-4" />
-                What We Believe
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
