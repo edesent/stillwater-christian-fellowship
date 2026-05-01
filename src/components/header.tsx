@@ -117,7 +117,7 @@ export function Header() {
             <span className="block text-sm font-bold uppercase tracking-[0.18em]">
               Still Water
             </span>
-            <span className="mt-1 hidden text-xs font-semibold uppercase tracking-[0.18em] text-white/55 sm:block">
+            <span className="mt-1 block text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
               Christian Fellowship
             </span>
           </span>
