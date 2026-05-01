@@ -505,13 +505,15 @@ function Leadership() {
               Pastor Robert Levesque
             </h3>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
-              Pastor Levesque shepherds Still Water Christian Fellowship with a love
-              for the Bible, a burden for souls, and a desire to see the light of the
-              Gospel shine throughout Hope and the surrounding area.
+              Pastor Robert (Bob) Levesque has been the Pastor of Still Water
+              Christian Fellowship since November of 2024. He came to us from
+              Knotty Oak Baptist Church in Coventry, RI, where he was a member
+              of the staff for eight years.
             </p>
             <p className="mt-5 text-lg leading-8 text-ink-soft">
-              When you visit, you will hear the Word of God preached with conviction,
-              compassion, and confidence in what Jesus Christ can do for you.
+              When you visit, you will hear the Word of God preached with
+              conviction, compassion, and confidence in what Jesus Christ can
+              do for you.
             </p>
             <article className="mt-8 border border-rule bg-paper p-5">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
