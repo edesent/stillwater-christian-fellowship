@@ -170,7 +170,7 @@ function Visit() {
               Visit This Week
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              We <span className="underline decoration-sky decoration-4 underline-offset-[6px]">hope</span> you will visit with us soon.
+              We would love to meet you!
             </h2>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
               When you come, you will find a church family and pastor who love the
