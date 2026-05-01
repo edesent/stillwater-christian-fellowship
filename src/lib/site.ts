@@ -152,6 +152,8 @@ export const ministries = [
     title: "Soul Winners Ministry",
     image: "/stillwater/bible-study.jpg",
     body: "Going out into Hope and the surrounding area to share the Good News of Jesus Christ with our neighbors.",
+    href: "/steps-to-salvation",
+    cta: "Steps to Salvation",
   },
   {
     title: "Providence Rescue Mission",
@@ -200,8 +202,8 @@ export const romansRoad = [
   {
     heading: "Everyone Needs Salvation",
     subheading: "To be saved from sin",
-    reference: "Romans 3:10",
-    verse: "All have sinned, and come short of the Glory of God.",
+    reference: "Romans 3:23",
+    verse: "For all have sinned, and come short of the glory of God.",
   },
   {
     heading: "Jesus Died For Our Salvation",

@@ -364,6 +364,7 @@ function Ministries() {
             const schedule =
               "schedule" in ministry ? ministry.schedule : undefined;
             const href = "href" in ministry ? ministry.href : undefined;
+            const cta = "cta" in ministry ? ministry.cta : undefined;
             const inner = (
               <>
                 <div
@@ -400,7 +401,7 @@ function Ministries() {
                   ) : null}
                   {href ? (
                     <p className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay transition group-hover:text-fern">
-                      Read More
+                      {cta ?? "Read More"}
                       <ArrowUpRight aria-hidden="true" className="size-3.5" />
                     </p>
                   ) : null}
