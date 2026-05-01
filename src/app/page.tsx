@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
+  ArrowUpRight,
   CalendarRange,
   Radio,
   Mail,
@@ -356,16 +358,14 @@ function Ministries() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {ministries.map((ministry) => {
             const isLogo = "imageContain" in ministry && ministry.imageContain;
             const schedule =
               "schedule" in ministry ? ministry.schedule : undefined;
-            return (
-              <article
-                key={ministry.title}
-                className="flex flex-col bg-white text-ink"
-              >
+            const href = "href" in ministry ? ministry.href : undefined;
+            const inner = (
+              <>
                 <div
                   className={
                     isLogo
@@ -381,7 +381,7 @@ function Ministries() {
                     className={
                       isLogo
                         ? "object-contain p-2"
-                        : "object-cover transition duration-500 hover:scale-105"
+                        : "object-cover transition duration-500 group-hover:scale-105"
                     }
                   />
                 </div>
@@ -398,7 +398,29 @@ function Ministries() {
                       {schedule}
                     </p>
                   ) : null}
+                  {href ? (
+                    <p className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay transition group-hover:text-fern">
+                      Read More
+                      <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                    </p>
+                  ) : null}
                 </div>
+              </>
+            );
+            return href ? (
+              <Link
+                key={ministry.title}
+                href={href}
+                className="group flex flex-col bg-white text-ink transition hover:shadow-lg"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <article
+                key={ministry.title}
+                className="group flex flex-col bg-white text-ink"
+              >
+                {inner}
               </article>
             );
           })}

@@ -48,7 +48,14 @@ export const navItems: readonly NavItem[] = [
   ["Visit", "/#visit"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
-  { label: "About", children: [["Beliefs", "/beliefs"], ["History", "/history"]] },
+  {
+    label: "About",
+    children: [
+      ["Beliefs", "/beliefs"],
+      ["History", "/history"],
+      ["Steps to Salvation", "/steps-to-salvation"],
+    ],
+  },
   ["Give", "/give"],
   ["Contact", "/#contact"],
 ];
@@ -125,27 +132,36 @@ export const visitorNotes = [
 
 export const ministries = [
   {
-    title: "Steps To Salvation",
-    image: "/stillwater/bible-study.jpg",
-    body: "A clear, Scripture-rooted walk through the Gospel — sharing how anyone can come to know Jesus Christ as Savior.",
+    title: "Children's Ministry",
+    image: "/stillwater/children-ministries.jpg",
+    body: "Teaching children the truth of God's Word through age-appropriate Bible lessons during Sunday services.",
   },
   {
-    title: "Men's Discipleship & Breakfast",
-    image: "/stillwater/mens-decipleship.jpg",
-    body: "Men of the church gather for breakfast, fellowship, and Christ-centered discipleship.",
-    schedule: "3rd Saturday of the month",
+    title: "VBS",
+    image: "/stillwater/childresn-ministries2.jpg",
+    body: "Vacation Bible School — a week of music, lessons, and Gospel teaching for children in our community each summer.",
   },
   {
-    title: "Ladies Caring & Sharing",
+    title: "Ladies Caring & Sharing Ministry",
     image: "/stillwater/ladies-fellowship.jpg",
     body: "Ladies of the church gather for prayer, encouragement, and meaningful fellowship.",
     schedule: "1st Saturday of the month",
   },
   {
-    title: "Providence Rescue Mission",
+    title: "Men's Breakfast Discipleship Ministry",
+    image: "/stillwater/mens-decipleship.jpg",
+    body: "Men of the church gather for breakfast, fellowship, and Christ-centered discipleship.",
+    schedule: "3rd Saturday of the month",
+  },
+  {
+    title: "Soul Winners Ministry",
     image: "/stillwater/mission.jpg",
-    body: "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence.",
-    schedule: "Last Monday of the month",
+    body: "Going out into Hope and the surrounding area to share the Good News of Jesus Christ with our neighbors.",
+  },
+  {
+    title: "Visitation Ministry",
+    image: "/stillwater/community.jpg",
+    body: "Caring for our church family and reaching the community through home and hospital visits, prayer, and encouragement.",
   },
 ] as const;
 
@@ -178,3 +194,78 @@ export const elders = [
   { name: "Carl Riecke" },
   { name: "Roger Lavoie" },
 ] as const;
+
+export const romansRoad = [
+  {
+    heading: "Everyone Needs Salvation",
+    subheading: "To be saved from sin",
+    reference: "Romans 3:10",
+    verse: "All have sinned, and come short of the Glory of God.",
+  },
+  {
+    heading: "Jesus Died For Our Salvation",
+    subheading: "Christ's love proved at the cross",
+    reference: "Romans 5:8",
+    verse:
+      "God commendeth His love toward us, in that, while we were yet sinners, Christ died for us.",
+  },
+  {
+    heading: "Salvation Is A Gift",
+    subheading: "Eternal life through Christ",
+    reference: "Romans 6:23",
+    verse:
+      "The wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.",
+  },
+  {
+    heading: "We Are Saved By Grace",
+    subheading: "Not by our own works",
+    reference: "Romans 11:6",
+    verse:
+      "And if by grace, then is it no more of works: otherwise grace is no more grace.",
+  },
+  {
+    heading: "Salvation Comes Through Faith",
+    subheading: "Faith counted for righteousness",
+    reference: "Romans 4:5",
+    verse:
+      "To him that … believeth on Him that justifieth the ungodly, his faith is counted for righteousness.",
+  },
+  {
+    heading: "God Saves All Who Call Upon Him",
+    subheading: "Whosoever will may come",
+    reference: "Romans 10:13",
+    verse:
+      "Whosoever shall call upon the name of the Lord shall be saved.",
+  },
+  {
+    heading: "Confess and Believe",
+    subheading: "Receive Christ today",
+    reference: "Romans 10:9–10",
+    verse:
+      "If thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised Him from the dead, thou shalt be saved. With the heart man believeth unto righteousness; with the mouth confession is made unto salvation.",
+  },
+] as const;
+
+export const pastorLetter = {
+  eyebrow: "Hope From Hope",
+  openingVerse: {
+    reference: "John 16:33",
+    text: "In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
+  },
+  paragraphs: [
+    "In this world we may hope for many things. We dare not, however, trust in many things.",
+    "We read the Scripture above and recognize exactly what Jesus was talking about. It is not hard to see a world around us that is waxing worse by the moment.",
+    "The Bible tells us that “by one man, sin entered into the world, and death by sin” — but it also tells us that salvation is offered to the world by one Man, Jesus Christ.",
+    "Our church, Still Water Christian Fellowship, is here to answer your spiritual questions. We are a Bible-believing Baptist church — a heritage traced back to the time of John the Baptist and Jesus Himself.",
+    "As Senior Pastor, I am extending the same invitation that Christ extended to His Apostles and to all whom He came across — and to me as well: “Come and see.”",
+    "I pray that you would accept this invitation, that we may share with you His offer of salvation — an offer found only in Him.",
+  ],
+  closingVerse: {
+    reference: "John 14:6",
+    text: "I am the way, the truth, and the life: no man cometh unto the Father, but by me.",
+  },
+  benediction:
+    "May the Spirit of God convince you today of your need for the Saviour.",
+  signOff: "In Christ,",
+  signature: "Pastor Bob Levesque",
+} as const;
