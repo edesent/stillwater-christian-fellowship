@@ -5,6 +5,8 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { site, siteUrl } from "@/lib/site";
 
+const TITHELY_EMBED_URL = "https://give.tithe.ly/?c=1383729";
+
 export const metadata: Metadata = {
   title: `Give — ${site.name}`,
   description: `Give to the ministry of ${site.name} in Hope, Rhode Island. Online giving is processed securely through Tithe.ly.`,
@@ -18,7 +20,8 @@ export default function GivePage() {
       <main className="overflow-hidden bg-paper">
         <Header />
         <Hero />
-        <Ways />
+        <Embed />
+        <OtherWays />
       </main>
       <Footer />
     </>
@@ -49,66 +52,79 @@ function Hero() {
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Every tithe and offering helps Still Water proclaim the Gospel,
           disciple believers, and serve the Village of Hope. Online giving is
-          processed securely through Tithe.ly.
+          processed securely through Tithe.ly directly below — or use one of
+          the other ways to give.
         </p>
-        <div className="mt-9">
-          <a
-            href={site.give}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-sky px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-ink transition hover:bg-white"
-          >
-            <HandHeart aria-hidden="true" className="size-5" />
-            Give Online
-            <ArrowUpRight aria-hidden="true" className="size-4" />
-          </a>
-        </div>
       </div>
     </section>
   );
 }
 
-function Ways() {
+function Embed() {
   return (
-    <section className="bg-paper py-16 sm:py-24">
+    <section className="bg-paper py-12 sm:py-16">
       <div className="section-shell">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
-              Ways to Give
-            </p>
-            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Generosity, with gratitude.
-            </h2>
-          </div>
-          <p className="max-w-xl text-base leading-7 text-ink-soft">
-            “Each one must give as he has decided in his heart, not reluctantly
-            or under compulsion, for God loves a cheerful giver.” — 2
-            Corinthians 9:7
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          <article className="border border-rule bg-cream p-7">
-            <div className="grid size-12 place-items-center border border-sky/55 bg-mist text-fern">
-              <HandHeart aria-hidden="true" className="size-6" />
-            </div>
-            <h3 className="serif mt-7 text-2xl font-bold text-ink">Online</h3>
-            <p className="mt-3 text-sm leading-7 text-ink-soft">
-              Secure one-time or recurring giving through Tithe.ly.
+        <div className="border border-rule bg-white p-3 shadow-sm sm:p-5">
+          <div className="mb-3 flex items-center justify-between gap-3 px-2 sm:px-3">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+              Secure Giving
             </p>
             <a
               href={site.give}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-clay transition hover:text-ink"
+              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-ink-soft transition hover:text-ink"
             >
-              Give on Tithe.ly
+              Open in Tithe.ly
               <ArrowUpRight aria-hidden="true" className="size-3.5" />
             </a>
-          </article>
+          </div>
+          <iframe
+            src={TITHELY_EMBED_URL}
+            title={`Give to ${site.name} via Tithe.ly`}
+            className="block h-[1000px] w-full border-0 bg-white"
+            loading="lazy"
+            allow="payment"
+          />
+        </div>
+        <p className="mt-3 text-center text-xs text-ink-soft">
+          Giving form provided by{" "}
+          <a
+            href="https://tithe.ly/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-clay underline-offset-4 hover:underline"
+          >
+            Tithe.ly
+          </a>
+          . If the form does not load, click “Open in Tithe.ly” above.
+        </p>
+      </div>
+    </section>
+  );
+}
 
-          <article className="border border-rule bg-cream p-7">
+function OtherWays() {
+  return (
+    <section className="bg-cream py-16 sm:py-20">
+      <div className="section-shell">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+              Other Ways to Give
+            </p>
+            <h2 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
+              Generosity, with gratitude.
+            </h2>
+          </div>
+          <p className="max-w-xl text-base leading-7 text-ink-soft">
+            “Each one must give as he has decided in his heart, not reluctantly
+            or under compulsion, for God loves a cheerful giver.” — 2 Corinthians 9:7
+          </p>
+        </div>
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <article className="border border-rule bg-paper p-7">
             <div className="grid size-12 place-items-center border border-sky/55 bg-mist text-fern">
               <Heart aria-hidden="true" className="size-6" />
             </div>
@@ -119,7 +135,7 @@ function Ways() {
             </p>
           </article>
 
-          <article className="border border-rule bg-cream p-7">
+          <article className="border border-rule bg-paper p-7">
             <div className="grid size-12 place-items-center border border-sky/55 bg-mist text-fern">
               <HandHeart aria-hidden="true" className="size-6" />
             </div>

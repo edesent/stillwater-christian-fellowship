@@ -321,21 +321,18 @@ function VerseBlock({
         {label} — {reference}
       </p>
       {pullQuote ? (
-        <p className="serif mt-6 text-balance text-3xl font-semibold italic leading-tight text-white sm:text-4xl">
-          “{pullQuote}”
-        </p>
-      ) : null}
-      <blockquote className={pullQuote ? "mt-5" : "mt-7"}>
-        <p
-          className={
-            pullQuote
-              ? "text-base leading-7 text-white/72 sm:text-lg"
-              : "serif text-balance text-xl font-normal italic leading-relaxed text-white/92 sm:text-2xl"
-          }
-        >
-          {pullQuote ? text : `“${text}”`}
-        </p>
-      </blockquote>
+        <blockquote className="mt-6">
+          <p className="serif text-balance text-3xl font-semibold italic leading-tight text-white sm:text-4xl">
+            “{pullQuote}”
+          </p>
+        </blockquote>
+      ) : (
+        <blockquote className="mt-7">
+          <p className="serif text-balance text-xl font-normal italic leading-relaxed text-white/92 sm:text-2xl">
+            “{text}”
+          </p>
+        </blockquote>
+      )}
     </div>
   );
 }
