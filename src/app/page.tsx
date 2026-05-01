@@ -111,8 +111,10 @@ function Hero() {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
               Location
             </p>
-            <p className="mt-1 text-sm font-semibold text-white/80">51 Main St</p>
-            <p className="serif text-3xl font-bold leading-tight text-white">
+            <p className="serif mt-1 text-3xl font-bold leading-tight text-white">
+              51 Main St
+            </p>
+            <p className="mt-1 text-sm font-semibold text-white/72">
               Hope, RI 02831
             </p>
           </div>
