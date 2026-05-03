@@ -52,6 +52,7 @@ export const navItems: readonly NavItem[] = [
   {
     label: "About",
     children: [
+      ["Leadership", "/#leadership"],
       ["Beliefs", "/beliefs"],
       ["History", "/history"],
       ["Steps to Salvation", "/steps-to-salvation"],
@@ -189,7 +190,7 @@ export const pastors = [
   {
     name: "Robert Levesque",
     role: "Senior Pastor",
-    image: "/stillwater/pastor-stillwater.png",
+    image: "/stillwater/pastor-bob.jpg",
   },
   { name: "Joseph Campbell", role: "Assistant Pastor" },
 ] as const;
