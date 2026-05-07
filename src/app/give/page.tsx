@@ -5,8 +5,6 @@ import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { site, siteUrl } from "@/lib/site";
 
-const TITHELY_EMBED_URL = "https://give.tithe.ly/?c=1383729";
-
 export const metadata: Metadata = {
   title: `Give — ${site.name}`,
   description: `Give to the ministry of ${site.name} in Hope, Rhode Island. Online giving is processed securely through Tithe.ly.`,
@@ -64,41 +62,28 @@ function Embed() {
   return (
     <section className="bg-paper py-12 sm:py-16">
       <div className="section-shell">
-        <div className="border border-rule bg-white p-3 shadow-sm sm:p-5">
-          <div className="mb-3 flex items-center justify-between gap-3 px-2 sm:px-3">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
-              Secure Giving
-            </p>
-            <a
-              href={site.give}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-ink-soft transition hover:text-ink"
-            >
-              Open in Tithe.ly
-              <ArrowUpRight aria-hidden="true" className="size-3.5" />
-            </a>
-          </div>
-          <iframe
-            src={TITHELY_EMBED_URL}
-            title={`Give to ${site.name} via Tithe.ly`}
-            className="block h-[1000px] w-full border-0 bg-white"
-            loading="lazy"
-            allow="payment"
-          />
-        </div>
-        <p className="mt-3 text-center text-xs text-ink-soft">
-          Giving form provided by{" "}
+        <div className="border border-rule bg-white p-8 shadow-sm sm:p-12">
+          <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+            Secure Giving
+          </p>
+          <h2 className="serif mt-4 text-balance text-3xl font-bold leading-tight text-ink sm:text-4xl">
+            Give online through Tithe.ly.
+          </h2>
+          <p className="mt-4 max-w-xl text-base leading-7 text-ink-soft">
+            Tithes and offerings are processed securely through Tithe.ly. Click
+            below to open the giving page in a new tab — you can give once or
+            set up a recurring gift.
+          </p>
           <a
-            href="https://tithe.ly/"
+            href={site.give}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-clay underline-offset-4 hover:underline"
+            className="mt-7 inline-flex items-center gap-2 bg-fern px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:bg-ink"
           >
-            Tithe.ly
+            Give on Tithe.ly
+            <ArrowUpRight aria-hidden="true" className="size-4" />
           </a>
-          . If the form does not load, click “Open in Tithe.ly” above.
-        </p>
+        </div>
       </div>
     </section>
   );

@@ -8,7 +8,7 @@ export const site = {
   address: "51 Main St, Hope, RI",
   addressNote: "At the corner of Rt 115 & 116",
   phone: "(401) 615-1956",
-  email: "info@stillwaterri.org",
+  email: "pastor.swcf@gmail.com",
   sermonAudio: "https://www.sermonaudio.com/broadcasters/stillwaterri/",
   facebook: "https://www.facebook.com/groups/671903697328042",
   give: "https://tithe.ly/give?c=1383729",
@@ -52,7 +52,7 @@ export const navItems: readonly NavItem[] = [
   {
     label: "About",
     children: [
-      ["Leadership", "/#leadership"],
+      ["Leadership", "/leadership"],
       ["Beliefs", "/beliefs"],
       ["History", "/history"],
       ["Steps to Salvation", "/steps-to-salvation"],
@@ -141,7 +141,7 @@ export const ministries = [
   },
   {
     title: "Ladies Caring & Sharing Ministry",
-    image: "/stillwater/ladies-fellowship.jpg",
+    image: "/stillwater/5-2-26_MissionaryReport.jpg",
     body: "Ladies of the church gather for prayer, encouragement, and meaningful fellowship.",
     schedule: "1st Saturday of the month · 12:00 PM – 2:00 PM",
   },
@@ -199,6 +199,27 @@ export const elders = [
   { name: "Joseph Hadfield" },
   { name: "Carl Riecke" },
   { name: "Roger Lavoie" },
+] as const;
+
+export const leadershipPortraits = [
+  {
+    name: "Pastor Bob & Cheryl Levesque",
+    role: "Senior Pastor",
+    image: "/stillwater/5-3-26_PastorBobCherylLevesque.jpeg",
+    body: "Pastor Bob shepherds Still Water with a love for the Bible, a burden for souls, and a desire to see the light of the Gospel shine throughout Hope and the surrounding area. Cheryl serves the church family alongside him.",
+  },
+  {
+    name: "Carl & Liz Riecke",
+    role: "Elder",
+    image: "/stillwater/5-3-26_CarlLizRiecke.jpeg",
+    body: "Carl serves as an elder of Still Water, laboring in the Word and watching over the flock with care. Carl and Liz are a faithful encouragement to the church family.",
+  },
+  {
+    name: "Roger & Luanna Lavoie",
+    role: "Elder",
+    image: "/stillwater/5-3-26_RogLuannaLavoie.jpeg",
+    body: "Roger serves as an elder of Still Water, devoted to the Scriptures and to the people of God. Roger and Luanna are a steady, prayerful presence in the life of the church.",
+  },
 ] as const;
 
 export const romansRoad = [
