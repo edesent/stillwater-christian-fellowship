@@ -173,7 +173,7 @@ function Visit() {
               Visit This Week
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              We would love to meet you!
+              We Would Love To Meet You!
             </h2>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
               When you come, you will find a church family and pastor who love the
