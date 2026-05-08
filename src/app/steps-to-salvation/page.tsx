@@ -225,7 +225,7 @@ function RomansRoad() {
                   {step.heading}
                 </h3>
                 <blockquote className="mt-5 border-l-4 border-rule pl-5">
-                  <p className="serif text-balance text-xl italic leading-relaxed text-ink-soft sm:text-2xl">
+                  <p className="serif text-balance text-lg italic leading-relaxed text-ink-soft sm:text-xl">
                     “{step.verse}”
                   </p>
                 </blockquote>
