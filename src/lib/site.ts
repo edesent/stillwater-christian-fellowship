@@ -52,7 +52,7 @@ export const navItems: readonly NavItem[] = [
   {
     label: "About",
     children: [
-      ["Leadership", "/leadership"],
+      ["Leadership", "/#leadership"],
       ["Beliefs", "/beliefs"],
       ["History", "/history"],
       ["Steps to Salvation", "/steps-to-salvation"],

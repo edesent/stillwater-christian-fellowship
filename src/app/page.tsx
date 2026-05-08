@@ -19,6 +19,7 @@ import { EventCard } from "@/components/event-card";
 import { upcomingEvents } from "@/lib/events";
 import {
   elders,
+  leadershipPortraits,
   ministries,
   pastors,
   services,
@@ -509,8 +510,13 @@ function Worship() {
 }
 
 function Leadership() {
-  const seniorPastor = pastors[0];
   const assistantPastor = pastors[1];
+  const otherElders = elders.filter(
+    (e) =>
+      !leadershipPortraits.some((p) =>
+        p.name.toLowerCase().includes(e.name.split(" ").pop()!.toLowerCase())
+      )
+  );
 
   return (
     <section id="leadership" className="bg-cream py-20 sm:py-28">
@@ -530,68 +536,63 @@ function Leadership() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="relative overflow-hidden bg-mist soft-shadow">
-            <div className="relative aspect-square">
-              <Image
-                src={seniorPastor.image}
-                alt={`${seniorPastor.name}, ${seniorPastor.role}`}
-                fill
-                sizes="(min-width: 1024px) 44vw, 100vw"
-                className="object-cover object-[50%_38%]"
-              />
-            </div>
-          </div>
-
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
-              Senior Pastor
-            </p>
-            <h3 className="serif mt-3 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Pastor Robert Levesque
-            </h3>
-            <p className="mt-6 text-lg leading-8 text-ink-soft">
-              Pastor Robert (Bob) Levesque has been the Pastor of Still Water
-              Christian Fellowship since November of 2024. He came to us from
-              Knotty Oak Baptist Church in Coventry, RI, where he was a member
-              of the staff for eight years.
-            </p>
-            <p className="mt-5 text-lg leading-8 text-ink-soft">
-              When you visit, you will hear the Word of God preached with
-              conviction, compassion, and confidence in what Jesus Christ can
-              do for you.
-            </p>
-            <article className="mt-8 border border-rule bg-paper p-5">
-              <p className="text-xs font-black uppercase tracking-[0.18em] text-clay">
-                Assistant Pastor
-              </p>
-              <h4 className="serif mt-3 text-3xl font-bold leading-tight text-ink">
-                {assistantPastor.name}
-              </h4>
-              <p className="mt-2 text-sm font-black uppercase tracking-[0.15em] text-fern">
-                {assistantPastor.role}
-              </p>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {leadershipPortraits.map((person) => (
+            <article
+              key={person.name}
+              className="flex flex-col border border-rule bg-paper"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+                  {person.role}
+                </p>
+                <h3 className="serif mt-3 text-2xl font-bold leading-tight text-ink">
+                  {person.name}
+                </h3>
+              </div>
             </article>
-          </div>
+          ))}
         </div>
 
-        <div className="mt-10">
-          <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
-            Elders
-          </p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {elders.map((elder) => (
-              <article
-                key={elder.name}
-                className="flex items-center gap-4 border border-rule bg-cream p-5"
-              >
-                <Initials name={elder.name} muted />
-                <h3 className="serif text-xl font-bold leading-tight text-ink">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          {assistantPastor ? (
+            <article className="flex items-center gap-4 border border-rule bg-paper p-5">
+              <Initials name={assistantPastor.name} muted />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-fern">
+                  {assistantPastor.role}
+                </p>
+                <h3 className="serif mt-1 text-xl font-bold leading-tight text-ink">
+                  {assistantPastor.name}
+                </h3>
+              </div>
+            </article>
+          ) : null}
+          {otherElders.map((elder) => (
+            <article
+              key={elder.name}
+              className="flex items-center gap-4 border border-rule bg-paper p-5"
+            >
+              <Initials name={elder.name} muted />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-fern">
+                  Elder
+                </p>
+                <h3 className="serif mt-1 text-xl font-bold leading-tight text-ink">
                   {elder.name}
                 </h3>
-              </article>
-            ))}
-          </div>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
