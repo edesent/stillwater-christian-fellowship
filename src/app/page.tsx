@@ -489,3 +489,405 @@ function Worship() {
           <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
             Reverent, Joyful, and Intentionally Blended.
           </h2>
+          <p className="mt-6 text-lg leading-8 text-ink-soft">
+            Still Water describes blended worship as a harmony that honors the
+            musical traditions of the church while joining them with modern
+            expressions of worship.
+          </p>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden bg-fern soft-shadow">
+          <Image
+            src="/stillwater/worship.jpg"
+            alt="Still Water Christian Fellowship worship team"
+            fill
+            sizes="(min-width: 1024px) 52vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Leadership() {
+  const assistantPastor = pastors[1];
+  const otherElders = elders.filter(
+    (e) =>
+      !leadershipPortraits.some((p) =>
+        p.name.toLowerCase().includes(e.name.split(" ").pop()!.toLowerCase())
+      )
+  );
+
+  return (
+    <section id="leadership" className="bg-cream py-20 sm:py-28">
+      <div className="section-shell">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
+              Leadership
+            </p>
+            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
+              Shepherding with Scripture and care.
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-ink-soft">
+            Still Water is led by faithful pastors and elders who labor in the
+            Word, watch over the flock, and serve the church in love.
+          </p>
+        </div>
+
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {leadershipPortraits.map((person) => (
+            <article
+              key={person.name}
+              className="flex flex-col border border-rule bg-paper"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5">
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+                  {person.role}
+                </p>
+                <h3 className="serif mt-3 text-2xl font-bold leading-tight text-ink">
+                  {person.name}
+                </h3>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 grid gap-3 sm:grid-cols-2">
+          {assistantPastor ? (
+            <article className="flex items-center gap-4 border border-rule bg-paper p-5">
+              <Initials name={assistantPastor.name} muted />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-fern">
+                  {assistantPastor.role}
+                </p>
+                <h3 className="serif mt-1 text-xl font-bold leading-tight text-ink">
+                  {assistantPastor.name}
+                </h3>
+              </div>
+            </article>
+          ) : null}
+          {otherElders.map((elder) => (
+            <article
+              key={elder.name}
+              className="flex items-center gap-4 border border-rule bg-paper p-5"
+            >
+              <Initials name={elder.name} muted />
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-fern">
+                  Elder
+                </p>
+                <h3 className="serif mt-1 text-xl font-bold leading-tight text-ink">
+                  {elder.name}
+                </h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Initials({ name, muted = false }: { name: string; muted?: boolean }) {
+  const initials = name
+    .split(/\s+/)
+    .map((part) => part[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+  return (
+    <span
+      className={
+        muted
+          ? "grid size-12 shrink-0 place-items-center border border-rule bg-paper text-base font-black text-ink-soft"
+          : "grid size-14 shrink-0 place-items-center border border-sky/55 bg-mist text-lg font-black text-fern"
+      }
+      aria-hidden="true"
+    >
+      {initials}
+    </span>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contact" className="bg-cream py-20 sm:py-28">
+      <div className="section-shell grid gap-8 lg:grid-cols-[1fr_1fr]">
+        <div className="bg-fern p-7 text-white sm:p-10">
+          <MapPin aria-hidden="true" className="size-9 text-sky" />
+          <h2 className="serif mt-8 text-balance text-5xl font-bold leading-tight">
+            Find us in Hope.
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-white/76">
+            {site.address}. {site.addressNote}. Sunday live streaming is available
+            through SermonAudio at 10:30 AM.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="https://maps.google.com/?q=51+Main+St+Hope+RI"
+              className="inline-flex items-center gap-2 bg-white px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-sky"
+            >
+              <MapPin aria-hidden="true" className="size-4" />
+              Directions
+            </a>
+            <a
+              href="/sermons"
+              className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
+            >
+              <PlayCircle aria-hidden="true" className="size-4" />
+              Listen to Sermons
+            </a>
+          </div>
+
+          <div className="mt-10 border-t border-white/18 pt-7">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
+              What to Expect
+            </p>
+            <dl className="mt-5 grid gap-3 text-sm leading-6 text-white/82">
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  Dress
+                </dt>
+                <dd>Come as you are.</dd>
+              </div>
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  Worship
+                </dt>
+                <dd>Reverent, Bible-centered, about an hour.</dd>
+              </div>
+              <div className="flex items-baseline gap-3">
+                <dt className="serif w-24 shrink-0 font-bold text-white">
+                  After
+                </dt>
+                <dd>Stay for our Fellowship Feast — all welcome.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <ConnectWithPastor />
+      </div>
+    </section>
+  );
+}
+
+function ConnectWithPastor() {
+  return (
+    <article className="flex flex-col border border-rule bg-paper p-8 sm:p-10">
+      <div className="grid size-14 place-items-center border border-sky/55 bg-[#f8fcff] text-fern">
+        <MessageCircleHeart aria-hidden="true" className="size-7" />
+      </div>
+      <p className="mt-7 text-xs font-black uppercase tracking-[0.22em] text-clay">
+        Connect with Pastor Bob
+      </p>
+      <h3 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
+        Have a question? Start a chat.
+      </h3>
+      <p className="mt-5 text-base leading-7 text-ink-soft">
+        Pastor Bob would love to hear from you — whether you’re visiting,
+        asking about faith, or in need of prayer. Send a message and he will
+        personally reply.
+      </p>
+      <div className="mt-7 flex flex-wrap gap-3">
+        <ChatButton />
+        <a
+          href={`mailto:${site.email}?subject=Connect with Pastor Bob`}
+          className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
+        >
+          <Mail aria-hidden="true" className="size-4" />
+          Email
+        </a>
+        <a
+          href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}
+          className="inline-flex items-center gap-2 border border-rule px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-cream"
+        >
+          <Phone aria-hidden="true" className="size-4" />
+          Call
+        </a>
+      </div>
+      <p className="mt-auto pt-7 text-xs text-ink-soft">
+        Replies typically arrive within a day, often sooner.
+      </p>
+    </article>
+  );
+}
+
+
+function JsonLd() {
+  const churchId = `${siteUrl}/#church`;
+  const websiteId = `${siteUrl}/#website`;
+  const pastorId = `${siteUrl}/#pastor-bob`;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: siteUrl,
+        name: site.name,
+        description: site.description,
+        inLanguage: "en-US",
+        publisher: { "@id": churchId },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": ["Church", "LocalBusiness", "PlaceOfWorship"],
+        "@id": churchId,
+        name: site.name,
+        alternateName: site.shortName,
+        url: siteUrl,
+        description: site.description,
+        telephone: site.phone,
+        email: site.email,
+        priceRange: "Free",
+        image: [`${siteUrl}/stillwater/hero-water.jpg`],
+        logo: `${siteUrl}/stillwater/stillwater-ri-logo.png`,
+        sameAs: [site.facebook, site.sermonAudio],
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "51 Main St",
+          addressLocality: "Hope",
+          addressRegion: "RI",
+          postalCode: "02831",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 41.72363,
+          longitude: -71.64019,
+        },
+        areaServed: [
+          { "@type": "Place", name: "Hope, Rhode Island" },
+          { "@type": "Place", name: "Scituate, Rhode Island" },
+          { "@type": "Place", name: "Coventry, Rhode Island" },
+          { "@type": "Place", name: "West Warwick, Rhode Island" },
+        ],
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "09:15",
+            closes: "12:00",
+            description: "Adult Sunday School 9:15 AM, Worship Service 10:30 AM",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Sunday",
+            opens: "17:30",
+            closes: "18:30",
+            description: "Discipleship Bible Study 5:30 PM",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Wednesday",
+            opens: "10:00",
+            closes: "11:00",
+            description: "Bible Study (verse by verse) 10:00 AM",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: "Wednesday",
+            opens: "18:00",
+            closes: "19:30",
+            description: "Prayer Meeting Service 6:00 PM",
+          },
+        ],
+        denomination: "Independent Baptist",
+        founder: { "@id": pastorId },
+        employee: [{ "@id": pastorId }],
+        event: [
+          {
+            "@type": "Event",
+            name: "Sunday Worship Service",
+            description: "Weekly Sunday worship service with Bible preaching.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Sunday",
+              startTime: "10:30",
+              endTime: "12:00",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+          {
+            "@type": "Event",
+            name: "Wednesday Bible Study",
+            description: "Midweek verse-by-verse Bible study.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Wednesday",
+              startTime: "10:00",
+              endTime: "11:00",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+          {
+            "@type": "Event",
+            name: "Wednesday Prayer Meeting Service",
+            description:
+              "Pleading with and praising the Lord — encouragement and exhortation.",
+            eventSchedule: {
+              "@type": "Schedule",
+              repeatFrequency: "P1W",
+              byDay: "https://schema.org/Wednesday",
+              startTime: "18:00",
+              endTime: "19:30",
+            },
+            location: { "@id": churchId },
+            organizer: { "@id": churchId },
+            isAccessibleForFree: true,
+            eventAttendanceMode:
+              "https://schema.org/OfflineEventAttendanceMode",
+            eventStatus: "https://schema.org/EventScheduled",
+          },
+        ],
+      },
+      {
+        "@type": "Person",
+        "@id": pastorId,
+        name: "Robert Levesque",
+        alternateName: "Pastor Bob",
+        jobTitle: "Senior Pastor",
+        affiliation: { "@id": churchId },
+        worksFor: { "@id": churchId },
+        sameAs: [site.sermonAudio],
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
