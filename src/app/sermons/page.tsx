@@ -187,16 +187,7 @@ function FeaturedCard({
             value={sermon.durationLabel}
           />
         </dl>
-        {sermon.audioUrl ? (
-          <audio
-            controls
-            preload="none"
-            src={sermon.audioUrl}
-            className="w-full"
-          >
-            Your browser does not support the audio element.
-          </audio>
-        ) : null}
+        <SermonPlayer sermon={sermon} variant="featured" />
         <a
           href={sermon.sermonAudioUrl}
           target="_blank"
@@ -209,6 +200,46 @@ function FeaturedCard({
       </div>
     </article>
   );
+}
+
+function SermonPlayer({
+  sermon,
+  variant,
+}: {
+  sermon: Sermon;
+  variant: "featured" | "row";
+}) {
+  if (sermon.videoUrl) {
+    return (
+      <video
+        controls
+        preload="none"
+        playsInline
+        poster={sermon.thumbnailUrl || undefined}
+        src={sermon.videoUrl}
+        className={
+          variant === "featured"
+            ? "aspect-video w-full bg-ink"
+            : "aspect-video w-full bg-ink"
+        }
+      >
+        Your browser does not support the video element.
+      </video>
+    );
+  }
+  if (sermon.audioUrl) {
+    return (
+      <audio
+        controls
+        preload="none"
+        src={sermon.audioUrl}
+        className="w-full"
+      >
+        Your browser does not support the audio element.
+      </audio>
+    );
+  }
+  return null;
 }
 
 function Meta({
@@ -321,16 +352,7 @@ function SermonRow({
           </div>
         </summary>
         <div className="border-t border-rule bg-mist/40 p-5 sm:p-6">
-          {sermon.audioUrl ? (
-            <audio
-              controls
-              preload="none"
-              src={sermon.audioUrl}
-              className="w-full"
-            >
-              Your browser does not support the audio element.
-            </audio>
-          ) : null}
+          <SermonPlayer sermon={sermon} variant="row" />
           <a
             href={sermon.sermonAudioUrl}
             target="_blank"

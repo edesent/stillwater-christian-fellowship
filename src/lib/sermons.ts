@@ -6,6 +6,7 @@ export type Sermon = {
   eventType: string;
   description: string;
   audioUrl: string;
+  videoUrl: string;
   hasVideo: boolean;
   thumbnailUrl: string;
   pubDate: string;
@@ -125,6 +126,7 @@ export async function getSermons(): Promise<SermonFeed> {
 function toSermon(s: ApiSermon): Sermon {
   const audio = pickAudio(s.media?.audio ?? []);
   const video = pickVideo(s.media?.video ?? []);
+  const playableVideo = pickPlayableVideo(s.media?.video ?? []);
   const duration =
     s.audioDurationSeconds || s.videoDurationSeconds || audio?.duration || 0;
   const thumbnailUrl =
@@ -140,6 +142,7 @@ function toSermon(s: ApiSermon): Sermon {
     eventType: s.displayEventType ?? s.eventType ?? "",
     description: (s.keywords ?? "").replace(/\s+/g, " ").trim(),
     audioUrl: audio?.streamURL ?? audio?.downloadURL ?? "",
+    videoUrl: playableVideo,
     hasVideo: Boolean(s.hasVideo),
     thumbnailUrl,
     pubDate: s.preachDate || s.publishDate || "",
@@ -147,6 +150,18 @@ function toSermon(s: ApiSermon): Sermon {
     durationLabel: formatDuration(duration),
     sermonAudioUrl: `https://www.sermonaudio.com/sermon/${s.sermonID}`,
   };
+}
+
+function pickPlayableVideo(video: Media[]): string {
+  for (const v of video) {
+    const dl = v.downloadURL;
+    if (dl && /\.mp4(\?|$)/i.test(dl)) {
+      return dl.replace(/([?&])download=true(&|$)/, (_, pre, post) =>
+        post === "&" ? pre : ""
+      ).replace(/[?&]$/, "");
+    }
+  }
+  return "";
 }
 
 function toLiveWebcast(w: ApiWebcast): LiveWebcast {
