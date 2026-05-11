@@ -1,27 +1,46 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowUpRight, Clock3, Headphones, Mic, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookOpen,
+  Clock3,
+  Headphones,
+  Mic,
+  PlayCircle,
+  Radio,
+  Sparkles,
+} from "lucide-react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
-import { formatSermonDate, getSermons, type Sermon } from "@/lib/sermons";
+import {
+  formatSermonDate,
+  getSermons,
+  type LiveWebcast,
+  type Sermon,
+} from "@/lib/sermons";
 import { site, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `Sermons — ${site.name}`,
-  description: `Listen to recent sermons from ${site.name} in Hope, Rhode Island.`,
+  description: `Listen to recent sermons from ${site.name} in Hope, Rhode Island — live on Sunday at 10:30 AM.`,
   alternates: { canonical: `${siteUrl}/sermons` },
 };
 
 export default async function SermonsPage() {
-  const { coverImage, sermons } = await getSermons();
-  const [latest, ...rest] = sermons;
+  const { coverImage, sermons, live } = await getSermons();
+  const [featured, ...rest] = sermons;
 
   return (
     <>
       <SermonsJsonLd sermons={sermons} coverImage={coverImage} />
       <main className="overflow-hidden bg-paper">
         <Header />
-        <Hero latest={latest} count={sermons.length} coverImage={coverImage} />
+        <Hero
+          live={live}
+          featured={featured}
+          count={sermons.length}
+          coverImage={coverImage}
+        />
         {sermons.length === 0 ? (
           <Empty />
         ) : (
@@ -33,89 +52,14 @@ export default async function SermonsPage() {
   );
 }
 
-function SermonsJsonLd({
-  sermons,
-  coverImage,
-}: {
-  sermons: Sermon[];
-  coverImage: string;
-}) {
-  const churchId = `${siteUrl}/#church`;
-  const data = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: siteUrl,
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "Sermons",
-            item: `${siteUrl}/sermons`,
-          },
-        ],
-      },
-      {
-        "@type": "PodcastSeries",
-        name: `${site.name} Sermons`,
-        url: `${siteUrl}/sermons`,
-        description: `Recent sermons from ${site.name} in Hope, Rhode Island.`,
-        image: coverImage,
-        author: { "@id": churchId },
-        publisher: { "@id": churchId },
-      },
-      {
-        "@type": "ItemList",
-        name: `${site.name} — Sermon Archive`,
-        url: `${siteUrl}/sermons`,
-        numberOfItems: sermons.length,
-        itemListElement: sermons.slice(0, 25).map((sermon, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
-            "@type": "PodcastEpisode",
-            name: sermon.title,
-            url: sermon.sermonAudioUrl,
-            datePublished: new Date(sermon.pubDate).toISOString(),
-            duration: sermon.durationSeconds
-              ? `PT${Math.floor(sermon.durationSeconds / 60)}M${sermon.durationSeconds % 60}S`
-              : undefined,
-            associatedMedia: {
-              "@type": "AudioObject",
-              contentUrl: sermon.audioUrl,
-              encodingFormat: "audio/mpeg",
-            },
-            author: {
-              "@type": "Person",
-              name: sermon.speaker,
-            },
-            inLanguage: "en",
-          },
-        })),
-      },
-    ],
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  );
-}
-
 function Hero({
-  latest,
+  live,
+  featured,
   count,
   coverImage,
 }: {
-  latest: Sermon | undefined;
+  live: LiveWebcast | null;
+  featured: Sermon | undefined;
   count: number;
   coverImage: string;
 }) {
@@ -141,16 +85,60 @@ function Hero({
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Recent messages from Sunday worship and Wednesday Bible study at Still
-          Water. {count > 0 ? `${count} sermons available — newest first.` : null}
+          Water. {count > 0 ? `${count} sermons in the library — newest first.` : null}
         </p>
 
-        {latest ? <LatestCard sermon={latest} coverImage={coverImage} /> : null}
+        {live ? (
+          <LiveCard live={live} />
+        ) : featured ? (
+          <FeaturedCard sermon={featured} coverImage={coverImage} />
+        ) : null}
       </div>
     </section>
   );
 }
 
-function LatestCard({
+function LiveCard({ live }: { live: LiveWebcast }) {
+  return (
+    <article className="mt-12 grid gap-0 border border-sky/55 bg-sky/12 backdrop-blur-md md:grid-cols-[1.05fr_0.95fr]">
+      <div className="relative aspect-video overflow-hidden bg-ink md:aspect-auto">
+        <Image
+          src={live.previewImageURL}
+          alt=""
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-ink/30" />
+        <div className="absolute left-5 top-5 inline-flex items-center gap-2 border border-sky/70 bg-ink/80 px-3 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-sky">
+          <span className="grid size-2 place-items-center">
+            <span className="size-2 animate-pulse rounded-full bg-sky" />
+          </span>
+          Live Now
+        </div>
+      </div>
+      <div className="flex flex-col gap-5 p-7 sm:p-9">
+        <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
+          {live.eventType || "Live Broadcast"}
+        </p>
+        <h2 className="serif text-balance text-3xl font-bold leading-tight sm:text-4xl">
+          {live.title}
+        </h2>
+        <a
+          href={live.webcastUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-auto inline-flex w-fit items-center gap-2 bg-sky px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white"
+        >
+          <Radio aria-hidden="true" className="size-4" />
+          Watch the Livestream
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function FeaturedCard({
   sermon,
   coverImage,
 }: {
@@ -159,46 +147,56 @@ function LatestCard({
 }) {
   return (
     <article className="mt-12 grid gap-0 border border-white/16 bg-white/8 backdrop-blur-md md:grid-cols-[0.95fr_1.05fr]">
-      <div className="border-b border-white/14 p-7 sm:p-9 md:border-b-0 md:border-r">
+      <div className="relative aspect-[16/10] overflow-hidden bg-ink md:aspect-auto md:min-h-[280px]">
+        <Image
+          src={sermon.thumbnailUrl || coverImage}
+          alt={sermon.title}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+        {sermon.hasVideo ? (
+          <div className="absolute left-5 top-5 inline-flex items-center gap-2 border border-white/30 bg-ink/70 px-3 py-1.5 text-xs font-black uppercase tracking-[0.2em] text-white">
+            <PlayCircle aria-hidden="true" className="size-3.5" />
+            Video
+          </div>
+        ) : null}
+      </div>
+      <div className="flex flex-col gap-5 p-7 sm:p-9">
         <p className="text-xs font-black uppercase tracking-[0.22em] text-sky">
           Latest Message
         </p>
-        <div className="mt-5 flex items-start gap-5">
-          <div className="relative size-20 shrink-0 overflow-hidden border border-white/20 bg-ink sm:size-24">
-            <Image
-              src={coverImage}
-              alt=""
-              fill
-              sizes="96px"
-              className="object-cover"
-            />
-          </div>
-          <h2 className="serif text-balance text-3xl font-bold leading-tight sm:text-4xl">
-            {sermon.title}
-          </h2>
-        </div>
-        <dl className="mt-7 grid gap-4 text-sm text-white/78 sm:grid-cols-2">
+        <h2 className="serif text-balance text-3xl font-bold leading-tight sm:text-4xl">
+          {sermon.title}
+        </h2>
+        <dl className="grid gap-4 text-sm text-white/78 sm:grid-cols-2">
           <Meta icon={<Mic />} label="Speaker" value={sermon.speaker} />
           <Meta
             icon={<Clock3 />}
-            label="Date"
+            label="Preached"
             value={formatSermonDate(sermon.pubDate)}
           />
+          <Meta
+            icon={<BookOpen />}
+            label="Scripture"
+            value={sermon.bibleText}
+          />
+          <Meta
+            icon={<Headphones />}
+            label="Length"
+            value={sermon.durationLabel}
+          />
         </dl>
-      </div>
-      <div className="flex flex-col justify-between gap-6 p-7 sm:p-9">
-        <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.14em] text-white/70">
-          <Headphones aria-hidden="true" className="size-4 text-sky" />
-          {sermon.durationLabel || "Audio"}
-        </div>
-        <audio
-          controls
-          preload="none"
-          src={sermon.audioUrl}
-          className="w-full"
-        >
-          Your browser does not support the audio element.
-        </audio>
+        {sermon.audioUrl ? (
+          <audio
+            controls
+            preload="none"
+            src={sermon.audioUrl}
+            className="w-full"
+          >
+            Your browser does not support the audio element.
+          </audio>
+        ) : null}
         <a
           href={sermon.sermonAudioUrl}
           target="_blank"
@@ -241,6 +239,7 @@ function Archive({
   sermons: Sermon[];
   coverImage: string;
 }) {
+  if (sermons.length === 0) return null;
   return (
     <section className="bg-cream py-16 sm:py-24">
       <div className="section-shell">
@@ -254,8 +253,8 @@ function Archive({
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-ink-soft">
-            Each card includes the audio inline — tap play to listen here, or open
-            the sermon on SermonAudio for series notes and additional formats.
+            Tap a sermon to expand the audio player, or open it on SermonAudio
+            for video, transcripts, and additional formats.
           </p>
         </div>
 
@@ -284,25 +283,35 @@ function SermonRow({
     <li className="border border-rule bg-paper">
       <details className="group">
         <summary className="flex cursor-pointer list-none items-start gap-5 p-5 transition hover:bg-mist/40 sm:items-center sm:p-6">
-          <div className="relative size-16 shrink-0 overflow-hidden border border-rule bg-mist sm:size-20">
+          <div className="relative size-20 shrink-0 overflow-hidden border border-rule bg-mist sm:size-28 sm:aspect-video sm:w-40">
             <Image
-              src={coverImage}
+              src={sermon.thumbnailUrl || coverImage}
               alt=""
               fill
-              sizes="80px"
+              sizes="(min-width: 640px) 160px, 80px"
               className="object-cover"
             />
             <div className="absolute inset-0 grid place-items-center bg-ink/40 text-white opacity-0 transition group-hover:opacity-100 group-open:opacity-100">
-              <Headphones aria-hidden="true" className="size-5" />
+              {sermon.hasVideo ? (
+                <PlayCircle aria-hidden="true" className="size-7" />
+              ) : (
+                <Headphones aria-hidden="true" className="size-6" />
+              )}
             </div>
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-clay">
               {formatSermonDate(sermon.pubDate)}
+              {sermon.eventType ? ` · ${sermon.eventType}` : ""}
             </p>
             <h3 className="serif mt-1 text-balance text-xl font-bold leading-tight text-ink sm:text-2xl">
               {sermon.title}
             </h3>
+            {sermon.bibleText ? (
+              <p className="mt-1 text-sm font-semibold text-fern">
+                {sermon.bibleText}
+              </p>
+            ) : null}
             <p className="mt-1 text-sm font-semibold text-ink-soft">
               {sermon.speaker}
             </p>
@@ -312,19 +321,16 @@ function SermonRow({
           </div>
         </summary>
         <div className="border-t border-rule bg-mist/40 p-5 sm:p-6">
-          {sermon.description ? (
-            <p className="mb-4 max-w-3xl text-sm leading-7 text-ink-soft">
-              {sermon.description}
-            </p>
+          {sermon.audioUrl ? (
+            <audio
+              controls
+              preload="none"
+              src={sermon.audioUrl}
+              className="w-full"
+            >
+              Your browser does not support the audio element.
+            </audio>
           ) : null}
-          <audio
-            controls
-            preload="none"
-            src={sermon.audioUrl}
-            className="w-full"
-          >
-            Your browser does not support the audio element.
-          </audio>
           <a
             href={sermon.sermonAudioUrl}
             target="_blank"
@@ -359,5 +365,74 @@ function Empty() {
         </p>
       </div>
     </section>
+  );
+}
+
+function SermonsJsonLd({
+  sermons,
+  coverImage,
+}: {
+  sermons: Sermon[];
+  coverImage: string;
+}) {
+  const churchId = `${siteUrl}/#church`;
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Sermons",
+            item: `${siteUrl}/sermons`,
+          },
+        ],
+      },
+      {
+        "@type": "PodcastSeries",
+        name: `${site.name} Sermons`,
+        url: `${siteUrl}/sermons`,
+        description: `Recent sermons from ${site.name} in Hope, Rhode Island.`,
+        image: coverImage,
+        author: { "@id": churchId },
+        publisher: { "@id": churchId },
+      },
+      {
+        "@type": "ItemList",
+        name: `${site.name} — Sermon Archive`,
+        url: `${siteUrl}/sermons`,
+        numberOfItems: sermons.length,
+        itemListElement: sermons.slice(0, 25).map((sermon, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "PodcastEpisode",
+            name: sermon.title,
+            url: sermon.sermonAudioUrl,
+            datePublished: sermon.pubDate,
+            duration: sermon.durationSeconds
+              ? `PT${Math.floor(sermon.durationSeconds / 60)}M${sermon.durationSeconds % 60}S`
+              : undefined,
+            associatedMedia: {
+              "@type": "AudioObject",
+              contentUrl: sermon.audioUrl,
+              encodingFormat: "audio/mpeg",
+            },
+            author: { "@type": "Person", name: sermon.speaker },
+            inLanguage: "en",
+          },
+        })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
   );
 }

@@ -2,99 +2,180 @@ export type Sermon = {
   id: string;
   title: string;
   speaker: string;
+  bibleText: string;
+  eventType: string;
   description: string;
   audioUrl: string;
+  hasVideo: boolean;
+  thumbnailUrl: string;
   pubDate: string;
   durationSeconds: number;
   durationLabel: string;
   sermonAudioUrl: string;
 };
 
-export type SermonFeed = {
-  coverImage: string;
-  sermons: Sermon[];
+export type LiveWebcast = {
+  id: string;
+  title: string;
+  eventType: string;
+  startTime: string;
+  previewImageURL: string;
+  webcastUrl: string;
 };
 
-const FEED_URL = "https://feed.sermonaudio.com/broadcasters/stillwaterri";
+export type SermonFeed = {
+  coverImage: string;
+  bannerImage: string;
+  sermons: Sermon[];
+  live: LiveWebcast | null;
+};
+
+const BROADCASTER_ID = "stillwaterri";
+const API_BASE = "https://api.sermonaudio.com/v2";
 const FALLBACK_COVER =
-  "https://vps.sermonaudio.com/resize_image/sources/podcast/1440/1440/stillwaterri.1744304730.jpg";
+  "https://media.sermonaudio.com/images/broadcasters/stillwaterri.1744304730.jpg";
+const FALLBACK_BANNER =
+  "https://media.sermonaudio.com/images/broadcasters/banners/custom/stillwaterri.1744305442.jpg";
+
+type Media = {
+  mediaType?: string;
+  streamURL?: string | null;
+  downloadURL?: string | null;
+  thumbnailImageURL?: string | null;
+  bitrate?: number | null;
+  duration?: number | null;
+  language?: string | null;
+};
+
+type ApiSermon = {
+  sermonID: string;
+  displayTitle: string;
+  fullTitle?: string;
+  bibleText?: string | null;
+  eventType?: string | null;
+  displayEventType?: string | null;
+  keywords?: string | null;
+  preachDate: string;
+  publishDate?: string;
+  audioDurationSeconds?: number | null;
+  videoDurationSeconds?: number | null;
+  hasAudio?: boolean;
+  hasVideo?: boolean;
+  media?: { audio?: Media[]; video?: Media[] };
+  speaker?: { displayName?: string };
+  broadcaster?: { imageURL?: string; bannerImageURL?: string };
+};
+
+type ApiWebcast = {
+  webcastID?: number;
+  id?: number;
+  title?: string;
+  displayTitle?: string;
+  eventType?: string;
+  startTime?: number | string | null;
+  startTimestamp?: number | null;
+  previewImageURL?: string | null;
+  streamURL?: string | null;
+  broadcaster?: { broadcasterID?: string };
+};
+
+async function api<T>(path: string): Promise<T | null> {
+  const key = process.env.SERMONAUDIO_API_KEY;
+  if (!key) {
+    console.warn("SERMONAUDIO_API_KEY missing — sermons will be empty");
+    return null;
+  }
+  const url = path.startsWith("http") ? path : `${API_BASE}${path}`;
+  const res = await fetch(url, {
+    headers: { "X-API-Key": key, Accept: "application/json" },
+    next: { revalidate: 300 },
+  });
+  if (!res.ok) {
+    console.warn(`SermonAudio API ${res.status} for ${url}`);
+    return null;
+  }
+  return (await res.json()) as T;
+}
 
 export async function getSermons(): Promise<SermonFeed> {
-  const res = await fetch(FEED_URL, { next: { revalidate: 3600 } });
-  if (!res.ok) return { coverImage: FALLBACK_COVER, sermons: [] };
-  const xml = await res.text();
-  return parseFeed(xml);
-}
+  const [list, webcasts] = await Promise.all([
+    api<{ results: ApiSermon[] }>(
+      `/node/sermons?broadcasterID=${BROADCASTER_ID}&sortBy=newest&pageSize=25`
+    ),
+    api<{ results: ApiWebcast[] }>(
+      `/node/webcasts?broadcasterID=${BROADCASTER_ID}`
+    ),
+  ]);
 
-function parseFeed(xml: string): SermonFeed {
-  const channelMatch = xml.match(/<channel>([\s\S]*?)(?=<item>|<\/channel>)/);
-  const channelXml = channelMatch ? channelMatch[1] : "";
-  const coverImage =
-    pickAttr(channelXml, "itunes:image", "href") ||
-    pick(channelXml, "url") ||
-    FALLBACK_COVER;
+  const sermons = (list?.results ?? []).map(toSermon);
+  const live = webcasts?.results?.[0]
+    ? toLiveWebcast(webcasts.results[0])
+    : null;
 
-  const items = xml.match(/<item>[\s\S]*?<\/item>/g) ?? [];
-  const sermons = items.map(parseItem).filter((s): s is Sermon => s !== null);
-  return { coverImage: decode(coverImage), sermons };
-}
-
-function parseItem(itemXml: string): Sermon | null {
-  const title = pick(itemXml, "title");
-  const link = pick(itemXml, "link");
-  const audioUrl = pickAttr(itemXml, "enclosure", "url");
-  const pubDate = pick(itemXml, "pubDate");
-  const speaker = pick(itemXml, "itunes:author") || pick(itemXml, "itunes:subtitle");
-  const description = pick(itemXml, "description");
-  const duration = pick(itemXml, "itunes:duration");
-
-  if (!title || !audioUrl || !pubDate) return null;
-
-  const id = link.split("/").filter(Boolean).pop() ?? audioUrl;
-  const durationSeconds = parseDuration(duration);
+  const broadcaster = list?.results?.[0]?.broadcaster;
 
   return {
-    id,
-    title: decode(title),
-    speaker: decode(speaker) || "Still Water Christian Fellowship",
-    description: decode(description),
-    audioUrl: decode(audioUrl),
-    pubDate,
-    durationSeconds,
-    durationLabel: formatDuration(durationSeconds),
-    sermonAudioUrl: decode(link),
+    coverImage: broadcaster?.imageURL || FALLBACK_COVER,
+    bannerImage: broadcaster?.bannerImageURL || FALLBACK_BANNER,
+    sermons,
+    live,
   };
 }
 
-function pick(xml: string, tag: string): string {
-  const escaped = tag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const match = xml.match(new RegExp(`<${escaped}(?:\\s[^>]*)?>([\\s\\S]*?)<\\/${escaped}>`));
-  if (!match) return "";
-  return match[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1").trim();
+function toSermon(s: ApiSermon): Sermon {
+  const audio = pickAudio(s.media?.audio ?? []);
+  const video = pickVideo(s.media?.video ?? []);
+  const duration =
+    s.audioDurationSeconds || s.videoDurationSeconds || audio?.duration || 0;
+  const thumbnailUrl =
+    video?.thumbnailImageURL ||
+    `https://media.sermonaudio.com/thumbnails/${s.sermonID}.jpg` ||
+    FALLBACK_COVER;
+
+  return {
+    id: s.sermonID,
+    title: s.displayTitle || s.fullTitle || "",
+    speaker: s.speaker?.displayName ?? "",
+    bibleText: s.bibleText ?? "",
+    eventType: s.displayEventType ?? s.eventType ?? "",
+    description: (s.keywords ?? "").replace(/\s+/g, " ").trim(),
+    audioUrl: audio?.streamURL ?? audio?.downloadURL ?? "",
+    hasVideo: Boolean(s.hasVideo),
+    thumbnailUrl,
+    pubDate: s.preachDate || s.publishDate || "",
+    durationSeconds: duration,
+    durationLabel: formatDuration(duration),
+    sermonAudioUrl: `https://www.sermonaudio.com/sermon/${s.sermonID}`,
+  };
 }
 
-function pickAttr(xml: string, tag: string, attr: string): string {
-  const match = xml.match(new RegExp(`<${tag}\\b[^>]*\\b${attr}="([^"]*)"`));
-  return match ? match[1] : "";
+function toLiveWebcast(w: ApiWebcast): LiveWebcast {
+  const id = String(w.webcastID ?? w.id ?? "");
+  const startRaw = w.startTime ?? w.startTimestamp ?? "";
+  const startTime =
+    typeof startRaw === "number"
+      ? new Date(startRaw * 1000).toISOString()
+      : String(startRaw || "");
+  return {
+    id,
+    title: w.displayTitle || w.title || "Live Now",
+    eventType: w.eventType || "",
+    startTime,
+    previewImageURL: w.previewImageURL || FALLBACK_COVER,
+    webcastUrl: `https://www.sermonaudio.com/broadcasters/${BROADCASTER_ID}/`,
+  };
 }
 
-function decode(s: string): string {
-  return s
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'");
+function pickAudio(audio: Media[]): Media | undefined {
+  if (audio.length === 0) return undefined;
+  return [...audio].sort((a, b) => (b.bitrate ?? 0) - (a.bitrate ?? 0))[0];
 }
 
-function parseDuration(value: string): number {
-  if (!value) return 0;
-  const parts = value.split(":").map((p) => parseInt(p, 10));
-  if (parts.some(Number.isNaN)) return 0;
-  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
-  if (parts.length === 2) return parts[0] * 60 + parts[1];
-  return parts[0] ?? 0;
+function pickVideo(video: Media[]): Media | undefined {
+  if (video.length === 0) return undefined;
+  return (
+    video.find((v) => v.thumbnailImageURL) ?? video[0]
+  );
 }
 
 function formatDuration(seconds: number): string {
@@ -106,6 +187,7 @@ function formatDuration(seconds: number): string {
 }
 
 export function formatSermonDate(pubDate: string): string {
+  if (!pubDate) return "";
   const date = new Date(pubDate);
   if (Number.isNaN(date.getTime())) return "";
   return date.toLocaleDateString("en-US", {
