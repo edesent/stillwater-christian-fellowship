@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import {
+  ArrowLeft,
+  ArrowRight,
   ArrowUpRight,
   BookOpen,
   Clock3,
@@ -26,9 +29,19 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteUrl}/sermons` },
 };
 
-export default async function SermonsPage() {
-  const { coverImage, sermons, live } = await getSermons();
+export default async function SermonsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: pageStr } = await searchParams;
+  const pageInput = Math.max(1, parseInt(pageStr ?? "1", 10) || 1);
+  const { coverImage, sermons, live, page, totalCount, totalPages } =
+    await getSermons(pageInput);
+
+  const isFirstPage = page === 1;
   const [featured, ...rest] = sermons;
+  const archive = isFirstPage ? rest : sermons;
 
   return (
     <>
@@ -36,15 +49,22 @@ export default async function SermonsPage() {
       <main className="overflow-hidden bg-paper">
         <Header />
         <Hero
-          live={live}
-          featured={featured}
-          count={sermons.length}
+          live={isFirstPage ? live : null}
+          featured={isFirstPage ? featured : undefined}
+          page={page}
+          totalPages={totalPages}
+          totalCount={totalCount}
           coverImage={coverImage}
         />
         {sermons.length === 0 ? (
           <Empty />
         ) : (
-          <Archive sermons={rest} coverImage={coverImage} />
+          <Archive
+            sermons={archive}
+            coverImage={coverImage}
+            page={page}
+            totalPages={totalPages}
+          />
         )}
       </main>
       <Footer />
@@ -55,12 +75,16 @@ export default async function SermonsPage() {
 function Hero({
   live,
   featured,
-  count,
+  page,
+  totalPages,
+  totalCount,
   coverImage,
 }: {
   live: LiveWebcast | null;
   featured: Sermon | undefined;
-  count: number;
+  page: number;
+  totalPages: number;
+  totalCount: number;
   coverImage: string;
 }) {
   return (
@@ -78,14 +102,17 @@ function Hero({
       <div className="section-shell relative pb-16 pt-32 sm:pb-20 sm:pt-40">
         <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
           <Sparkles aria-hidden="true" className="size-4" />
-          Sermon Library
+          {page > 1 ? `Page ${page} of ${totalPages}` : "Sermon Library"}
         </p>
         <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
           Sit with the Word, hear it preached.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Recent messages from Sunday worship and Wednesday Bible study at Still
-          Water. {count > 0 ? `${count} sermons in the library — newest first.` : null}
+          Water.{" "}
+          {totalCount > 0
+            ? `${totalCount} sermons in the library — newest first.`
+            : null}
         </p>
 
         {live ? (
@@ -266,9 +293,13 @@ function Meta({
 function Archive({
   sermons,
   coverImage,
+  page,
+  totalPages,
 }: {
   sermons: Sermon[];
   coverImage: string;
+  page: number;
+  totalPages: number;
 }) {
   if (sermons.length === 0) return null;
   return (
@@ -280,12 +311,14 @@ function Archive({
               Sermon Archive
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Past messages, ready when you are.
+              {page > 1
+                ? `Older messages — page ${page}.`
+                : "Past messages, ready when you are."}
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-ink-soft">
-            Tap a sermon to expand the audio player, or open it on SermonAudio
-            for video, transcripts, and additional formats.
+            Tap a sermon to expand the video player, or open it on SermonAudio
+            for transcripts and additional formats.
           </p>
         </div>
 
@@ -298,9 +331,102 @@ function Archive({
             />
           ))}
         </ul>
+
+        <Pagination page={page} totalPages={totalPages} />
       </div>
     </section>
   );
+}
+
+function Pagination({
+  page,
+  totalPages,
+}: {
+  page: number;
+  totalPages: number;
+}) {
+  if (totalPages <= 1) return null;
+  const pages = pageList(page, totalPages);
+  const hrefFor = (n: number) => (n === 1 ? "/sermons" : `/sermons?page=${n}`);
+
+  return (
+    <nav
+      aria-label="Sermon archive pagination"
+      className="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-rule pt-8"
+    >
+      {page > 1 ? (
+        <Link
+          href={hrefFor(page - 1)}
+          className="inline-flex items-center gap-2 border border-rule bg-paper px-4 py-2.5 text-sm font-black uppercase tracking-[0.14em] text-ink transition hover:bg-mist"
+        >
+          <ArrowLeft aria-hidden="true" className="size-4" />
+          Previous
+        </Link>
+      ) : (
+        <span />
+      )}
+
+      <ol className="flex flex-wrap items-center gap-1.5">
+        {pages.map((p, i) =>
+          p === "…" ? (
+            <li
+              key={`dots-${i}`}
+              className="px-2 text-sm font-bold text-ink-soft"
+              aria-hidden="true"
+            >
+              …
+            </li>
+          ) : (
+            <li key={p}>
+              <Link
+                href={hrefFor(p)}
+                aria-current={p === page ? "page" : undefined}
+                className={
+                  p === page
+                    ? "grid size-10 place-items-center border border-ink bg-ink text-sm font-black text-white"
+                    : "grid size-10 place-items-center border border-rule bg-paper text-sm font-bold text-ink transition hover:bg-mist"
+                }
+              >
+                {p}
+              </Link>
+            </li>
+          )
+        )}
+      </ol>
+
+      {page < totalPages ? (
+        <Link
+          href={hrefFor(page + 1)}
+          className="inline-flex items-center gap-2 border border-rule bg-paper px-4 py-2.5 text-sm font-black uppercase tracking-[0.14em] text-ink transition hover:bg-mist"
+        >
+          Next
+          <ArrowRight aria-hidden="true" className="size-4" />
+        </Link>
+      ) : (
+        <span />
+      )}
+    </nav>
+  );
+}
+
+function pageList(current: number, total: number): (number | "…")[] {
+  const out: (number | "…")[] = [];
+  const push = (v: number | "…") => {
+    if (out[out.length - 1] !== v) out.push(v);
+  };
+  const window = 1;
+  for (let i = 1; i <= total; i++) {
+    if (
+      i === 1 ||
+      i === total ||
+      (i >= current - window && i <= current + window)
+    ) {
+      push(i);
+    } else if (i < current - window || i > current + window) {
+      push("…");
+    }
+  }
+  return out;
 }
 
 function SermonRow({

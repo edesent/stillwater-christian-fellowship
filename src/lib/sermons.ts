@@ -29,7 +29,13 @@ export type SermonFeed = {
   bannerImage: string;
   sermons: Sermon[];
   live: LiveWebcast | null;
+  page: number;
+  pageSize: number;
+  totalCount: number;
+  totalPages: number;
 };
+
+export const SERMONS_PER_PAGE = 25;
 
 const BROADCASTER_ID = "stillwaterri";
 const API_BASE = "https://api.sermonaudio.com/v2";
@@ -98,14 +104,17 @@ async function api<T>(path: string): Promise<T | null> {
   return (await res.json()) as T;
 }
 
-export async function getSermons(): Promise<SermonFeed> {
+export async function getSermons(page = 1): Promise<SermonFeed> {
+  const safePage = Math.max(1, Math.floor(page));
   const [list, webcasts] = await Promise.all([
-    api<{ results: ApiSermon[] }>(
-      `/node/sermons?broadcasterID=${BROADCASTER_ID}&sortBy=newest&pageSize=25`
+    api<{ results: ApiSermon[]; totalCount: number }>(
+      `/node/sermons?broadcasterID=${BROADCASTER_ID}&sortBy=newest&pageSize=${SERMONS_PER_PAGE}&page=${safePage}`
     ),
-    api<{ results: ApiWebcast[] }>(
-      `/node/webcasts?broadcasterID=${BROADCASTER_ID}`
-    ),
+    safePage === 1
+      ? api<{ results: ApiWebcast[] }>(
+          `/node/webcasts?broadcasterID=${BROADCASTER_ID}`
+        )
+      : Promise.resolve(null),
   ]);
 
   const sermons = (list?.results ?? []).map(toSermon);
@@ -114,12 +123,18 @@ export async function getSermons(): Promise<SermonFeed> {
     : null;
 
   const broadcaster = list?.results?.[0]?.broadcaster;
+  const totalCount = list?.totalCount ?? sermons.length;
+  const totalPages = Math.max(1, Math.ceil(totalCount / SERMONS_PER_PAGE));
 
   return {
     coverImage: broadcaster?.imageURL || FALLBACK_COVER,
     bannerImage: broadcaster?.bannerImageURL || FALLBACK_BANNER,
     sermons,
     live,
+    page: safePage,
+    pageSize: SERMONS_PER_PAGE,
+    totalCount,
+    totalPages,
   };
 }
 
