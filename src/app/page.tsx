@@ -530,10 +530,19 @@ function Leadership() {
               Shepherding with Scripture and care.
             </h2>
           </div>
-          <p className="max-w-xl text-lg leading-8 text-ink-soft">
-            Still Water is led by faithful pastors and elders who labor in the
-            Word, watch over the flock, and serve the church in love.
-          </p>
+          <div className="max-w-xl">
+            <p className="text-lg leading-8 text-ink-soft">
+              Still Water is led by faithful pastors and elders who labor in the
+              Word, watch over the flock, and serve the church in love.
+            </p>
+            <Link
+              href="/from-the-pastor"
+              className="mt-6 inline-flex items-center gap-2 border border-rule bg-paper px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-mist"
+            >
+              From The Pastor
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
