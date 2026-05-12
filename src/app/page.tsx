@@ -258,7 +258,7 @@ function Events() {
               Upcoming Events
             </p>
             <h2 className="serif mt-4 max-w-3xl text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              What&rsquo;s coming up at Still Water.
+              What&rsquo;s Coming Up At Still Water.
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-8 text-ink-soft">
