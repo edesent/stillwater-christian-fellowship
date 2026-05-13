@@ -112,7 +112,7 @@ function Hero({
   return (
     <section className="relative bg-ink text-white">
       <Image
-        src="/stillwater/worship.jpg"
+        src="/stillwater/sermon-library-glory-tabernacle.png"
         alt=""
         fill
         priority
