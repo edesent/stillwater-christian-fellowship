@@ -45,6 +45,14 @@ function Hero() {
               A message of Gospel Hope from Pastor Bob Levesque to our Neighbors in
               Hope and the surrounding Community.
             </p>
+            <blockquote className="mt-6 max-w-2xl border-l-4 border-sky pl-5 text-lg leading-8 text-white/82 sm:text-xl">
+              <p>
+                “ye were without Christ.. having no hope, and without God in the world”
+              </p>
+              <footer className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-sky">
+                - Ephesians 2:12
+              </footer>
+            </blockquote>
           </div>
           <img
             src="/stillwater/from-the-pastor-bob-8-10-25.jpg"
