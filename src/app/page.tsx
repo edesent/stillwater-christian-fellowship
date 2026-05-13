@@ -111,7 +111,7 @@ function Hero() {
             primary="10:00 AM"
             primaryLabel="Bible Study"
             secondary="6:00 PM"
-            secondaryLabel="Prayer Meeting"
+            secondaryLabel="Prayer Service"
           />
           <div className="border-white/14 px-5 py-4 md:border-r md:last:border-r-0">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-white/55">
