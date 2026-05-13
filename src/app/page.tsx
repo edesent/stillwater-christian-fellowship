@@ -509,7 +509,7 @@ function Worship() {
 }
 
 function Leadership() {
-  const assistantPastor = pastors[1];
+  const assistantPastor = null;
   const otherElders = elders.filter(
     (e) =>
       !leadershipPortraits.some((p) =>
