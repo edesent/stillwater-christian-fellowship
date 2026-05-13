@@ -531,8 +531,9 @@ function Leadership() {
           </div>
           <div className="max-w-xl">
             <p className="text-lg leading-8 text-ink-soft">
-              Still Water is led by faithful pastors and elders who labor in the
-              Word, watch over the flock, and serve the church in love.
+              Pastor Bob and the Elders are Men who faithfully Labor as
+              Under-Shepherds. They are led and guided by The Holy Spirit in the
+              Word. They are True Servant Leaders of God's Precious Flock.
             </p>
             <Link
               href="/from-the-pastor"
