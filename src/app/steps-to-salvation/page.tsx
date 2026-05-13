@@ -75,6 +75,14 @@ function Hero() {
         </p>
         <blockquote className="mt-6 max-w-2xl border-l-4 border-sky pl-5 text-lg leading-8 text-white/82 sm:text-xl">
           <p>
+            “Look unto me, and be ye saved, all the ends of the earth..”
+          </p>
+          <footer className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-sky">
+            - Isaiah 45:22
+          </footer>
+        </blockquote>
+        <blockquote className="mt-6 max-w-2xl border-l-4 border-sky pl-5 text-lg leading-8 text-white/82 sm:text-xl">
+          <p>
             “through His (Christ&rsquo;s) name whosoever believeth in him shall
             receive remission of sins.”
           </p>
