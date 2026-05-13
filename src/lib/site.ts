@@ -110,7 +110,7 @@ export const services = [
   {
     day: "Wednesday",
     time: "6:00 PM",
-    title: "Prayer Meeting Service",
+    title: "Prayer Service",
     tagline:
       "Pleading with and praising the Lord — encouragement and exhortation.",
     livestream: true,
