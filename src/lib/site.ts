@@ -100,7 +100,7 @@ export const services = [
     day: "Sunday",
     time: "5:30 PM",
     title: "Discipleship Bible Study",
-    tagline: "study to show thyself approved",
+    tagline: "“study to show thyself approved”",
   },
   {
     day: "Wednesday",
