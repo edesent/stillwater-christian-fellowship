@@ -30,16 +30,6 @@
     "description": "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence."
   },
   {
-    "id": "sunday-school-picnic-2026",
-    "title": "Sunday School Picnic",
-    "category": "Church Family",
-    "date": "2026-06-14",
-    "startTime": "12:30 PM",
-    "endTime": "3:00 PM",
-    "location": "Church Grounds",
-    "description": "Following the morning service — burgers, hot dogs, games for the kids, and fellowship for the whole church family."
-  },
-  {
     "id": "vbs-2026",
     "title": "Vacation Bible School",
     "category": "Children's Ministry",
