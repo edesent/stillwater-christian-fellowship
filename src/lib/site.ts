@@ -209,7 +209,7 @@ export const leadershipPortraits = [
     body: "Pastor Robert (Bob) Levesque has been the Pastor of Still Water Christian Fellowship since November of 2024. He came to us from Knotty Oak Baptist Church in Coventry, RI, where he was a member of the staff for eight years. Pastor Bob has been involved in The Ministry for the past 20 years. His wife, Cheryl, is involved in various aspects of the Ministry of Still Water Christian Fellowship. She is certainly, “an help, meet” for Her Husband.",
   },
   {
-    name: "Joseph & Petra Campbell",
+    name: "Pastor Joseph & Petra Campbell",
     role: "Assistant Pastor",
     image: "/stillwater/assistant-pastor-joseph-campbell.jpeg",
     body: "Assistant Pastor Joseph Campbell serves Still Water Christian Fellowship alongside his wife, Petra.",
