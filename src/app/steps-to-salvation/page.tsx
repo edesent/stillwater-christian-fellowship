@@ -67,7 +67,7 @@ function Hero() {
           Hope From Hope
         </p>
         <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
-          Steps to Salvation
+          Steps To Salvation
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           A clear, Scripture-rooted walk through the Gospel — the Romans Road —
