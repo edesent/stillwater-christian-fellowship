@@ -77,8 +77,8 @@ function Hero() {
             Proclaiming the Gospel truth of Jesus Christ to a lost world.
           </p>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-            A Bible-believing, Christ-honoring, Independent Baptist Church
-            shining the light of the Gospel in the Village of Hope, Rhode Island.
+            A Bible-Believing, Christ-Honoring, Independent Baptist Church
+            shining the Light of the Gospel in the Village of Hope, Rhode Island.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
