@@ -130,6 +130,12 @@ function Hero({
           &ldquo;Thus Saith The Lord...&rdquo;
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
+          When you visit SWCF, you will hear the Undiluted Word of God.. Lifting
+          Up the Lord Jesus Christ and Him Crucified. Pastor Bob
+          Unapologetically Preaches, by the Guidance of the Holy Spirit, with
+          Conviction, Compassion, and Confidence…. And Love!
+        </p>
+        <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Recent messages from Sunday worship and Wednesday Bible study at Still
           Water.{" "}
           {totalCount > 0
