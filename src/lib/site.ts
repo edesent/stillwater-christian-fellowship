@@ -295,7 +295,7 @@ export const pastorLetter = {
     "In this world we may hope for many things. We dare not, however, trust in many things.",
     "We read the Scripture above and recognize exactly what Jesus was talking about. It is not hard to see a world around us that is waxing worse by the moment.",
     "The Bible tells us that “by one man, sin entered into the world, and death by sin” — but it also tells us that salvation is offered to the world by one Man, Jesus Christ.",
-    "Our church, Still Water Christian Fellowship, is here to answer your spiritual questions. We are a Bible-believing Baptist church — a heritage traced back to the time of John the Baptist and Jesus Himself.",
+    "Our church, Still Water Christian Fellowship, is here to answer your spiritual questions. We are a Bible-Believing Baptist church — a Heritage traced back to the time of John the Baptist and Jesus Himself.",
     "As Senior Pastor, I am extending the same invitation that Christ extended to His Apostles and to all whom He came across — and to me as well: “Come and see.”",
     "I pray that you would accept this invitation, that we may share with you His offer of salvation — an offer found only in Him.",
   ],
