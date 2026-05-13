@@ -484,7 +484,7 @@ function Worship() {
       <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
-            Worship
+            Praise and Worship
           </p>
           <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
             &ldquo;O sing unto the Lord a new song: sing unto the Lord, all the earth.&rdquo; - Psalm 96:1
