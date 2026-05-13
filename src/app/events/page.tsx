@@ -55,7 +55,7 @@ function Hero({ count }: { count: number }) {
           What&rsquo;s Coming Up
         </p>
         <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
-          Events at Still Water
+          Events At Still Water
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           {count > 0
