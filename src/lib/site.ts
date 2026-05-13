@@ -193,7 +193,11 @@ export const pastors = [
     role: "Senior Pastor",
     image: "/stillwater/pastor-stillwater.png",
   },
-  { name: "Joseph Campbell", role: "Assistant Pastor" },
+  {
+    name: "Joseph Campbell",
+    role: "Assistant Pastor",
+    image: "/stillwater/assistant-pastor-joseph-campbell.jpeg",
+  },
 ] as const;
 
 export const elders = [
