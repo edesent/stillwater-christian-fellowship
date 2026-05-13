@@ -203,12 +203,6 @@ export const elders = [
 
 export const leadershipPortraits = [
   {
-    name: "Joseph Hadfield",
-    role: "Elder",
-    image: "/stillwater/elder-joseph-hadfield.jpeg",
-    body: "",
-  },
-  {
     name: "Pastor Bob & Cheryl Levesque",
     role: "Senior Pastor",
     image: "/stillwater/pastor-bob-cheryl-updated.jpeg",
@@ -219,6 +213,12 @@ export const leadershipPortraits = [
     role: "Assistant Pastor",
     image: "/stillwater/assistant-pastor-joseph-campbell.jpeg",
     body: "Assistant Pastor Joseph Campbell serves Still Water Christian Fellowship alongside his wife, Petra.",
+  },
+  {
+    name: "Joseph Hadfield",
+    role: "Elder",
+    image: "/stillwater/elder-joseph-hadfield.jpeg",
+    body: "",
   },
   {
     name: "Carl & Liz Riecke",
