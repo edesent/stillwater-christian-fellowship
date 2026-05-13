@@ -526,7 +526,7 @@ function Leadership() {
               Leadership
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Shepherding with Scripture and care.
+              And he gave some.. pastors and teachers..
             </h2>
           </div>
           <div className="max-w-xl">
