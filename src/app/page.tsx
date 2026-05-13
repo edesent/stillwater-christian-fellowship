@@ -594,21 +594,20 @@ function Leadership() {
                     {person.name}
                   </h3>
                   {"body" in person && person.body ? (
-                    <>
-                      <p className="mt-4 line-clamp-8 text-sm leading-7 text-ink-soft">
-                        {person.body}
-                      </p>
-                      <a
-                        href={`/leadership#${person.name
-                          .toLowerCase()
-                          .replace(/[^a-z0-9]+/g, "-")
-                          .replace(/(^-|-$)/g, "")}`}
-                        className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-clay transition hover:text-fern"
-                      >
-                        Read More
-                        <ArrowRight aria-hidden="true" className="size-3.5" />
-                      </a>
-                    </>
+                    <details className="group mt-4">
+                      <summary className="cursor-pointer list-none">
+                        <p className="line-clamp-4 text-sm leading-7 text-ink-soft group-open:line-clamp-none">
+                          {person.body}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-clay transition hover:text-fern group-open:hidden">
+                          Read More
+                          <ArrowRight aria-hidden="true" className="size-3.5" />
+                        </span>
+                        <span className="mt-4 hidden text-xs font-black uppercase tracking-[0.16em] text-clay transition hover:text-fern group-open:inline-flex">
+                          Show Less
+                        </span>
+                      </summary>
+                    </details>
                   ) : null}
                 </div>
               </article>
