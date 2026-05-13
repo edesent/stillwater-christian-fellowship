@@ -32,17 +32,26 @@ function Hero() {
     <section className="relative bg-ink text-white">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(94,183,222,0.34),transparent_34%),linear-gradient(90deg,rgba(8,43,62,0.98),rgba(13,75,105,0.82)_52%,rgba(58,155,197,0.36))]" />
       <div className="section-shell relative pb-16 pt-32 sm:pb-20 sm:pt-40">
-        <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
-          <Sparkles aria-hidden="true" className="size-4" />
-          {pastorLetter.eyebrow}
-        </p>
-        <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
-          From The Pastor
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-          A message of Gospel hope from Pastor Bob Levesque to our neighbors in
-          Hope and the surrounding community.
-        </p>
+        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+          <div>
+            <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
+              <Sparkles aria-hidden="true" className="size-4" />
+              {pastorLetter.eyebrow}
+            </p>
+            <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
+              From The Pastor
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
+              A message of Gospel hope from Pastor Bob Levesque to our neighbors in
+              Hope and the surrounding community.
+            </p>
+          </div>
+          <img
+            src="/stillwater/from-the-pastor-bob-8-10-25.jpg"
+            alt="Pastor Bob Levesque preaching at Still Water Christian Fellowship"
+            className="w-full rounded-sm border border-white/20 object-cover shadow-2xl"
+          />
+        </div>
       </div>
     </section>
   );
