@@ -218,7 +218,7 @@ export const leadershipPortraits = [
     name: "Carl & Liz Riecke",
     role: "Elder",
     image: "/stillwater/5-3-26_CarlLizRiecke.jpeg",
-    body: "Carl serves as an elder of Still Water, laboring in the Word and watching over the flock with care. Carl and Liz are a faithful encouragement to the church family.",
+    body: "Carl Riecke is one of the founding members of Still Water Christian Fellowship. He and his wife, Elizabeth, have served in many capacities over the past 20 years. Carl is considered the Master Chef of the church and provides many wonderful meals for special occasions as well as contributing food for our Sunday Fellowship Feasts. Carl faithfully informs the congregation of prayer needs as well as upcoming church notices. Carl is also a Gideon member.. faithfully praying for our church, as well as other churches and pastors, every Saturday morning. His wife, Elizabeth, has faithfully served with her musical talents from the very first service. Liz now plays the piano and assists Pastor Joe with the music each week. She loves to worship and praise our Lord.",
   },
   {
     name: "Roger & Luanna Lavoie",
