@@ -593,6 +593,11 @@ function Leadership() {
                   <h3 className="serif mt-3 text-2xl font-bold leading-tight text-ink">
                     {person.name}
                   </h3>
+                  {"body" in person && person.body ? (
+                    <p className="mt-4 text-sm leading-7 text-ink-soft">
+                      {person.body}
+                    </p>
+                  ) : null}
                 </div>
               </article>
             );
