@@ -575,7 +575,19 @@ function Leadership() {
         <div className="mt-10 grid gap-3 sm:grid-cols-2">
           {assistantPastor ? (
             <article className="flex items-center gap-4 border border-rule bg-paper p-5">
-              <Initials name={assistantPastor.name} muted />
+              {"image" in assistantPastor ? (
+                <div className="relative size-20 overflow-hidden border border-rule bg-mist">
+                  <Image
+                    src={assistantPastor.image}
+                    alt={assistantPastor.name}
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <Initials name={assistantPastor.name} muted />
+              )}
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-fern">
                   {assistantPastor.role}
