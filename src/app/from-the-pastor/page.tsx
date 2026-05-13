@@ -42,8 +42,8 @@ function Hero() {
               From The Pastor
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-              A message of Gospel hope from Pastor Bob Levesque to our neighbors in
-              Hope and the surrounding community.
+              A message of Gospel Hope from Pastor Bob Levesque to our Neighbors in
+              Hope and the surrounding Community.
             </p>
           </div>
           <img
