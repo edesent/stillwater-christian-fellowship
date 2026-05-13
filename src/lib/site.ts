@@ -229,7 +229,7 @@ export const leadershipPortraits = [
   {
     name: "Roger & Luanna Lavoie",
     role: "Elder",
-    image: "/stillwater/5-3-26_RogLuannaLavoie.jpeg",
+    image: "/stillwater/roger-luanna-lavoie-updated.jpeg",
     body: "Roger serves as an elder of Still Water, devoted to the Scriptures and to the people of God. Roger and Luanna are a steady, prayerful presence in the life of the church.",
   },
 ] as const;
