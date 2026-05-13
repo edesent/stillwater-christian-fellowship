@@ -531,8 +531,8 @@ function Leadership() {
           </div>
           <div className="max-w-xl">
             <p className="text-lg leading-8 text-ink-soft">
-              Pastor Bob and the Elders are Men who faithfully Labor as
-              Under-Shepherds. They are led and guided by The Holy Spirit in the
+              Pastor Bob, Pastor Joe, and the Elders are Men who faithfully
+              Labor as Under-Shepherds. They are led and guided by The Holy Spirit in the
               Word. They are True Servant Leaders of God's Precious Flock.
             </p>
             <Link
