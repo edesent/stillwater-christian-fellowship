@@ -595,7 +595,7 @@ function Leadership() {
                   </h3>
                   {"body" in person && person.body ? (
                     <>
-                      <p className="mt-4 line-clamp-4 text-sm leading-7 text-ink-soft">
+                      <p className="mt-4 line-clamp-8 text-sm leading-7 text-ink-soft">
                         {person.body}
                       </p>
                       <a
