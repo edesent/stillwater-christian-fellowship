@@ -117,7 +117,7 @@ function Hero({
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-50"
+        className="object-contain object-center opacity-50"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.96),rgba(13,75,105,0.78)_50%,rgba(58,155,197,0.32))]" />
 
