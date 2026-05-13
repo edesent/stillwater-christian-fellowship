@@ -118,7 +118,7 @@ function Hero() {
               Location
             </p>
             <p className="serif mt-1 text-3xl font-bold leading-tight text-white">
-              51 Main St
+              51 Main Street
             </p>
             <p className="mt-1 text-sm font-semibold text-white/72">
               Hope, RI 02831
@@ -772,7 +772,7 @@ function JsonLd() {
         sameAs: [site.facebook, site.sermonAudio],
         address: {
           "@type": "PostalAddress",
-          streetAddress: "51 Main St",
+          streetAddress: "51 Main Street",
           addressLocality: "Hope",
           addressRegion: "RI",
           postalCode: "02831",
