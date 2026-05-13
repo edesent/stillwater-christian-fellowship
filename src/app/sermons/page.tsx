@@ -127,7 +127,7 @@ function Hero({
           {page > 1 ? `Page ${page} of ${totalPages}` : "Sermon Library"}
         </p>
         <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
-          Sit with the Word, hear it preached.
+          &ldquo;Thus Saith The Lord...&rdquo;
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Recent messages from Sunday worship and Wednesday Bible study at Still
