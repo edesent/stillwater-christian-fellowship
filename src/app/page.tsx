@@ -177,9 +177,16 @@ function Visit() {
               We Would Love To Meet You!
             </h2>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
-              When you come, you will find a church family and pastor who love the
-              Bible. The preaching of the Word of God is filled with passion, zeal,
-              and the fullness of the Holy Ghost.
+              When you Come, you will Find a Church Family and Pastor who Love
+              the Bible. The Preaching of the Word of God is filled with
+              Passion, Zeal, and the Fullness of the Holy Ghost.
+            </p>
+            <p className="mt-5 text-lg leading-8 text-ink-soft">
+              Jesus Himself said, &ldquo;Come unto me, all ye that labour and are
+              heavy laden, and I will give you rest.&rdquo;
+            </p>
+            <p className="mt-5 text-lg leading-8 text-ink-soft">
+              We Pray that You would take up His Gracious Offer and Join Us!
             </p>
           </div>
 
