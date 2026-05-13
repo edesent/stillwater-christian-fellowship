@@ -567,7 +567,7 @@ function Leadership() {
                       alt={person.name}
                       fill
                       sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
-                      className="object-cover object-center"
+                      className={person.role === "Senior Pastor" ? "object-cover object-[center_18%]" : "object-cover object-center"}
                     />
                   ) : (
                     <div className="absolute inset-0 grid place-items-center bg-mist">
