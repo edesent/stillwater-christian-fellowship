@@ -136,8 +136,8 @@ function Hero({
           Conviction, Compassion, and Confidence…. And Love!
         </p>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-          Recent messages from Sunday Morning Worship and Wednesday Evening
-          Prayer Service at Still Water.{" "}
+          Recent messages from our Sunday Morning Worship Service and our
+          Wednesday Evening Prayer Service at Still Water.{" "}
           {totalCount > 0
             ? `${totalCount} sermons in the library — newest first.`
             : null}
