@@ -546,30 +546,50 @@ function Leadership() {
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {leadershipPortraits.map((person) => (
-            <article
-              key={person.name}
-              className="flex flex-col border border-rule bg-paper"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden bg-mist">
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
-                  {person.role}
-                </p>
-                <h3 className="serif mt-3 text-2xl font-bold leading-tight text-ink">
-                  {person.name}
-                </h3>
-              </div>
-            </article>
-          ))}
+          {leadershipPortraits.map((person) => {
+            const image = "image" in person ? person.image : undefined;
+            return (
+              <article
+                key={person.name}
+                className="flex flex-col border border-rule bg-paper"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden bg-mist">
+                  {image ? (
+                    <Image
+                      src={image}
+                      alt={person.name}
+                      fill
+                      sizes="(min-width: 1024px) 28vw, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover object-center"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 grid place-items-center bg-mist">
+                      <span
+                        className="serif text-7xl font-bold text-fern/70"
+                        aria-hidden="true"
+                      >
+                        {person.name
+                          .split(/\s+/)
+                          .map((part) => part[0])
+                          .filter(Boolean)
+                          .slice(0, 2)
+                          .join("")
+                          .toUpperCase()}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
+                    {person.role}
+                  </p>
+                  <h3 className="serif mt-3 text-2xl font-bold leading-tight text-ink">
+                    {person.name}
+                  </h3>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-10 grid gap-3 sm:grid-cols-2">

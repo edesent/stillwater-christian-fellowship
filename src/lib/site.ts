@@ -217,7 +217,6 @@ export const leadershipPortraits = [
   {
     name: "Joseph Hadfield",
     role: "Elder",
-    image: "/stillwater/elder-joseph-hadfield.jpeg",
     body: "",
   },
   {
