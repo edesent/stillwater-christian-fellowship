@@ -190,7 +190,7 @@ export const pastors = [
   {
     name: "Robert Levesque",
     role: "Senior Pastor",
-    image: "/stillwater/pastor-bob.jpg",
+    image: "/stillwater/pastor-stillwater.png",
   },
   { name: "Joseph Campbell", role: "Assistant Pastor" },
 ] as const;
