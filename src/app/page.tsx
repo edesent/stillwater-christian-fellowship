@@ -487,7 +487,7 @@ function Worship() {
             Worship
           </p>
           <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-            Reverent, Joyful, and Intentionally Blended.
+            &ldquo;O sing unto the Lord a new song: sing unto the Lord, all the earth.&rdquo; - Psalm 96:1
           </h2>
           <p className="mt-6 text-lg leading-8 text-ink-soft">
             Still Water describes blended worship as a harmony that honors the
