@@ -490,9 +490,8 @@ function Worship() {
             &ldquo;O sing unto the Lord a new song: sing unto the Lord, all the earth.&rdquo; - Psalm 96:1
           </h2>
           <p className="mt-6 text-lg leading-8 text-ink-soft">
-            Still Water describes blended worship as a harmony that honors the
-            musical traditions of the church while joining them with modern
-            expressions of worship.
+            At SWFC, we Sing Joyfully unto the Lord. He is Worthy of all of our
+            praise. We Shout His Praises.. We lift His Holy Name on High!
           </p>
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-fern soft-shadow">
