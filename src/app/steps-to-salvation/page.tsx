@@ -73,6 +73,15 @@ function Hero() {
           A clear, Scripture-rooted walk through the Gospel — the Romans Road —
           showing how anyone can come to know Jesus Christ as Saviour.
         </p>
+        <blockquote className="mt-6 max-w-2xl border-l-4 border-sky pl-5 text-lg leading-8 text-white/82 sm:text-xl">
+          <p>
+            “through His (Christ&rsquo;s) name whosoever believeth in him shall
+            receive remission of sins.”
+          </p>
+          <footer className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-sky">
+            - Acts 10:43
+          </footer>
+        </blockquote>
         <div className="mt-9 flex flex-wrap gap-3">
           <a
             href="#romans-road"
