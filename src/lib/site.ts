@@ -136,8 +136,8 @@ export const visitorNotes = [
 export const ministries = [
   {
     title: "Children's Ministry & VBS",
-    image: "/stillwater/children-ministries.jpg",
-    body: "Children's Church and Sunday School on Sunday mornings during the worship service — and Vacation Bible School each August, a week of music, lessons, and Gospel teaching for community kids.",
+    image: "/uploads/carolbennetforwebsite.jpg",
+    body: "Carol Bennett serves as SWCF's Director of Children's Ministry and VBS. Children's Church and Sunday School meet on Sunday mornings during the worship service — and Vacation Bible School each August brings a week of music, lessons, and Gospel teaching for community kids.",
     schedule: "Sundays · VBS in August",
   },
   {
