@@ -214,6 +214,12 @@ export const leadershipPortraits = [
     body: "Pastor Bob shepherds Still Water with a love for the Bible, a burden for souls, and a desire to see the light of the Gospel shine throughout Hope and the surrounding area. Cheryl serves the church family alongside him.",
   },
   {
+    name: "Joseph & Petra Campbell",
+    role: "Assistant Pastor",
+    image: "/stillwater/assistant-pastor-joseph-campbell.jpeg",
+    body: "Assistant Pastor Joseph Campbell serves Still Water Christian Fellowship alongside his wife, Petra.",
+  },
+  {
     name: "Carl & Liz Riecke",
     role: "Elder",
     image: "/stillwater/5-3-26_CarlLizRiecke.jpeg",
