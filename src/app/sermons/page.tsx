@@ -23,11 +23,33 @@ import {
 } from "@/lib/sermons";
 import { site, siteUrl } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: `Sermons — ${site.name}`,
-  description: `Listen to recent sermons from ${site.name} in Hope, Rhode Island — live on Sunday at 10:30 AM.`,
-  alternates: { canonical: `${siteUrl}/sermons` },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}): Promise<Metadata> {
+  const { page: pageStr } = await searchParams;
+  const page = Math.max(1, parseInt(pageStr ?? "1", 10) || 1);
+  const titleSuffix = page > 1 ? ` — Page ${page}` : "";
+  const canonical =
+    page === 1 ? `${siteUrl}/sermons` : `${siteUrl}/sermons?page=${page}`;
+  const description =
+    page > 1
+      ? `Sermon archive page ${page} — older messages from ${site.name} in Hope, Rhode Island.`
+      : `Listen to recent sermons from ${site.name} in Hope, Rhode Island — live on Sunday at 10:30 AM.`;
+
+  return {
+    title: `Sermons${titleSuffix} — ${site.name}`,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title: `Sermons${titleSuffix} — ${site.name}`,
+      description,
+      url: canonical,
+      type: "website",
+    },
+  };
+}
 
 export default async function SermonsPage({
   searchParams,
