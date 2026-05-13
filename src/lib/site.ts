@@ -211,7 +211,7 @@ export const leadershipPortraits = [
     name: "Pastor Bob & Cheryl Levesque",
     role: "Senior Pastor",
     image: "/stillwater/5-3-26_PastorBobCherylLevesque.jpeg",
-    body: "Pastor Bob shepherds Still Water with a love for the Bible, a burden for souls, and a desire to see the light of the Gospel shine throughout Hope and the surrounding area. Cheryl serves the church family alongside him.",
+    body: "Pastor Robert (Bob) Levesque has been the Pastor of Still Water Christian Fellowship since November of 2024. He came to us from Knotty Oak Baptist Church in Coventry, RI, where he was a member of the staff for eight years. Pastor Bob has been involved in The Ministry for the past 20 years. His wife, Cheryl, is involved in various aspects of the Ministry of Still Water Christian Fellowship. She is certainly, “an help, meet” for Her Husband.",
   },
   {
     name: "Joseph & Petra Campbell",
