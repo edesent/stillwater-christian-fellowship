@@ -203,6 +203,12 @@ export const elders = [
 
 export const leadershipPortraits = [
   {
+    name: "Joseph Hadfield",
+    role: "Elder",
+    image: "/stillwater/elder-joseph-hadfield.jpeg",
+    body: "",
+  },
+  {
     name: "Pastor Bob & Cheryl Levesque",
     role: "Senior Pastor",
     image: "/stillwater/5-3-26_PastorBobCherylLevesque.jpeg",
