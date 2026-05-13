@@ -136,7 +136,7 @@ function Hero({
           Conviction, Compassion, and Confidence…. And Love!
         </p>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-          Recent messages from Sunday worship and Wednesday Bible study at Still
+          Recent messages from Sunday Worship and Wednesday Bible Study at Still
           Water.{" "}
           {totalCount > 0
             ? `${totalCount} sermons in the library — newest first.`
