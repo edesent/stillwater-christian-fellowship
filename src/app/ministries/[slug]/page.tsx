@@ -57,10 +57,15 @@ export default async function MinistryPage({
                   text: "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
                   reference: "Proverbs 27:17",
                 }
+              : ministry.slug === "providence-rescue-mission"
+              ? {
+                  text: "when thou makest a feast, call the poor, the maimed, the lame, the blind.. for they cannot recompense thee..",
+                  reference: "Luke 14:13-14",
+                }
               : {
-                text: "And let us consider one another to provoke unto love and to good works.",
-                reference: "Hebrews 10:24",
-              };
+                  text: "And let us consider one another to provoke unto love and to good works.",
+                  reference: "Hebrews 10:24",
+                };
 
   return (
     <>
