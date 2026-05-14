@@ -93,13 +93,6 @@ export default async function MinistryPage({
                   This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.
                 </p>
 
-                {"verse" in ministry && ministry.verse ? (
-                  <blockquote className="mt-8 border-l-4 border-sky pl-5">
-                    <p className="serif text-xl italic leading-relaxed text-ink sm:text-2xl">
-                      {ministry.verse}
-                    </p>
-                  </blockquote>
-                ) : null}
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2">
