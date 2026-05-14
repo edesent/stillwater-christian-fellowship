@@ -100,7 +100,7 @@ export default async function MinistryPage({
                   A Place for Fellowship, Service, and Growth
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-ink-soft">
-                  This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.
+                  {ministryDescription}
                 </p>
 
               </div>
