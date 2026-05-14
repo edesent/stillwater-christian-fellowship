@@ -38,7 +38,6 @@ export default function Home() {
         <Hero />
         <Visit />
         <Events />
-        <Verse />
         <Welcome />
         <Ministries />
         <Leadership />
