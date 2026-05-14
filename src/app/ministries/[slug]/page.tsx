@@ -12,12 +12,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default function MinistryPage({
+export default async function MinistryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const ministry = ministries.find((item) => item.slug === params.slug);
+  const { slug } = await params;
+  const ministry = ministries.find((item) => item.slug === slug);
 
   if (!ministry) {
     notFound();
