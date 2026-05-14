@@ -47,8 +47,8 @@ export default async function MinistryPage({
             }
           : ministry.slug === "soul-winners-ministry"
             ? {
-                text: "..he that winneth souls is wise.",
-                reference: "Proverbs 11:30",
+                text: "..Go out into the highways and hedges, and compel them to come in, that my house may be filled",
+                reference: "Luke 14:23",
               }
             : ministry.slug === "mens-discipleship-breakfast-ministry"
               ? {
