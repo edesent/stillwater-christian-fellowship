@@ -126,8 +126,10 @@ export const visitorNotes = [
     reference: "2 Timothy 3:16",
   },
   {
-    title: "Christ-honoring",
-    body: "Our desire is to shine the light of the Gospel to Hope and the surrounding area with joy, conviction, and compassion.",
+    title: "Christ-Honoring",
+    body: "We honor our Saviour when we lift up HIs name as the Standard of our Salvation. When we, with His Holy Spirit, together fulfill His Commission to, \"Go Ye Therefore\"!",
+    verse: ".. all men should honour the Son, even as they honour the Father",
+    reference: "John 5:23",
   },
   {
     title: "A church family",
