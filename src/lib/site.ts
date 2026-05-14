@@ -121,7 +121,7 @@ export const services = [
 export const visitorNotes = [
   {
     title: "Bible-Believing",
-    body: "Led by our Pastor, we live by \"every word with proceedeth out of the mouth of God\"\n\nThe Bible is God's Inerrant Word. It is our Sole Authority in all matters Spiritual.",
+    body: "Led by our Pastor, we live by \"every word which proceedeth out of the mouth of God\"\nThe Bible is God's Inerrant Word. It is our Sole Authority in all matters Spiritual.",
     verse: "All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness",
     reference: "2 Timothy 3:16",
   },
