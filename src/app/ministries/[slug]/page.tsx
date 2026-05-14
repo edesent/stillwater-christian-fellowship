@@ -137,10 +137,10 @@ export default async function MinistryPage({
 
               <blockquote className="mt-5">
                 <p className="serif text-2xl italic leading-relaxed text-ink sm:text-3xl">
-                  “And let us consider one another to provoke unto love and to good works.”
+                  “{ministryScripture.text}”
                 </p>
                 <cite className="mt-4 block text-sm font-black uppercase tracking-[0.16em] text-clay not-italic">
-                  Hebrews 10:24
+                  {ministryScripture.reference}
                 </cite>
               </blockquote>
             </div>
