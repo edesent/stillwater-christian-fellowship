@@ -337,7 +337,21 @@ function Welcome() {
           {visitorNotes.map((note) => (
             <article key={note.title} className="border-l-4 border-sky bg-mist/58 p-6">
               <h3 className="text-lg font-bold text-ink">{note.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-ink-soft">{note.body}</p>
+              <p className="mt-2 whitespace-pre-line text-sm leading-7 text-ink-soft">
+                {note.body}
+              </p>
+              {"verse" in note && note.verse ? (
+                <blockquote className="mt-5 border-t border-rule pt-4">
+                  <p className="serif text-base italic leading-7 text-ink">
+                    &ldquo;{note.verse}&rdquo;
+                  </p>
+                  {"reference" in note && note.reference ? (
+                    <cite className="mt-3 block text-xs font-black uppercase tracking-[0.16em] text-clay not-italic">
+                      {note.reference}
+                    </cite>
+                  ) : null}
+                </blockquote>
+              ) : null}
             </article>
           ))}
         </div>
