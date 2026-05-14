@@ -554,8 +554,8 @@ function Leadership() {
             <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
               Leadership
             </p>
-            <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              "And he gave some.. Pastors and Teachers.." Ephesians 4:11
+            <h2 className="serif mt-4 text-balance text-5xl font-semibold italic leading-tight text-ink sm:text-6xl">
+              &ldquo;and he gave some.. Pastors and Teachers..&rdquo; - Ephesians 4:11
             </h2>
           </div>
           <div className="max-w-xl">
