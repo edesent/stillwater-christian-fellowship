@@ -45,10 +45,15 @@ export default async function MinistryPage({
               text: "Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
               reference: "Mark 10:14",
             }
-          : {
-              text: "And let us consider one another to provoke unto love and to good works.",
-              reference: "Hebrews 10:24",
-            };
+          : ministry.slug === "soul-winners-ministry"
+            ? {
+                text: "..he that winneth souls is wise.",
+                reference: "Proverbs 11:30",
+              }
+            : {
+                text: "And let us consider one another to provoke unto love and to good works.",
+                reference: "Hebrews 10:24",
+              };
 
   return (
     <>
