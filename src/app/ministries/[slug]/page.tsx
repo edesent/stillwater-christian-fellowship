@@ -24,6 +24,17 @@ export default async function MinistryPage({
     notFound();
   }
 
+  const ministryScripture =
+    ministry.slug === "visitation-ministry"
+      ? {
+          text: "God, that comforteth those that are cast down, comforted us by the coming of Titus",
+          reference: "2 Corinthians 7:6",
+        }
+      : {
+          text: "And let us consider one another to provoke unto love and to good works.",
+          reference: "Hebrews 10:24",
+        };
+
   return (
     <>
       <Header />
