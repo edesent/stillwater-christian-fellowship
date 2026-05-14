@@ -499,7 +499,7 @@ function Ministries() {
                   <p className="mt-3 text-sm leading-7 text-ink-soft">
                     {ministry.body}
                   </p>
-                  {"verse" in ministry && ministry.verse ? (
+                  {"verse" in ministry && typeof ministry.verse === "string" ? (
                     <p className="mt-4 text-sm italic leading-7 text-ink-soft">
                       {ministry.verse}
                     </p>
