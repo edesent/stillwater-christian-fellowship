@@ -24,6 +24,11 @@ export default async function MinistryPage({
     notFound();
   }
 
+  const ministryDescription =
+    ministry.slug === "childrens-ministry-vbs"
+      ? "Along with their Parents and Guardians, the Church Family is called upon to help to raise the children, \"in the fear and admonition of the Lord.\" We are reminded in the Scriptures to, \"Train up a child in the way he should go..\" Ms. Carol and her Staff do a Wonderful job of carrying out that Godly Commission. The SWCF Family is whole-heartedly committed to Supporting those Efforts!"
+      : "This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.";
+
   const ministryScripture =
     ministry.slug === "visitation-ministry"
       ? {
