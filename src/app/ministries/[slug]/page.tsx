@@ -35,10 +35,15 @@ export default async function MinistryPage({
             text: "certain women, which had been healed of evil spirits and infirmities.. ministered unto him of their substance.",
             reference: "Luke 8:2-3",
           }
-        : {
-            text: "And let us consider one another to provoke unto love and to good works.",
-            reference: "Hebrews 10:24",
-          };
+        : ministry.slug === "childrens-ministry-vbs"
+          ? {
+              text: "Suffer the little children to come unto me, and forbid them not: for of such is the kingdom of God.",
+              reference: "Mark 10:14",
+            }
+          : {
+              text: "And let us consider one another to provoke unto love and to good works.",
+              reference: "Hebrews 10:24",
+            };
 
   return (
     <>
