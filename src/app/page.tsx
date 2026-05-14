@@ -425,7 +425,7 @@ function Ministries() {
               Our Ministries
             </p>
             <h2 className="serif mt-4 max-w-3xl text-balance text-5xl font-bold leading-tight sm:text-6xl">
-              Places to grow, serve, and belong.
+              Places To Serve, to Grow, and to Belong
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-8 text-white/72">
