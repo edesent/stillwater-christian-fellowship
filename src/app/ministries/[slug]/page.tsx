@@ -28,7 +28,7 @@ export default async function MinistryPage({
     ministry.slug === "childrens-ministry-vbs"
       ? <>Along with their Parents and Guardians, the Church Family is called upon to help to raise the children, <em>"in the fear and admonition of the Lord."</em> We are reminded in the Scriptures to, <em>"Train up a child in the way he should go.."</em> Ms. Carol and her Staff do a Wonderful job of carrying out that Godly Commission. The SWCF Family is whole-heartedly committed to Supporting those Efforts!</>
       : ministry.slug === "soul-winners-ministry"
-        ? <>Jesus commanded His followers to, <em>"Go into all the world, and preach the gospel to every creature."</em><br /><br />God's Word reminds us also, that <em>"he who winneth souls is wise"</em> The saints of SWCF are committed to this Commission.</>
+        ? <>Jesus commanded His followers to, <em>"Go into all the world, and preach the gospel to every creature."</em><br />God's Word reminds us also, that <em>"he who winneth souls is wise"</em> The saints of SWCF are committed to this Commission.</>
         : "This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.";
 
   const ministryScripture =
