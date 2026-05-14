@@ -315,8 +315,16 @@ function Welcome() {
               What We Are About
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Shining the light of the Gospel from darkness to light.
+              Shining Gospel Light Into A Dark And Cold World
             </h2>
+            <blockquote className="mt-6 border-l-4 border-sky pl-5">
+              <p className="serif text-2xl font-semibold italic leading-tight text-ink sm:text-3xl">
+                &ldquo;..they that dwell in the land of the shadow of death, upon them hath the light shined&rdquo;
+              </p>
+              <cite className="mt-3 block text-sm font-bold uppercase tracking-[0.16em] text-clay not-italic">
+                Isaiah 9:2
+              </cite>
+            </blockquote>
             <p className="mt-6 text-lg leading-8 text-ink-soft">
               Thank you for your interest in Still Water Christian Fellowship. It
               would be our great joy to share with you what Jesus Christ can do
