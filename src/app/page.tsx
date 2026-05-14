@@ -176,16 +176,16 @@ function Visit() {
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
               We Would Love To Meet You!
             </h2>
-            <p className="mt-6 text-lg leading-8 text-ink-soft">
-              When you Come, you will Find a Church Family and Pastor who Love
-              the Bible. The Preaching of the Word of God is filled with
-              Passion, Zeal, and the Fullness of the Holy Ghost.
+            <p className="mt-5 text-lg leading-7 text-ink-soft">
+              SWCF is a Church Family. We have a Pastor who Love the Bible. His
+              Preaching of the Word of God is filled with Passion, Zeal, and the
+              Fullness of the Holy Ghost.
             </p>
-            <p className="mt-5 text-lg leading-8 text-ink-soft">
+            <p className="mt-3 text-lg leading-7 text-ink-soft">
               Jesus Himself said, &ldquo;Come unto me, all ye that labour and are
               heavy laden, and I will give you rest.&rdquo;
             </p>
-            <p className="mt-5 text-lg leading-8 text-ink-soft">
+            <p className="mt-3 text-lg leading-7 text-ink-soft">
               We Pray that You would take up His Gracious Offer and Join Us!
             </p>
           </div>
