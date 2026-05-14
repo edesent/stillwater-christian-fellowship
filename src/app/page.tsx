@@ -430,7 +430,7 @@ function Ministries() {
           </div>
           <blockquote className="max-w-xl border-l-4 border-sky pl-5">
             <p className="serif text-2xl font-semibold italic leading-tight text-white sm:text-3xl">
-              &ldquo;.. love the Lord your God, and to serve him with all your heart and with all your soul&rdquo;
+              &ldquo;.. love the Lord your God... serve him with all your heart and with all your soul&rdquo;
             </p>
             <cite className="mt-3 block text-sm font-bold uppercase tracking-[0.16em] text-sky not-italic">
               Deuteronomy 11:13
