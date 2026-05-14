@@ -120,8 +120,8 @@ export const services = [
 
 export const visitorNotes = [
   {
-    title: "Bible-believing",
-    body: "You will find people and a pastor who love the Bible and take seriously the command to teach and preach God's Word to every person.",
+    title: "Bible-Believing",
+    body: "Led by our Pastor, we live by \"every word with proceedeth out of the mouth of God\"\n\nThe Bible is God's Inerrant Word. It is our Sole Authority in all matters Spiritual.\n\n\"All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness\" - 2 Timothy 3:16",
   },
   {
     title: "Christ-honoring",
