@@ -499,6 +499,11 @@ function Ministries() {
                   <p className="mt-3 text-sm leading-7 text-ink-soft">
                     {ministry.body}
                   </p>
+                  {"verse" in ministry && ministry.verse ? (
+                    <p className="mt-4 text-sm italic leading-7 text-ink-soft">
+                      {ministry.verse}
+                    </p>
+                  ) : null}
                   {schedule ? (
                     <p className="mt-auto pt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay">
                       <CalendarRange aria-hidden="true" className="size-3.5" />
