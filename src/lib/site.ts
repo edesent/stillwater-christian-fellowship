@@ -224,7 +224,7 @@ export const leadershipPortraits = [
     name: "Joseph Hadfield",
     role: "Elder",
     image: "/uploads/website-photo.jpg",
-    body: "",
+    body: "Brother Joe was born in Providence and was educated in St. Louis at St. Louis University. Joe came to know Jesus as his Lord and Savior after being convicted by the Holy Spirit in reading Romans 4 and 5; Convincing him that salvation came only through Faith and Trust in Jesus Christ.. By His Grace alone; that He was crucified and died; paying the penalty for my sins with His shed blood. Joe is currently a teaching Elder at SWCF. He is a member of the Gideons International, and serves on the Boards for the Providence Rescue Mission and Child Evangelism Fellowship.",
   },
   {
     name: "Carl & Liz Riecke",
