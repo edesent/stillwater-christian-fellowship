@@ -50,7 +50,12 @@ export default async function MinistryPage({
                 text: "..he that winneth souls is wise.",
                 reference: "Proverbs 11:30",
               }
-            : {
+            : ministry.slug === "mens-discipleship-breakfast-ministry"
+              ? {
+                  text: "Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.",
+                  reference: "Proverbs 27:17",
+                }
+              : {
                 text: "And let us consider one another to provoke unto love and to good works.",
                 reference: "Hebrews 10:24",
               };
