@@ -177,7 +177,7 @@ function Visit() {
               We Would Love To Meet You!
             </h2>
             <p className="mt-5 text-lg leading-7 text-ink-soft">
-              SWCF is a Church Family. We have a Pastor that Loves the Bible. His
+              SWCF is a Church Family. We have a Pastor that Loves the Lord. His
               Preaching of the Word of God is filled with Passion, Zeal, and the
               Fullness of the Holy Ghost.
             </p>
