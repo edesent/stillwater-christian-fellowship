@@ -132,8 +132,10 @@ export const visitorNotes = [
     reference: "John 5:23",
   },
   {
-    title: "A church family",
-    body: "SWCF is a family of imperfect people who have experienced our mighty Lord do the miraculous.",
+    title: "Independent-Baptist Church",
+    body: "We trace our beginnings back to John Baptist himself, and to the times of our Lord Jesus Christ.\nWe are not affiliated with any Conventions, but are Governed Independently and Autonomously from Within, as were the Early Churches.",
+    verse: "And they continued stedfastly in the apostles’ doctrine and fellowship, and in breaking of bread, and in prayers.",
+    reference: "Acts 2:42",
   },
 ] as const;
 
