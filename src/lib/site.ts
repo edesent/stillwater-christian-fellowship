@@ -236,7 +236,7 @@ export const leadershipPortraits = [
     name: "Roger & Luanna Lavoie",
     role: "Elder",
     image: "/uploads/5-3-26-rogluannalavoie.jpeg",
-    body: "Roger serves as an elder of Still Water, devoted to the Scriptures and to the people of God. Roger and Luanna are a steady, prayerful presence in the life of the church.",
+    body: "Elder Roger is devoted to Scripture Study and to the people of God. Roger and Luanna are a steady, Prayerful presence in the life of SWCF. Brother Lavoie grew up in the Pawtuxet Valley area in a large Family. Roger came to know the Lord as Saviour at the age of 10. Roger and Luanna have attended Still Water for 20 years, in which they have greatly enjoyed, by the Grace of Jesus (the Head of the Church), their Growing and the Fellowship of the Saints in the Holy Spirit. Roger's favorite Bible Verse is Psalm 16:11. He and Luanna have been blessed with Children and Grandchildren. They Love serving the Lord with all their Hearts.. As Needed!",
   },
 ] as const;
 
