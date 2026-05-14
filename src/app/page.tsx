@@ -355,27 +355,31 @@ function Welcome() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {visitorNotes.map((note) => (
-            <article key={note.title} className="border-l-4 border-sky bg-mist/58 p-6">
-              <h3 className="text-lg font-bold text-ink">{note.title}</h3>
-              <p className="mt-2 whitespace-pre-line text-sm leading-7 text-ink-soft">
-                {note.body}
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          <div className="border-l-4 border-sky bg-mist/58 p-6">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+              {churchVerses.mission.label} — {churchVerses.mission.reference}
+            </p>
+            <blockquote className="mt-5">
+              <p className="serif text-xl italic leading-relaxed text-ink sm:text-2xl">
+                &ldquo;{churchVerses.mission.text}&rdquo;
               </p>
-              {"verse" in note && note.verse ? (
-                <blockquote className="mt-5 border-t border-rule pt-4">
-                  <p className="serif text-base italic leading-7 text-ink">
-                    &ldquo;{note.verse}&rdquo;
-                  </p>
-                  {"reference" in note && note.reference ? (
-                    <cite className="mt-3 block text-xs font-black uppercase tracking-[0.16em] text-clay not-italic">
-                      {note.reference}
-                    </cite>
-                  ) : null}
-                </blockquote>
-              ) : null}
-            </article>
-          ))}
+            </blockquote>
+          </div>
+
+          <div className="border-l-4 border-sky bg-mist/58 p-6">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+              {churchVerses.theme.label} — {churchVerses.theme.reference}
+            </p>
+            <blockquote className="mt-5">
+              <p className="serif text-3xl font-semibold italic leading-tight text-ink">
+                &ldquo;{churchVerses.theme.pullQuote}&rdquo;
+              </p>
+              <p className="mt-5 text-base leading-7 text-ink-soft">
+                {churchVerses.theme.text}
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
