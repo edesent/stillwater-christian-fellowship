@@ -154,7 +154,6 @@ export const ministries = [
     title: "Ladies Caring & Sharing Ministry",
     image: "/stillwater/5-2-26_MissionaryReport.jpg",
     body: "Ladies of the church gather for prayer, encouragement, and meaningful fellowship.",
-    verse: "\"certain women, which had been healed of evil spirits and infirmities.. ministered unto him of their substance.\" - Luke 8:2-3",
     schedule: "1st Saturday of the month · 12:00 PM – 2:00 PM",
     href: "/ministries/ladies-caring-sharing-ministry",
     cta: "More About Ladies Caring & Sharing Ministry",
