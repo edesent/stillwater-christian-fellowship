@@ -133,7 +133,7 @@ export default async function MinistryPage({
                         alt="Child wearing armour for Children's Ministry"
                         fill
                         sizes="(min-width: 1024px) 16vw, 50vw"
-                        className="object-cover"
+                        className="object-contain object-top"
                       />
                     </div>
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">
