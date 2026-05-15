@@ -187,7 +187,7 @@ export const ministries = [
   {
     slug: "visitation-ministry",
     title: "Visitation Ministry",
-    image: "/stillwater/community.jpg",
+    image: "/uploads/day5-batch1-pastorhariet.jpg",
     body: "Caring for our church family and reaching the community through home and hospital visits, prayer, and encouragement.",
     href: "/ministries/visitation-ministry",
     cta: "More About Visitation Ministry",
