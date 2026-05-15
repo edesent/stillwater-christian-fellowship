@@ -195,7 +195,14 @@ export default async function MinistryPage({
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                      Additional placeholder image area for ministry activities and fellowship.
+                      {ministry.slug === "soul-winners-ministry" ? (
+                        <>
+                          “ye shall know the truth, and the truth shall make you free.”<br />
+                          <span className="font-bold not-italic">- John 8:32</span>
+                        </>
+                      ) : (
+                        "Additional placeholder image area for ministry activities and fellowship."
+                      )}
                     </figcaption>
                   </figure>
                 </div>
