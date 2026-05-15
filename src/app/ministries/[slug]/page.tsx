@@ -124,37 +124,66 @@ export default async function MinistryPage({
 
               </div>
 
-              <div className="grid gap-6 sm:grid-cols-2">
+              {ministry.slug === "childrens-ministry-vbs" ? (
                 <figure className="border border-rule bg-paper p-3">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                    <Image
-                      src={ministry.slug === "soul-winners-ministry" ? "/uploads/tractfolding6-25.jpg" : ministry.image}
-                      alt={ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : ministry.title}
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover"
-                    />
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+                      <Image
+                        src="/uploads/childrens-armour-of-god-1.jpg"
+                        alt="Child wearing armour for Children's Ministry"
+                        fill
+                        sizes="(min-width: 1024px) 16vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
+                      <Image
+                        src="/uploads/childrens-armour-of-god-2.jpg"
+                        alt="Child wearing armour for Children's Ministry"
+                        fill
+                        sizes="(min-width: 1024px) 16vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                  <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                    {ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : "Placeholder caption for future ministry photos and event highlights."}
+                  <figcaption className="mt-4 text-center text-sm italic leading-6 text-ink-soft">
+                    “Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.”<br />
+                    <span className="font-bold not-italic">- Ephesians 6:11</span>
                   </figcaption>
                 </figure>
+              ) : (
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <Image
+                        src={ministry.slug === "soul-winners-ministry" ? "/uploads/tractfolding6-25.jpg" : ministry.image}
+                        alt={ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : ministry.title}
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
+                      {ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : "Placeholder caption for future ministry photos and event highlights."}
+                    </figcaption>
+                  </figure>
 
-                <figure className="border border-rule bg-paper p-3">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                    <Image
-                      src={ministry.image}
-                      alt={ministry.title}
-                      fill
-                      sizes="(min-width: 1024px) 30vw, 100vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                    Additional placeholder image area for ministry activities and fellowship.
-                  </figcaption>
-                </figure>
-              </div>
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <Image
+                        src={ministry.image}
+                        alt={ministry.title}
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
+                      Additional placeholder image area for ministry activities and fellowship.
+                    </figcaption>
+                  </figure>
+                </div>
+              )}
             </div>
 
             <div className="mt-16 border-l-4 border-sky bg-paper p-8">
