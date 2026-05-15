@@ -138,7 +138,7 @@ export default async function MinistryPage({
                     </div>
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">
                       <Image
-                        src="/uploads/childrens-armour-of-god-2.jpg"
+                        src="/uploads/img2.jpg"
                         alt="Child wearing armour for Children's Ministry"
                         fill
                         sizes="(min-width: 1024px) 16vw, 50vw"
