@@ -170,7 +170,7 @@ export const ministries = [
   {
     slug: "soul-winners-ministry",
     title: "Soul Winners Ministry",
-    image: "/stillwater/bible-study.jpg",
+    image: "/uploads/faith-and-freedom-outreach.png",
     body: "Going out into Hope and the surrounding area to share the Good News of Jesus Christ with our neighbors.",
     href: "/ministries/soul-winners-ministry",
     cta: "More About Soul Winners Ministry",
