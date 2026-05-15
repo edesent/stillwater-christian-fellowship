@@ -150,6 +150,22 @@ export default async function MinistryPage({
                     “Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.”<br />
                     <span className="font-bold not-italic">- Ephesians 6:11</span>
                   </figcaption>
+
+                  <figure className="mt-8 border-t border-rule pt-6">
+                    <div className="relative aspect-[5/3] overflow-hidden bg-mist">
+                      <Image
+                        src="/uploads/day3-batch1-start-teaching4.jpg"
+                        alt="Children hearing God's Word during VBS"
+                        fill
+                        sizes="(min-width: 1024px) 36vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-4 text-center text-sm italic leading-6 text-ink-soft">
+                      “faith cometh by hearing, and hearing by the word of God”<br />
+                      <span className="font-bold not-italic">- Romans 10:17</span>
+                    </figcaption>
+                  </figure>
                 </figure>
               ) : (
                 <div className="grid gap-6 sm:grid-cols-2">
