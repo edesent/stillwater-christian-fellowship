@@ -115,8 +115,15 @@ export default async function MinistryPage({
                 <p className="text-sm font-black uppercase tracking-[0.22em] text-clay">
                   About This Ministry
                 </p>
-                <h2 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
-                  A Place for Fellowship, Service, and Growth
+                <h2 className="serif mt-4 text-balance text-4xl font-bold italic leading-tight text-ink sm:text-5xl">
+                  {ministry.slug === "soul-winners-ministry" ? (
+                    <>
+                      ..how shall they hear without a preacher?.. and how shall they preach, except they be sent?<br />
+                      <span className="text-2xl sm:text-3xl">- Romans 10:14-15</span>
+                    </>
+                  ) : (
+                    "A Place for Fellowship, Service, and Growth"
+                  )}
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-ink-soft">
                   {ministryDescription}
