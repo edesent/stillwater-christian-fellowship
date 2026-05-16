@@ -133,6 +133,11 @@ export default async function MinistryPage({
                       “..the angel.. said unto the women, Fear not ye: for I know that ye seek Jesus..”<br />
                       <span className="text-2xl sm:text-3xl">- Matthew 28:5</span>
                     </>
+                  ) : ministry.slug === "mens-discipleship-breakfast-ministry" ? (
+                    <>
+                      “..If ye continue in my word, then are ye my disciples indeed”<br />
+                      <span className="text-2xl sm:text-3xl">- John 8:31</span>
+                    </>
                   ) : (
                     "A Place for Fellowship, Service, and Growth"
                   )}
