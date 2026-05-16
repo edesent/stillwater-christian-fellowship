@@ -30,6 +30,16 @@
     "description": "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence."
   },
   {
+    "id": "ladies-caring-sharing-june-2026",
+    "title": "Ladies Caring & Sharing",
+    "category": "Ladies Ministry",
+    "date": "2026-06-06",
+    "startTime": "12:00 PM",
+    "endTime": "2:00 PM",
+    "location": "Fellowship Hall",
+    "description": "A morning of prayer, encouragement, and fellowship for the ladies of the church. Light breakfast provided — please bring a friend."
+  },
+  {
     "id": "vbs-2026",
     "title": "Vacation Bible School",
     "category": "Children's Ministry",
