@@ -235,15 +235,15 @@ export default async function MinistryPage({
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                       <Image
-                        src={ministry.image}
-                        alt={ministry.title}
+                        src={ministry.slug === "ladies-caring-sharing-ministry" ? "/uploads/5-2-26-missionaryreport-editcopy.jpg" : ministry.image}
+                        alt={ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                      Placeholder caption for future ministry photos and event highlights.
+                      {ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : "Placeholder caption for future ministry photos and event highlights."}
                     </figcaption>
                   </figure>
 
