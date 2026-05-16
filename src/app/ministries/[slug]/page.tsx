@@ -348,7 +348,7 @@ export default async function MinistryPage({
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist sm:aspect-[4/5]">
                       <LightboxImage
-                        src={ministry.slug === "ladies-caring-sharing-ministry" ? "/uploads/5-2-26-missionaryreport-editcopy.jpg" : ministry.image}
+                        src={ministry.slug === "mens-discipleship-breakfast-ministry" ? "/uploads/5-16-26-cyrusfrnchtst.jpg" : ministry.slug === "ladies-caring-sharing-ministry" ? "/uploads/5-2-26-missionaryreport-editcopy.jpg" : ministry.image}
                         alt={ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
