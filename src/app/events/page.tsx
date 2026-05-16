@@ -101,7 +101,7 @@ function PastList({ events }: { events: ChurchEvent[] }) {
           Past Events
         </p>
         <h2 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
-          Looking back with thanksgiving.
+          Looking Back With Thanksgiving.
         </h2>
         <ul className="mt-10 grid gap-4 md:grid-cols-2">
           {events
