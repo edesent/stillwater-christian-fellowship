@@ -18,7 +18,7 @@ export function Footer() {
             {site.name}
           </p>
           <h2 className="serif mt-4 max-w-2xl text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-            Where faith and love meet in Hope, RI.
+            Where Faith and Love Meet in Hope... RI
           </h2>
         </div>
         <div className="grid justify-items-center gap-3 text-sm text-white/75 sm:grid-cols-2">
