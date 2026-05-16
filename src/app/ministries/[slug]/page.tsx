@@ -345,6 +345,25 @@ export default async function MinistryPage({
                 </div>
               ) : (
                 <div className="grid gap-6 sm:grid-cols-2">
+                  {ministry.slug === "mens-discipleship-breakfast-ministry" && (
+                    <figure className="border border-rule bg-paper p-3 sm:col-span-2">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-mist sm:aspect-[16/9]">
+                        <LightboxImage
+                          src="/uploads/5-16-26-longshotgroup.jpg"
+                          alt="Men gathered for fellowship and study at Men's Discipleship Breakfast"
+                          fill
+                          sizes="(min-width: 1024px) 60vw, 100vw"
+                          className="object-contain"
+                          title="Men's Discipleship Breakfast — Fellowship and Study"
+                          description={<p>5/16/26 - Fellowship and Study</p>}
+                        />
+                      </div>
+                      <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
+                        5/16/26 - Fellowship and Study
+                      </figcaption>
+                    </figure>
+                  )}
+
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist sm:aspect-[4/5]">
                       <LightboxImage
