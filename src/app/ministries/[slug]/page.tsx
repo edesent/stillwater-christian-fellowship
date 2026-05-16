@@ -213,6 +213,22 @@ export default async function MinistryPage({
                       )}
                     </figcaption>
                   </figure>
+                  </div>
+
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[16/9] overflow-hidden bg-mist">
+                      <Image
+                        src="/uploads/ministrytable.jpg"
+                        alt="Soul Winners Ministry outreach table"
+                        fill
+                        sizes="100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
+                      “Give 'Em Heaven!”
+                    </figcaption>
+                  </figure>
                 </div>
               )}
             </div>
