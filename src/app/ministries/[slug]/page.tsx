@@ -121,6 +121,11 @@ export default async function MinistryPage({
                       “..how shall they hear without a preacher?.. and how shall they preach, except they be sent?”<br />
                       <span className="text-2xl sm:text-3xl">- Romans 10:14-15</span>
                     </>
+                  ) : ministry.slug === "ladies-caring-sharing-ministry" ? (
+                    <>
+                      “..the angel.. said unto the women, Fear not ye: for I know that ye seek Jesus..”<br />
+                      <span className="text-2xl sm:text-3xl">- Matthew 28:5</span>
+                    </>
                   ) : (
                     "A Place for Fellowship, Service, and Growth"
                   )}
