@@ -322,14 +322,16 @@ function Welcome() {
     <section className="bg-paper py-20 sm:py-28">
       <div className="section-shell">
         <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-          <div className="relative min-h-[560px] overflow-hidden bg-mist soft-shadow">
-            <Image
-              src="/stillwater/bible-study.jpg"
-              alt="A Bible study gathering at Still Water Christian Fellowship"
-              fill
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover"
-            />
+          <div className="relative min-h-[560px] overflow-hidden border-4 border-sky/70 bg-mist p-2 shadow-lg ring-1 ring-clay/25">
+            <div className="relative h-full min-h-[540px] overflow-hidden bg-mist">
+              <Image
+                src="/stillwater/bible-study.jpg"
+                alt="A Bible study gathering at Still Water Christian Fellowship"
+                fill
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
 
           <div>
