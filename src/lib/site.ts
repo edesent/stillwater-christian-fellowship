@@ -10,7 +10,7 @@ export const site = {
   phone: "(401) 615-1956",
   email: "pastor.swcf@gmail.com",
   sermonAudio: "https://www.sermonaudio.com/broadcasters/stillwaterri/",
-  facebook: "https://www.facebook.com/groups/671903697328042",
+  facebook: "https://www.facebook.com/profile.php?id=61574553760473",
   give: "https://tithe.ly/give?c=1383729",
 };
 
