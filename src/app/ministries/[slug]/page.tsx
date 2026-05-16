@@ -174,8 +174,9 @@ export default async function MinistryPage({
                     </figcaption>
                   </figure>
                 </figure>
-              ) : (
-                <div className="grid gap-6 sm:grid-cols-2">
+              ) : ministry.slug === "soul-winners-ministry" ? (
+                <div className="space-y-6">
+                  <div className="grid gap-6 sm:grid-cols-2">
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                       <Image
