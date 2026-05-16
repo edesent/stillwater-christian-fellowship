@@ -349,6 +349,29 @@ export default async function MinistryPage({
                       “Give 'Em Heaven!”
                     </figcaption>
                   </figure>
+
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist sm:aspect-[16/9]">
+                      <LightboxImage
+                        src="/uploads/billboard.jpg"
+                        alt="Brother Bill's Bill Board for Soul Winners Ministry"
+                        fill
+                        sizes="100vw"
+                        className="object-contain"
+                        title="Soul Winners — Our Bill Board"
+                        description={
+                          <p>
+                            Our, "Bill Board".. We dearly miss our Brother,
+                            Bill.. His zeal to reach the lost with The Gospel of
+                            Christ was unmatched.
+                          </p>
+                        }
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
+                      Our, "Bill Board".. We dearly miss our Brother, Bill.. His zeal to reach the lost with The Gospel of Christ was unmatched.
+                    </figcaption>
+                  </figure>
                 </div>
               ) : (
                 <div className="grid gap-6 sm:grid-cols-2">
