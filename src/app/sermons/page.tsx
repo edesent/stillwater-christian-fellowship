@@ -135,6 +135,10 @@ function Hero({
           Unapologetically Preaches, by the Guidance of the Holy Spirit, with
           Conviction, Compassion, and Confidence…. And Love!
         </p>
+        <p className="mt-4 max-w-2xl text-lg font-bold italic leading-8 text-white/82 sm:text-xl">
+          The Scriptures remind us - “Man shall not live by bread alone, but by
+          every word that proceedeth out of the mouth of God.”
+        </p>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Recent messages from our Sunday Morning Worship Service and our
           Wednesday Evening Prayer Service at Still Water.{" "}
