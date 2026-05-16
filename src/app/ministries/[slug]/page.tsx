@@ -384,13 +384,13 @@ export default async function MinistryPage({
                   </figure>
 
                   <figure className="border border-rule bg-paper p-3">
-                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                    <div className="relative aspect-[3/4] overflow-hidden bg-mist sm:aspect-[4/5]">
                       <LightboxImage
                         src={ministry.slug === "mens-discipleship-breakfast-ministry" ? "/uploads/5-16-26-scottleading.jpg" : ministry.image}
                         alt={ministry.slug === "mens-discipleship-breakfast-ministry" ? "Brother Scott leads the Men's Discipleship Breakfast study" : ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
-                        className="object-cover"
+                        className="object-contain"
                         title={ministry.slug === "mens-discipleship-breakfast-ministry" ? "Men's Discipleship Breakfast — Brother Scott Leads the Study" : ministry.title}
                         description={
                           ministry.slug === "mens-discipleship-breakfast-ministry" ? (
