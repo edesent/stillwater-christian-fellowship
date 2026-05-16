@@ -433,7 +433,7 @@ export default async function MinistryPage({
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                      {ministry.slug === "mens-discipleship-breakfast-ministry" ? "The French Toast Didn't Stand a Chance!" : ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : "Placeholder caption for future ministry photos and event highlights."}
+                      {ministry.slug === "mens-discipleship-breakfast-ministry" ? "The French Toast Didn't Stand a Chance!" : ministry.slug === "visitation-ministry" ? "Our Most Senior Saint with Pastor Bob" : ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : "Placeholder caption for future ministry photos and event highlights."}
                     </figcaption>
                   </figure>
 
