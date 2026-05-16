@@ -118,7 +118,7 @@ export default async function MinistryPage({
                 <h2 className="serif mt-4 text-balance text-4xl font-bold italic leading-tight text-ink sm:text-5xl">
                   {ministry.slug === "soul-winners-ministry" ? (
                     <>
-                      ..how shall they hear without a preacher?.. and how shall they preach, except they be sent?<br />
+                      “..how shall they hear without a preacher?.. and how shall they preach, except they be sent?”<br />
                       <span className="text-2xl sm:text-3xl">- Romans 10:14-15</span>
                     </>
                   ) : (
