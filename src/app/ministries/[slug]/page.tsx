@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { LightboxImage } from "@/components/lightbox-image";
 import { ministries } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -167,12 +168,29 @@ export default async function MinistryPage({
 
                   <figure className="mt-8 border-t border-rule pt-6">
                     <div className="relative aspect-[5/3] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src="/uploads/day3-batch1-start-teaching4.jpg"
                         alt="Children hearing God's Word during VBS"
                         fill
                         sizes="(min-width: 1024px) 36vw, 100vw"
                         className="object-cover"
+                        title="VBS — Teaching God's Word"
+                        description={
+                          <>
+                            <p>
+                              Children hearing the Word of God preached during
+                              Vacation Bible School at Still Water.
+                            </p>
+                            <p className="mt-3 italic">
+                              “faith cometh by hearing, and hearing by the word
+                              of God”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — Romans 10:17
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <figcaption className="mt-4 text-center text-sm italic leading-6 text-ink-soft">
