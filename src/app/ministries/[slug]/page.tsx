@@ -230,6 +230,38 @@ export default async function MinistryPage({
                     </figcaption>
                   </figure>
                 </div>
+              ) : (
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <Image
+                        src={ministry.image}
+                        alt={ministry.title}
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
+                      Placeholder caption for future ministry photos and event highlights.
+                    </figcaption>
+                  </figure>
+
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <Image
+                        src={ministry.image}
+                        alt={ministry.title}
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
+                      Additional placeholder image area for ministry activities and fellowship.
+                    </figcaption>
+                  </figure>
+                </div>
               )}
             </div>
 
