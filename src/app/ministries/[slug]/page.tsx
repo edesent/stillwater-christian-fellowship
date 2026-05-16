@@ -34,7 +34,9 @@ export default async function MinistryPage({
           ? <>The Bible tells us that it is <em>"more blessed to give than to receive."</em> The Rescue Mission has taken that Truth to Heart and is all about Giving. They are not just <em>"hearers of the Word, but doers also."</em><br />Jesus reminds us in Luke 3:11 - <em>"..He that hath two coats, let him impart to him that hath none; and he that hath meat, let him do likewise.."</em> This is Truly living out the command to <em>"do for the least!"</em><br />SWCF whole-heartedly supports this Blessing Ministry.</>
           : ministry.slug === "ladies-caring-sharing-ministry"
             ? <>The Bible reminds us that our Search for The Truth of Christ, we will not be ashamed.<br />It is declared concerning that Great Wisdom of the Scriptures, Christ, that - <em>"..those that seek me early shall find me."</em><br />The Ladies of SWCF certainly Seek after the Lord with a Great Love and Zeal.. All rooted in an Unshakeable Faith.</>
-            : "This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.";
+            : ministry.slug === "mens-discipleship-breakfast-ministry"
+              ? <>A Disciple is a Follower and a Learner. Led by the indwelling Holy Spirit, the men of SWCF do indeed, <em>"follow on to know the Lord"</em><br />They readily Desire for, <em>"the word of Christ to dwell in them richly"</em>!</>
+              : "This section is ready for expanded ministry information, testimony, outreach details, schedules, announcements, and future ministry updates.";
 
   const ministryScripture =
     ministry.slug === "visitation-ministry"
