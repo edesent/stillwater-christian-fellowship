@@ -78,7 +78,11 @@ export default async function MinistryPage({
       <main className="bg-paper text-ink">
         <section className="relative min-h-[52svh] overflow-hidden bg-ink text-white">
           <Image
-            src={ministry.image}
+            src={
+              ministry.slug === "childrens-ministry-vbs"
+                ? "/uploads/day3-batch1-start-teaching4.jpg"
+                : ministry.image
+            }
             alt={ministry.title}
             fill
             priority
