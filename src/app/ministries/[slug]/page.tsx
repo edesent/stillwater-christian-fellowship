@@ -143,21 +143,56 @@ export default async function MinistryPage({
                 <figure className="border border-rule bg-paper p-3">
                   <div className="grid gap-3 sm:grid-cols-2">
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src="/uploads/img1.jpg"
                         alt="Child wearing armour for Children's Ministry"
                         fill
                         sizes="(min-width: 1024px) 16vw, 50vw"
                         className="object-contain object-top"
+                        title="Children's Ministry — The Armour of God"
+                        description={
+                          <>
+                            <p>
+                              The children of SWCF learning what it means to
+                              put on the whole armour of God.
+                            </p>
+                            <p className="mt-3 italic">
+                              “Put on the whole armour of God, that ye may be
+                              able to stand against the wiles of the devil.”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — Ephesians 6:11
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src="/uploads/img2.jpg"
                         alt="Child wearing armour for Children's Ministry"
                         fill
                         sizes="(min-width: 1024px) 16vw, 50vw"
                         className="object-contain object-top"
+                        title="Children's Ministry — The Armour of God"
+                        description={
+                          <>
+                            <p>
+                              Suited up and ready to stand — our children
+                              learning the Christian soldier's armour piece by
+                              piece.
+                            </p>
+                            <p className="mt-3 italic">
+                              “Put on the whole armour of God, that ye may be
+                              able to stand against the wiles of the devil.”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — Ephesians 6:11
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                   </div>
@@ -204,50 +239,99 @@ export default async function MinistryPage({
                   <div className="grid gap-6 sm:grid-cols-2">
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src="/uploads/tractfolding6-25.jpg"
                         alt="Tract Folding and Door Hanger Prep"
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
+                        title="Soul Winners — Tract & Door Hanger Prep"
+                        description={
+                          <>
+                            <p>
+                              Members of SWCF folding gospel tracts and
+                              preparing door hangers ahead of going out into
+                              Hope and the surrounding area.
+                            </p>
+                            <p className="mt-3 italic">
+                              “Go ye into all the world, and preach the gospel
+                              to every creature.”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — Mark 16:15
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                      {ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : "Placeholder caption for future ministry photos and event highlights."}
+                      Tract Folding and Door Hanger Prep
                     </figcaption>
                   </figure>
 
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src={ministry.image}
                         alt={ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
+                        title="Soul Winners — Sharing the Truth"
+                        description={
+                          <>
+                            <p>
+                              The saints of Still Water going out to share the
+                              life-changing truth of Jesus Christ.
+                            </p>
+                            <p className="mt-3 italic">
+                              “ye shall know the truth, and the truth shall
+                              make you free.”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — John 8:32
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
-                      {ministry.slug === "soul-winners-ministry" ? (
-                        <>
-                          “ye shall know the truth, and the truth shall make you free.”<br />
-                          <span className="font-bold not-italic">- John 8:32</span>
-                        </>
-                      ) : (
-                        "Additional placeholder image area for ministry activities and fellowship."
-                      )}
+                      “ye shall know the truth, and the truth shall make you free.”<br />
+                      <span className="font-bold not-italic">- John 8:32</span>
                     </figcaption>
                   </figure>
                   </div>
 
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[16/9] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src="/uploads/ministrytable.jpg"
                         alt="Soul Winners Ministry outreach table"
                         fill
                         sizes="100vw"
                         className="object-cover"
+                        title="Soul Winners — Give ’Em Heaven!"
+                        description={
+                          <>
+                            <p>
+                              The “Give ’Em Heaven” outreach table — meeting
+                              our neighbors with the message of salvation,
+                              gospel tracts in hand and the love of Christ in
+                              our hearts.
+                            </p>
+                            <p className="mt-3 italic">
+                              “..Go out into the highways and hedges, and
+                              compel them to come in, that my house may be
+                              filled.”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — Luke 14:23
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
@@ -259,12 +343,35 @@ export default async function MinistryPage({
                 <div className="grid gap-6 sm:grid-cols-2">
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src={ministry.slug === "ladies-caring-sharing-ministry" ? "/uploads/5-2-26-missionaryreport-editcopy.jpg" : ministry.image}
                         alt={ministry.slug === "ladies-caring-sharing-ministry" ? "Brazil Mission Trip Report" : ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
+                        title={ministry.slug === "ladies-caring-sharing-ministry" ? "Ladies Ministry — Brazil Mission Trip Report" : ministry.title}
+                        description={
+                          ministry.slug === "ladies-caring-sharing-ministry" ? (
+                            <>
+                              <p>
+                                The Ladies Caring & Sharing fellowship hearing
+                                a missionary report from Brazil — encouraging
+                                one another in the worldwide work of the
+                                Gospel.
+                              </p>
+                              <p className="mt-3 italic">
+                                “How beautiful are the feet of them that preach
+                                the gospel of peace.”
+                                <br />
+                                <span className="font-bold not-italic">
+                                  — Romans 10:15
+                                </span>
+                              </p>
+                            </>
+                          ) : (
+                            <p>{ministry.body}</p>
+                          )
+                        }
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
@@ -274,12 +381,25 @@ export default async function MinistryPage({
 
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                      <Image
+                      <LightboxImage
                         src={ministry.image}
                         alt={ministry.title}
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
+                        title={ministry.title}
+                        description={
+                          <>
+                            <p>{ministry.body}</p>
+                            <p className="mt-3 italic">
+                              “{ministryScripture.text}”
+                              <br />
+                              <span className="font-bold not-italic">
+                                — {ministryScripture.reference}
+                              </span>
+                            </p>
+                          </>
+                        }
                       />
                     </div>
                     <figcaption className="mt-3 text-sm italic leading-6 text-ink-soft">
