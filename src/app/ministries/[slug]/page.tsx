@@ -180,8 +180,8 @@ export default async function MinistryPage({
                   <figure className="border border-rule bg-paper p-3">
                     <div className="relative aspect-[4/3] overflow-hidden bg-mist">
                       <Image
-                        src={ministry.slug === "soul-winners-ministry" ? "/uploads/tractfolding6-25.jpg" : ministry.image}
-                        alt={ministry.slug === "soul-winners-ministry" ? "Tract Folding and Door Hanger Prep" : ministry.title}
+                        src="/uploads/tractfolding6-25.jpg"
+                        alt="Tract Folding and Door Hanger Prep"
                         fill
                         sizes="(min-width: 1024px) 30vw, 100vw"
                         className="object-cover"
