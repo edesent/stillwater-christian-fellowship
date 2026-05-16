@@ -36,9 +36,9 @@ export default function Home() {
       <main id="home" className="overflow-hidden bg-paper">
         <Header />
         <Hero />
+        <Welcome />
         <Visit />
         <Events />
-        <Welcome />
         <Ministries />
         <Leadership />
         <Worship />
