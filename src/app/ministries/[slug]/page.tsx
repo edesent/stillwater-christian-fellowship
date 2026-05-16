@@ -140,6 +140,11 @@ export default async function MinistryPage({
                       “..If ye continue in my word, then are ye my disciples indeed”<br />
                       <span className="text-2xl sm:text-3xl">- John 8:31</span>
                     </>
+                  ) : ministry.slug === "visitation-ministry" ? (
+                    <>
+                      “I was an hungred, and ye gave me meat.. thirsty, and ye gave me drink.. a stranger, and ye took me in:... naked, and ye clothed me.. sick, and ye visited me.. in prison, and ye came unto me.”<br />
+                      <span className="text-2xl sm:text-3xl">- Matthew 25:35-36</span>
+                    </>
                   ) : (
                     "A Place for Fellowship, Service, and Growth"
                   )}
