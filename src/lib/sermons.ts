@@ -154,7 +154,7 @@ function toSermon(s: ApiSermon): Sermon {
     id: s.sermonID,
     title: title.replace(/\bDestina\b/g, "Destinations"),
     speaker: s.speaker?.displayName ?? "",
-    bibleText: title === "Destina" && !s.bibleText ? "Luke 16:19-26" : s.bibleText ?? "",
+    bibleText: title === "Destina" ? "Luke 16:19-26" : s.bibleText ?? "",
     eventType: s.displayEventType ?? s.eventType ?? "",
     description: (s.keywords ?? "").replace(/\s+/g, " ").trim(),
     audioUrl: audio?.streamURL ?? audio?.downloadURL ?? "",
