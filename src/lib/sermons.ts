@@ -149,12 +149,13 @@ function toSermon(s: ApiSermon): Sermon {
     `https://media.sermonaudio.com/thumbnails/${s.sermonID}.jpg` ||
     FALLBACK_COVER;
   const title = s.displayTitle || s.fullTitle || "";
+  const displayTitle = title.replace(/\bDestina\b/g, "Destinations");
 
   return {
     id: s.sermonID,
-    title: title.replace(/\bDestina\b/g, "Destinations"),
+    title: displayTitle,
     speaker: s.speaker?.displayName ?? "",
-    bibleText: title === "Destina" ? "Luke 16:19-26" : s.bibleText ?? "",
+    bibleText: displayTitle === "Destinations" ? "Luke 16:19-26" : s.bibleText ?? "",
     eventType: s.displayEventType ?? s.eventType ?? "",
     description: (s.keywords ?? "").replace(/\s+/g, " ").trim(),
     audioUrl: audio?.streamURL ?? audio?.downloadURL ?? "",
