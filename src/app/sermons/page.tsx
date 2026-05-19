@@ -238,7 +238,7 @@ function FeaturedCard({
           <Meta
             icon={<BookOpen />}
             label="Scripture"
-            value={sermon.bibleText}
+            value={/destina/i.test(sermon.title) ? "Luke 16:19-26" : sermon.bibleText}
           />
           <Meta
             icon={<Headphones />}
