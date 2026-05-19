@@ -496,9 +496,9 @@ function SermonRow({
             <h3 className="serif mt-1 text-balance text-xl font-bold leading-tight text-ink sm:text-2xl">
               {sermon.title}
             </h3>
-            {(sermon.bibleText || sermon.title === "Destinations") ? (
+            {(sermon.bibleText || /destina/i.test(sermon.title)) ? (
               <p className="mt-1 text-sm font-semibold text-fern">
-                {sermon.title === "Destinations"
+                {/destina/i.test(sermon.title)
                   ? "Luke 16:19-26"
                   : sermon.bibleText}
               </p>
