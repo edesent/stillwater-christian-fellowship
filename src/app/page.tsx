@@ -191,25 +191,10 @@ function HappeningTodayCard() {
           className="object-cover"
         />
       </div>
-      <div className="p-5">
-        <p className="text-sm leading-7 text-ink-soft">
-          {happeningToday.description}
-        </p>
-        <p className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-clay transition group-hover:text-fern">
-          {happeningToday.cta}
-          <ArrowUpRight aria-hidden="true" className="size-3.5" />
-        </p>
-      </div>
     </article>
   );
 
-  if (!happeningToday.href) return card;
-
-  return (
-    <Link href={happeningToday.href} className="group block w-full lg:max-w-[360px]">
-      {card}
-    </Link>
-  );
+  return card;
 }
 
 function HeroDayStat({
