@@ -30,6 +30,7 @@ import {
 
 const happeningToday = {
   enabled: true,
+  expiresAfter: "2026-05-20",
   title: "Happening Today!",
   image: "/uploads/5-20-26-prayerservice.png",
   alt: "Invitation for today's prayer service",
