@@ -188,7 +188,7 @@ function HappeningTodayCard() {
           alt={happeningToday.alt}
           fill
           sizes="(min-width: 1024px) 360px, 100vw"
-          className="object-cover"
+          className="object-contain p-2"
         />
       </div>
     </article>
