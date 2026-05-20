@@ -169,6 +169,15 @@ function Hero() {
 function HappeningTodayCard() {
   if (!happeningToday.enabled) return null;
 
+  const today = new Date().toISOString().split("T")[0];
+
+  if (
+    "expiresAfter" in happeningToday &&
+    today > happeningToday.expiresAfter
+  ) {
+    return null;
+  }
+
   const card = (
     <article className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md lg:ml-auto">
       <div className="bg-sky px-5 py-3 text-ink">
