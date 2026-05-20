@@ -34,9 +34,6 @@ const happeningToday = {
   title: "Happening Today!",
   image: "/uploads/5-20-26-prayerservice.png",
   alt: "Invitation for today's prayer service",
-  description: "Join us today at Still Water Christian Fellowship.",
-  href: "/events",
-  cta: "View Details",
 } as const;
 
 export default function Home() {
