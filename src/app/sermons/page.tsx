@@ -345,7 +345,7 @@ function Archive({
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
               {page > 1
                 ? `Older messages — page ${page}.`
-                : "Past messages, ready when you are."}
+                : "Past Messages... Ready When You Are!"}
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-ink-soft">
