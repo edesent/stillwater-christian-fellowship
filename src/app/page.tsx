@@ -176,7 +176,7 @@ function HappeningTodayCard() {
   }
 
   const card = (
-    <article className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md lg:ml-auto">
+    <article className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md lg:ml-auto lg:max-w-[440px]">
       <div className="bg-sky px-5 py-3 text-ink">
         <p className="text-xs font-black uppercase tracking-[0.22em]">
           {happeningToday.title}
