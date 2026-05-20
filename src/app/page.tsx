@@ -29,10 +29,10 @@ import {
 } from "@/lib/site";
 
 const happeningToday = {
-  enabled: false,
+  enabled: true,
   title: "Happening Today!",
-  image: "/uploads/happening-today.jpg",
-  alt: "Invitation for today's church event",
+  image: "/uploads/5-20-26-prayerservice.png",
+  alt: "Invitation for today's prayer service",
   description: "Join us today at Still Water Christian Fellowship.",
   href: "/events",
   cta: "View Details",
