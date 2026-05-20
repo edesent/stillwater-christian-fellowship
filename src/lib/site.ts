@@ -188,7 +188,7 @@ export const ministries = [
     slug: "visitation-ministry",
     title: "Visitation Ministry",
     image: "/uploads/day5-batch1-pastorhariet.jpg",
-    body: "Caring for our church family and reaching the community through home and hospital visits, prayer, and encouragement.",
+    body: "Caring for our Church Family and Encouraging the Community through Home and Hospital visits, and Fervent Prayer.",
     href: "/ministries/visitation-ministry",
     cta: "More About Visitation Ministry",
   },
