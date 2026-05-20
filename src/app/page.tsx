@@ -21,13 +21,22 @@ import {
   elders,
   leadershipPortraits,
   ministries,
-  pastors,
   services,
   site,
   siteUrl,
   churchVerses,
   visitorNotes,
 } from "@/lib/site";
+
+const happeningToday = {
+  enabled: false,
+  title: "Happening Today!",
+  image: "/uploads/happening-today.jpg",
+  alt: "Invitation for today's church event",
+  description: "Join us today at Still Water Christian Fellowship.",
+  href: "/events",
+  cta: "View Details",
+} as const;
 
 export default function Home() {
   return (
@@ -64,37 +73,41 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.84),rgba(58,155,197,0.1)_50%,rgba(8,43,62,0.34))]" />
 
       <div className="section-shell relative flex min-h-[84svh] flex-col justify-end pb-8 pt-32 sm:pb-10">
-        <div className="max-w-4xl pb-10">
-          <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
-            <Sparkles aria-hidden="true" className="size-4" />
-            Hope, Rhode Island
-          </p>
-          <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.02] sm:text-7xl lg:text-8xl">
-            Still Water Christian Fellowship
-          </h1>
-          <p className="serif mt-6 max-w-3xl text-balance text-2xl font-semibold italic leading-tight text-sky sm:text-3xl">
-            Proclaiming the Gospel truth of Jesus Christ to a lost world.
-          </p>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-            A Bible-Believing, Christ-Honoring, Independent Baptist Church
-            shining the Light of the Gospel in the Village of Hope, Rhode Island.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#visit"
-              className="inline-flex items-center gap-2 bg-sky px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white"
-            >
-              Plan Your Visit
-              <ArrowRight aria-hidden="true" className="size-4" />
-            </a>
-            <a
-              href="/sermons"
-              className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
-            >
-              <PlayCircle aria-hidden="true" className="size-4" />
-              Listen to Sermons
-            </a>
+        <div className="grid gap-8 pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,360px)] lg:items-end">
+          <div className="max-w-4xl">
+            <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
+              <Sparkles aria-hidden="true" className="size-4" />
+              Hope, Rhode Island
+            </p>
+            <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.02] sm:text-7xl lg:text-8xl">
+              Still Water Christian Fellowship
+            </h1>
+            <p className="serif mt-6 max-w-3xl text-balance text-2xl font-semibold italic leading-tight text-sky sm:text-3xl">
+              Proclaiming the Gospel truth of Jesus Christ to a lost world.
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
+              A Bible-Believing, Christ-Honoring, Independent Baptist Church
+              shining the Light of the Gospel in the Village of Hope, Rhode Island.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <a
+                href="#visit"
+                className="inline-flex items-center gap-2 bg-sky px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white"
+              >
+                Plan Your Visit
+                <ArrowRight aria-hidden="true" className="size-4" />
+              </a>
+              <a
+                href="/sermons"
+                className="inline-flex items-center gap-2 border border-white/42 px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-white transition hover:border-white hover:bg-white hover:text-ink"
+              >
+                <PlayCircle aria-hidden="true" className="size-4" />
+                Listen to Sermons
+              </a>
+            </div>
           </div>
+
+          <HappeningTodayCard />
         </div>
 
         <div className="grid border border-white/16 bg-white/10 backdrop-blur-md md:grid-cols-3">
@@ -149,6 +162,46 @@ function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function HappeningTodayCard() {
+  if (!happeningToday.enabled) return null;
+
+  const card = (
+    <article className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md lg:ml-auto">
+      <div className="bg-sky px-5 py-3 text-ink">
+        <p className="text-xs font-black uppercase tracking-[0.22em]">
+          {happeningToday.title}
+        </p>
+      </div>
+      <div className="relative aspect-[4/3] bg-mist">
+        <Image
+          src={happeningToday.image}
+          alt={happeningToday.alt}
+          fill
+          sizes="(min-width: 1024px) 360px, 100vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="p-5">
+        <p className="text-sm leading-7 text-ink-soft">
+          {happeningToday.description}
+        </p>
+        <p className="mt-4 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-clay transition group-hover:text-fern">
+          {happeningToday.cta}
+          <ArrowUpRight aria-hidden="true" className="size-3.5" />
+        </p>
+      </div>
+    </article>
+  );
+
+  if (!happeningToday.href) return card;
+
+  return (
+    <Link href={happeningToday.href} className="group block w-full lg:max-w-[360px]">
+      {card}
+    </Link>
   );
 }
 
@@ -575,7 +628,6 @@ function Worship() {
 }
 
 function Leadership() {
-  const assistantPastor = null;
   const otherElders = elders.filter(
     (e) =>
       !leadershipPortraits.some((p) =>
