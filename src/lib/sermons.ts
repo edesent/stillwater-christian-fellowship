@@ -155,7 +155,12 @@ function toSermon(s: ApiSermon): Sermon {
     id: s.sermonID,
     title: displayTitle,
     speaker: s.speaker?.displayName ?? "",
-    bibleText: displayTitle === "Destinations" ? "Luke 16:19-26" : s.bibleText ?? "",
+    bibleText:
+      displayTitle === "Destinations"
+        ? "Luke 16:19-26"
+        : displayTitle === "Extended Encouragement"
+          ? "Psalm 48"
+          : s.bibleText ?? "",
     eventType: s.displayEventType ?? s.eventType ?? "",
     description: (s.keywords ?? "").replace(/\s+/g, " ").trim(),
     audioUrl: audio?.streamURL ?? audio?.downloadURL ?? "",
