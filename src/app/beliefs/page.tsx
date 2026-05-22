@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { site, siteUrl, statementOfFaith } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `What We Believe — ${site.name}`,
+  title: "What We Believe",
   description: `Statement of Faith for ${site.name} — the doctrines that anchor every sermon, prayer, and ministry.`,
   alternates: { canonical: `${siteUrl}/beliefs` },
 };

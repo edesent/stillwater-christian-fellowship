@@ -13,7 +13,7 @@ import {
 import { site, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Events — ${site.name}`,
+  title: "Events",
   description: `Upcoming events and gatherings at ${site.name} in Hope, Rhode Island.`,
   alternates: { canonical: `${siteUrl}/events` },
 };

@@ -7,7 +7,7 @@ import { Header } from "@/components/header";
 import { churchHistory, site, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Our History — ${site.name}`,
+  title: "Our History",
   description: `The story of Still Water Christian Fellowship, from the 1765 Hope Furnace ironworks to the 1875 founding of Hope Church in the Village of Hope, Rhode Island.`,
   alternates: { canonical: `${siteUrl}/history` },
 };

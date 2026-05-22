@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { pastorLetter, site, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `From The Pastor — ${site.name}`,
+  title: "From The Pastor",
   description:
     "A message of Gospel hope from Pastor Bob Levesque of Still Water Christian Fellowship in Hope, Rhode Island.",
   alternates: { canonical: `${siteUrl}/from-the-pastor` },

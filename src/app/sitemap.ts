@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteUrl } from "@/lib/site";
+import { ministries, siteUrl } from "@/lib/site";
 import { getSermons } from "@/lib/sermons";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -74,5 +74,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   }
 
-  return [...staticRoutes, ...sermonPages];
+  const ministryPages: MetadataRoute.Sitemap = ministries.map((m) => ({
+    url: `${siteUrl}/ministries/${m.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  return [...staticRoutes, ...ministryPages, ...sermonPages];
 }

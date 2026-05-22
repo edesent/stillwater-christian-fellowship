@@ -6,7 +6,7 @@ import { Header } from "@/components/header";
 import { site, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Give — ${site.name}`,
+  title: "Give",
   description: `Give to the ministry of ${site.name} in Hope, Rhode Island. Online giving is processed securely through Tithe.ly.`,
   alternates: { canonical: `${siteUrl}/give` },
 };

@@ -39,11 +39,11 @@ export async function generateMetadata({
       : `Listen to recent sermons from ${site.name} in Hope, Rhode Island — live on Sunday at 10:30 AM.`;
 
   return {
-    title: `Sermons${titleSuffix} — ${site.name}`,
+    title: `Sermons${titleSuffix}`,
     description,
     alternates: { canonical },
     openGraph: {
-      title: `Sermons${titleSuffix} — ${site.name}`,
+      title: `Sermons${titleSuffix} · ${site.name} · Hope, RI`,
       description,
       url: canonical,
       type: "website",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -5,12 +6,35 @@ import { ArrowLeft } from "lucide-react";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { LightboxImage } from "@/components/lightbox-image";
-import { ministries } from "@/lib/site";
+import { ministries, siteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return ministries.map((ministry) => ({
     slug: ministry.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const ministry = ministries.find((m) => m.slug === slug);
+  if (!ministry) return { title: "Ministry not found" };
+  const canonical = `${siteUrl}/ministries/${ministry.slug}`;
+  return {
+    title: ministry.title,
+    description: ministry.body,
+    alternates: { canonical },
+    openGraph: {
+      title: `${ministry.title} · Still Water Christian Fellowship · Hope, RI`,
+      description: ministry.body,
+      url: canonical,
+      type: "article",
+      images: [ministry.image],
+    },
+  };
 }
 
 export default async function MinistryPage({

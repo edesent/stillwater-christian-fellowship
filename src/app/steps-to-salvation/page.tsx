@@ -19,12 +19,12 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Steps to Salvation — ${site.name}`,
+  title: "Steps to Salvation",
   description:
     "The Romans Road to salvation — a clear, Scripture-rooted walk through the Gospel from Pastor Bob Levesque and Still Water Christian Fellowship in Hope, Rhode Island.",
   alternates: { canonical: `${siteUrl}/steps-to-salvation` },
   openGraph: {
-    title: `Steps to Salvation — ${site.name}`,
+    title: `Steps to Salvation · ${site.name} · Hope, RI`,
     description:
       "The Romans Road to salvation — a clear, Scripture-rooted walk through the Gospel.",
     url: `${siteUrl}/steps-to-salvation`,
