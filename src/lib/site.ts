@@ -1,4 +1,4 @@
-export const siteUrl = "https://www.stillwaterhoperi.org";
+export const siteUrl = "https://www.stillwaterri.org";
 
 export const site = {
   name: "Still Water Christian Fellowship",
