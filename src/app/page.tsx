@@ -33,7 +33,7 @@ const happeningToday = {
   expiresAfter: "2026-05-24",
   title: "Happening Sunday!",
   image: "/uploads/5-24-26-memorialday.png",
-  alt: "Memorial Day Sunday morning invitation for Still Water Christian Fellowship",
+  alt: "Memorial Day Sunday morning invitation for Still Water Christian Fellowship event",
 } as const;
 
 export default function Home() {
