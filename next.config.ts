@@ -22,6 +22,21 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/about-us", destination: "/", permanent: true },
+      { source: "/our-history", destination: "/history", permanent: true },
+      { source: "/our-ministries", destination: "/#ministries", permanent: true },
+      { source: "/bible-study", destination: "/sermons", permanent: true },
+      { source: "/worship", destination: "/#worship", permanent: true },
+      { source: "/connect", destination: "/#contact", permanent: true },
+      { source: "/contact", destination: "/#contact", permanent: true },
+      { source: "/contact-us", destination: "/#contact", permanent: true },
+      { source: "/stream-test-page", destination: "/sermons", permanent: true },
+      { source: "/pastor", destination: "/from-the-pastor", permanent: true },
+      { source: "/our-pastor", destination: "/from-the-pastor", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
