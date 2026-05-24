@@ -605,13 +605,14 @@ function Worship() {
             praise. We Shout His Praises.. We lift His Holy Name on High!
           </p>
         </div>
-        <div className="relative aspect-[4/3] overflow-hidden bg-fern soft-shadow">
+        <div className="overflow-hidden bg-fern soft-shadow">
           <Image
             src="/uploads/pjoedirectschoir-cropped-4-26.jpg"
             alt="Pastor Joe directing the Still Water Christian Fellowship choir"
-            fill
+            width={599}
+            height={701}
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-contain"
+            className="h-auto w-full"
           />
         </div>
       </div>
