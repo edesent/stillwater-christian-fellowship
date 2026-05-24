@@ -611,7 +611,7 @@ function Worship() {
             alt="Pastor Joe directing the Still Water Christian Fellowship choir"
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
       </div>
