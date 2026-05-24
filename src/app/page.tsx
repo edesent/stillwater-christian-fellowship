@@ -605,15 +605,27 @@ function Worship() {
             praise. We Shout His Praises.. We lift His Holy Name on High!
           </p>
         </div>
-        <div className="overflow-hidden bg-fern soft-shadow">
-          <Image
-            src="/uploads/pjoedirectschoir-cropped-4-26.jpg"
-            alt="Pastor Joe directing the Still Water Christian Fellowship choir"
-            width={599}
-            height={701}
-            sizes="(min-width: 1024px) 52vw, 100vw"
-            className="h-auto w-full"
-          />
+        <div className="grid gap-5">
+          <div className="overflow-hidden bg-fern soft-shadow">
+            <Image
+              src="/uploads/pjoedirectschoir-cropped-4-26.jpg"
+              alt="Pastor Joe directing the Still Water Christian Fellowship choir"
+              width={599}
+              height={701}
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="h-auto w-full"
+            />
+          </div>
+          <div className="overflow-hidden bg-fern soft-shadow">
+            <Image
+              src="/uploads/sing-memday-1-cropped.jpg"
+              alt="Still Water Christian Fellowship praise team singing on Memorial Day"
+              width={2048}
+              height={518}
+              sizes="(min-width: 1024px) 52vw, 100vw"
+              className="h-auto w-full"
+            />
+          </div>
         </div>
       </div>
     </section>
