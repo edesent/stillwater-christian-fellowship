@@ -112,12 +112,12 @@ function Hero({
   return (
     <section className="relative bg-ink text-white">
       <Image
-        src="/uploads/11-9-25-cover-the-glory-of-the-lord-filled-the-tabernacle.png"
+        src="/uploads/backgroundlayerimage.png"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-contain object-center opacity-50"
+        className="object-cover object-center opacity-70"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.96),rgba(13,75,105,0.78)_50%,rgba(58,155,197,0.32))]" />
 
