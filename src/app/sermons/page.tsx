@@ -112,7 +112,7 @@ function Hero({
   return (
     <section className="relative bg-ink text-white">
       <Image
-        src="/uploads/backgroundlayerimage.png"
+        src="/uploads/backgroundlayerimage-flipped.png"
         alt=""
         fill
         priority
