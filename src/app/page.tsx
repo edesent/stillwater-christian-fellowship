@@ -607,8 +607,8 @@ function Worship() {
         </div>
         <div className="relative aspect-[4/3] overflow-hidden bg-fern soft-shadow">
           <Image
-            src="/stillwater/worship.jpg"
-            alt="Still Water Christian Fellowship worship team"
+            src="/uploads/pjoedirectschoir-cropped-4-26.jpg"
+            alt="Pastor Joe directing the Still Water Christian Fellowship choir"
             fill
             sizes="(min-width: 1024px) 52vw, 100vw"
             className="object-cover"
