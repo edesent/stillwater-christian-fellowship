@@ -30,7 +30,7 @@ import {
 
 const happeningToday = {
   enabled: true,
-  expiresAfter: "2026-05-24",
+  expiresAfter: "2026-05-25",
   title: "Happening Sunday!",
   image: "/memday26.png",
   alt: "Memorial Day Sunday morning invitation for Still Water Christian Fellowship event",
