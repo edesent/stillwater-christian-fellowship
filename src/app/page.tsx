@@ -30,7 +30,7 @@ import {
 
 const happeningToday = {
   enabled: true,
-  expiresAfter: "2026-05-28",
+  expiresAfter: "2026-05-27",
   title: "Happening Wednesday",
   image: "/uploads/5-27-26-bibstud-praymtg.png",
   alt: "Wednesday Bible Study and Prayer Meeting invitation for Still Water Christian Fellowship",
