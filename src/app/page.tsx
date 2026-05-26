@@ -30,10 +30,10 @@ import {
 
 const happeningToday = {
   enabled: true,
-  expiresAfter: "2026-05-25",
-  title: "Happening Today!",
-  image: "/memday26.png",
-  alt: "Memorial Day Sunday morning invitation for Still Water Christian Fellowship event",
+  expiresAfter: "2026-05-28",
+  title: "Happening Wednesday",
+  image: "/uploads/5-27-26-bibstud-praymtg.png",
+  alt: "Wednesday Bible Study and Prayer Meeting invitation for Still Water Christian Fellowship",
 } as const;
 
 export default function Home() {
