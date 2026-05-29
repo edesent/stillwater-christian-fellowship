@@ -29,7 +29,7 @@ import {
 } from "@/lib/site";
 
 const happeningToday = {
-  enabled: true,
+  enabled: false,
   expiresAfter: "2026-05-27",
   title: "Happening Wednesday",
   image: "/uploads/5-27-26-bibstud-praymtg.png",
