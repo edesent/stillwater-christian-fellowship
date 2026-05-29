@@ -30,13 +30,15 @@ import {
 
 const happeningToday: {
   enabled: boolean;
-  startsOn?: string;
-  expiresAfter?: string;
+  startsAt?: string;
+  expiresAt?: string;
   title: string;
   image: string;
   alt: string;
 } = {
   enabled: true,
+  startsAt: "2026-05-31T00:00:00-04:00",
+  expiresAt: "2026-06-01T06:00:00-04:00",
   title: "Happening Sunday",
   image: "/uploads/happeningsunday-5-31-26-morningservice.png",
   alt: "Sunday Morning invitation for Still Water Christian Fellowship",
