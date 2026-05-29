@@ -173,6 +173,7 @@ function HappeningTodayCard() {
 
   if (
     "startsOn" in happeningToday &&
+    happeningToday.startsOn &&
     today < happeningToday.startsOn
   ) {
     return null;
@@ -180,6 +181,7 @@ function HappeningTodayCard() {
 
   if (
     "expiresAfter" in happeningToday &&
+    happeningToday.expiresAfter &&
     today > happeningToday.expiresAfter
   ) {
     return null;
