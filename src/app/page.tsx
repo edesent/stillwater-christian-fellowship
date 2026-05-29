@@ -175,24 +175,12 @@ function HappeningTodayCard() {
   if (!happeningToday.enabled) return null;
 
   const now = new Date();
-  const eastern = new Date(
-    now.toLocaleString("en-US", { timeZone: "America/New_York" })
-  );
-  const today = eastern.toISOString().split("T")[0];
 
-  if (
-    "startsOn" in happeningToday &&
-    happeningToday.startsOn &&
-    today < happeningToday.startsOn
-  ) {
+  if (happeningToday.startsAt && now < new Date(happeningToday.startsAt)) {
     return null;
   }
 
-  if (
-    "expiresAfter" in happeningToday &&
-    happeningToday.expiresAfter &&
-    today > happeningToday.expiresAfter
-  ) {
+  if (happeningToday.expiresAt && now >= new Date(happeningToday.expiresAt)) {
     return null;
   }
 
