@@ -30,6 +30,7 @@ import {
 
 const happeningToday = {
   enabled: true,
+  startsOn: "2026-05-31",
   expiresAfter: "2026-06-01",
   title: "Happening Sunday",
   image: "/uploads/happeningsunday-5-31-26-morningservice.png",
