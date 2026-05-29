@@ -172,6 +172,13 @@ function HappeningTodayCard() {
   }).format(new Date());
 
   if (
+    "startsOn" in happeningToday &&
+    today < happeningToday.startsOn
+  ) {
+    return null;
+  }
+
+  if (
     "expiresAfter" in happeningToday &&
     today > happeningToday.expiresAfter
   ) {
