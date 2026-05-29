@@ -28,14 +28,19 @@ import {
   visitorNotes,
 } from "@/lib/site";
 
-const happeningToday = {
+const happeningToday: {
+  enabled: boolean;
+  startsOn?: string;
+  expiresAfter?: string;
+  title: string;
+  image: string;
+  alt: string;
+} = {
   enabled: true,
-  startsOn: "",
-  expiresAfter: "",
   title: "Happening Sunday",
   image: "/uploads/happeningsunday-5-31-26-morningservice.png",
   alt: "Sunday Morning invitation for Still Water Christian Fellowship",
-} as const;
+};
 
 export default function Home() {
   return (
