@@ -29,11 +29,11 @@ import {
 } from "@/lib/site";
 
 const happeningToday = {
-  enabled: false,
-  expiresAfter: "2026-05-27",
-  title: "Happening Wednesday",
-  image: "/uploads/5-27-26-bibstud-praymtg.png",
-  alt: "Wednesday Bible Study and Prayer Meeting invitation for Still Water Christian Fellowship",
+  enabled: true,
+  expiresAfter: "2026-06-01",
+  title: "Happening Sunday",
+  image: "/uploads/5-31-26-sunday-morning.png",
+  alt: "Sunday Morning invitation for Still Water Christian Fellowship",
 } as const;
 
 export default function Home() {
