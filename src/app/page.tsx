@@ -39,7 +39,7 @@ const happeningToday: {
   alt: string;
 } = {
   enabled: true,
-  startsAt: "2026-05-31T00:00:00-04:00",
+  startsAt: "2026-05-29T00:00:00-04:00",
   expiresAt: "2026-06-01T06:00:00-04:00",
   title: "Happening Sunday",
   image: "/uploads/happeningsunday-5-31-26-morningservice.png",
