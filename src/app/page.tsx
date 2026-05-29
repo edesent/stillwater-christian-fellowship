@@ -28,6 +28,8 @@ import {
   visitorNotes,
 } from "@/lib/site";
 
+export const revalidate = 3600;
+
 const happeningToday: {
   enabled: boolean;
   startsAt?: string;

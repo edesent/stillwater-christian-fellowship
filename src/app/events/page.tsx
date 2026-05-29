@@ -12,6 +12,8 @@ import {
 } from "@/lib/events";
 import { site, siteUrl } from "@/lib/site";
 
+export const revalidate = 3600;
+
 export const metadata: Metadata = {
   title: "Events",
   description: `Upcoming events and gatherings at ${site.name} in Hope, Rhode Island.`,

@@ -13,6 +13,23 @@ export type ChurchEvent = {
   featured?: boolean;
 };
 
+const CHURCH_TIME_ZONE = "America/New_York";
+const isoDateFormatter = new Intl.DateTimeFormat("en-CA", {
+  timeZone: CHURCH_TIME_ZONE,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/**
+ * Today's date as YYYY-MM-DD in America/New_York (Hope, RI).
+ * Use this instead of new Date().toISOString().slice(0, 10) so events do not
+ * disappear early when UTC has already rolled to the next day.
+ */
+export function todayInChurchTime(): string {
+  return isoDateFormatter.format(new Date());
+}
+
 const events: ChurchEvent[] = (rawEvents as ChurchEvent[])
   .slice()
   .sort((a, b) => a.date.localeCompare(b.date));
@@ -20,7 +37,7 @@ const events: ChurchEvent[] = (rawEvents as ChurchEvent[])
 export const allEvents: readonly ChurchEvent[] = events;
 
 export function upcomingEvents(limit?: number): ChurchEvent[] {
-  const todayIso = new Date().toISOString().slice(0, 10);
+  const todayIso = todayInChurchTime();
   const upcoming = events.filter((e) => (e.endDate ?? e.date) >= todayIso);
   return typeof limit === "number" ? upcoming.slice(0, limit) : upcoming;
 }
