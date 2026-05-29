@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { site, siteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -96,6 +97,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${libreBaskerville.variable}`}>
       <body>
         {children}
+        <Analytics />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){var s=document.createElement('script');s.src='https://slackwebsitechat.vercel.app/widget/wbc-chat.js';s.setAttribute('data-api','https://slackwebsitechat.vercel.app');s.setAttribute('data-key','wbc_b1a2a3b9ed6fcd227f6b75b9dca684bd3bbcf6fcfda19a59');s.async=true;document.body.appendChild(s);})();`,
