@@ -192,7 +192,7 @@ function HappeningTodayCard() {
           {happeningToday.title}
         </p>
       </div>
-      <div className="relative aspect-[4/3] bg-mist">
+      <div className="relative aspect-[3/4] bg-mist">
         <Image
           src={happeningToday.image}
           alt={happeningToday.alt}
