@@ -32,7 +32,7 @@ const happeningToday = {
   enabled: true,
   expiresAfter: "2026-06-01",
   title: "Happening Sunday",
-  image: "/uploads/5-31-26-sunday-morning.png",
+  image: "/uploads/happeningsunday-5-31-26-morningservice.png",
   alt: "Sunday Morning invitation for Still Water Christian Fellowship",
 } as const;
 
