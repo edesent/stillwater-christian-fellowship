@@ -167,9 +167,11 @@ function Hero() {
 function HappeningTodayCard() {
   if (!happeningToday.enabled) return null;
 
-  const today = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/New_York",
-  }).format(new Date());
+  const now = new Date();
+  const eastern = new Date(
+    now.toLocaleString("en-US", { timeZone: "America/New_York" })
+  );
+  const today = eastern.toISOString().split("T")[0];
 
   if (
     "startsOn" in happeningToday &&
