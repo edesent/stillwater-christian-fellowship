@@ -441,9 +441,11 @@ function Welcome() {
               <p className="serif text-3xl font-semibold italic leading-tight text-ink">
                 &ldquo;{churchVerses.theme.pullQuote}&rdquo;
               </p>
-              <p className="mt-5 text-base leading-7 text-ink-soft">
-                {churchVerses.theme.text}
-              </p>
+              <div className="mt-5 text-base leading-7 text-ink-soft">
+                <p><i>Jesus said, "whosoever doth not bear his cross, and come after me, cannot be my disciple."</i></p>
+                <p className="mt-3">A Disciple is a Follower and a Learner. The True Follower yearns to Learn of Christ. Jesus urges His Church to Follow on to Know Him..</p>
+                <p className="mt-3"><i>"Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls."</i></p>
+              </div>
             </blockquote>
           </div>
         </div>
