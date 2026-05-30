@@ -28,7 +28,7 @@ export const churchVerses = {
   theme: {
     label: "2026 Theme",
     reference: "Hosea 6:3",
-    text: "Then shall we know, if we follow on to know the Lord: his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth.",
+    text: "Jesus said, \"whosoever doth not bear his cross, and come after me, cannot be my disciple.\"\nA Disciple is a Follower and a Learner. The True Follower yearns to Learn of Christ. Jesus urges His Church to Follow on to Know Him.. \"Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls.\"",
     pullQuote: "Follow on to know the Lord.",
   },
 } as const;
