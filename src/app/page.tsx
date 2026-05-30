@@ -91,7 +91,7 @@ function Hero() {
               Still Water Christian Fellowship
             </h1>
             <p className="serif mt-6 max-w-3xl text-balance text-2xl font-semibold italic leading-tight text-sky sm:text-3xl">
-              Proclaiming the Gospel truth of Jesus Christ to a lost world.
+              Proclaiming the Gospel Truth of Jesus Christ to a Lost World.
             </p>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
               A Bible-Believing, Christ-Honoring, Independent Baptist Church
