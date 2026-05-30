@@ -101,9 +101,11 @@ export function EventRow({ event }: { event: ChurchEvent }) {
         <h3 className="serif mt-3 text-balance text-3xl font-bold leading-tight text-ink sm:text-4xl">
           {event.title}
         </h3>
-        <p className="mt-4 text-base leading-7 text-ink-soft">
-          {event.description}
-        </p>
+        <div className="mt-4 space-y-2 text-base leading-7 text-ink-soft">
+          {event.description.split("\n").map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
         <dl className="mt-5 grid gap-2 text-sm leading-6 text-ink-soft sm:grid-cols-[auto_1fr] sm:gap-x-4">
           <dt className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-clay">
             <CalendarRange aria-hidden="true" className="size-3.5" />
