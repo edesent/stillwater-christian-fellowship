@@ -150,9 +150,17 @@ function Hero() {
           {visitorNotes.map((note) => (
             <article key={note.title} className="border-l-4 border-sky bg-white/92 p-5 text-ink shadow-sm backdrop-blur">
               <h3 className="text-lg font-bold text-ink">{note.title}</h3>
-              <p className="mt-2 whitespace-pre-line text-sm leading-7 text-ink-soft">
-                {note.body}
-              </p>
+              {note.title === "Bible-Believing" ? (
+                <p className="mt-2 text-sm leading-7 text-ink-soft">
+                  Led by our Pastor, we live by <i>"every word which proceedeth out of the mouth of God"</i>
+                  <br />
+                  The Bible is God's Inerrant Word. It is our Sole Authority in all matters Spiritual.
+                </p>
+              ) : (
+                <p className="mt-2 whitespace-pre-line text-sm leading-7 text-ink-soft">
+                  {note.body}
+                </p>
+              )}
               {"verse" in note && note.verse ? (
                 <blockquote className="mt-5 border-t border-rule pt-4">
                   <p className="serif text-base italic leading-7 text-ink">
