@@ -201,13 +201,14 @@ function HappeningTodayCard() {
           {happeningToday.title}
         </p>
       </div>
-      <div className="relative aspect-[3/4] bg-mist">
+      <div className="bg-mist">
         <Image
           src={happeningToday.image}
           alt={happeningToday.alt}
-          fill
+          width={1200}
+          height={1600}
           sizes="(min-width: 1024px) 360px, 100vw"
-          className="object-contain"
+          className="h-auto max-h-[72vh] w-full object-contain"
         />
       </div>
     </article>
