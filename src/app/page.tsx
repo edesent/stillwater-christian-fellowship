@@ -42,7 +42,7 @@ const happeningToday: {
   startsAt: "2026-06-07T00:00:00-04:00",
   expiresAt: "2026-06-08T06:00:00-04:00",
   title: "Join Us Sunday",
-  image: "/uploads/join-us-sunday-6-7-26.png",
+  image: "/uploads/6-7-26-sundaymorning.png",
   alt: "Join Us Sunday bulletin for Still Water Christian Fellowship on June 7, 2026",
 };
 
