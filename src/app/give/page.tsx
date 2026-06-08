@@ -99,7 +99,7 @@ function OtherWays() {
               Other Ways to Give
             </p>
             <h2 className="serif mt-4 text-balance text-4xl font-bold leading-tight text-ink sm:text-5xl">
-              Generosity, with gratitude.
+              Generosity, With Gratitude.
             </h2>
           </div>
           <p className="max-w-xl text-base leading-7 text-ink-soft">
