@@ -45,7 +45,7 @@ function Hero() {
           Cheerful Givers
         </p>
         <h1 className="serif max-w-4xl text-balance text-5xl font-bold leading-[1.04] sm:text-7xl">
-          Give to support the work.
+          Give To Support The Work.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
           Every tithe and offering helps Still Water proclaim the Gospel,
