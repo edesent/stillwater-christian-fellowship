@@ -67,7 +67,7 @@ function Embed() {
             Secure Giving
           </p>
           <h2 className="serif mt-4 text-balance text-3xl font-bold leading-tight text-ink sm:text-4xl">
-            Give online through Tithe.ly.
+            Give Online Through Tithe.ly.
           </h2>
           <p className="mt-4 max-w-xl text-base leading-7 text-ink-soft">
             Tithes and offerings are processed securely through Tithe.ly. Click
