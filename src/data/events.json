@@ -50,15 +50,5 @@
     "location": "Still Water Christian Fellowship",
     "description": "A week of music, lessons, crafts, and the Gospel of Jesus Christ for kids ages 4 through 12. Free and open to the community.",
     "featured": true
-  },
-  {
-    "id": "pastor-anniversary-2026",
-    "title": "Pastor's Anniversary Sunday",
-    "category": "Special Service",
-    "date": "2026-09-06",
-    "startTime": "10:30 AM",
-    "endTime": "12:00 PM",
-    "location": "Sanctuary",
-    "description": "Join us as we give thanks to the Lord for another year of pastoral ministry under Pastor Bob Levesque. Special music and a Fellowship Feast to follow."
   }
 ]
