@@ -128,8 +128,8 @@ function OtherWays() {
             </div>
             <h3 className="serif mt-7 text-2xl font-bold text-ink">By Mail</h3>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              Checks payable to {site.name} can be mailed to{" "}
-              {site.address} 02831.
+              Checks Payable to Still Water Christian Fellowship can be Mailed
+              to - PO Box 670 - Hope, RI 02831.
             </p>
           </article>
         </div>
