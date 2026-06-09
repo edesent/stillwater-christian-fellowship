@@ -105,7 +105,8 @@ function OtherWays() {
           <p className="max-w-xl text-base leading-7 text-ink-soft italic">
             "Every man according as he purposeth in his heart, so let him give;
             not grudgingly, or of necessity: for God loveth a cheerful giver."
-            — 2 Corinthians 9:7
+            <br />
+            - 2 Corinthians 9:7
           </p>
         </div>
 
