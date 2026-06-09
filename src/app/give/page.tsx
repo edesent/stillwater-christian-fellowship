@@ -117,8 +117,8 @@ function OtherWays() {
             </div>
             <h3 className="serif mt-7 text-2xl font-bold text-ink">In Person</h3>
             <p className="mt-3 text-sm leading-7 text-ink-soft">
-              Place tithes and offerings in the box at the back of the
-              sanctuary on Sundays.
+              Tithes and Offerings can be dropped into the Offering Plate on
+              Sundays.
             </p>
           </article>
 
