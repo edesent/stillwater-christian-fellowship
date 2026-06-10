@@ -805,7 +805,7 @@ function Contact() {
         <div className="bg-fern p-7 text-white sm:p-10">
           <MapPin aria-hidden="true" className="size-9 text-sky" />
           <h2 className="serif mt-8 text-balance text-5xl font-bold leading-tight">
-            Find us in Hope.
+            Find Us In Hope.
           </h2>
           <p className="mt-5 text-lg leading-8 text-white/76">
             {site.address}. {site.addressNote}. Sunday live streaming is available
