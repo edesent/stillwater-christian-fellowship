@@ -808,8 +808,7 @@ function Contact() {
             Find Us In Hope.
           </h2>
           <p className="mt-5 text-lg leading-8 text-white/76">
-            {site.address}. {site.addressNote}. Sunday live streaming is available
-            through SermonAudio at 10:30 AM.
+            {site.address}. {site.addressNote}. Sunday Live Streaming is available at www.sermonaudio.com/broadcasters/stillwaterri/ - Beginning at 10:30 AM.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a
