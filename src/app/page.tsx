@@ -836,19 +836,19 @@ function Contact() {
                 <dt className="serif w-24 shrink-0 font-bold text-white">
                   Dress
                 </dt>
-                <dd>Come as you are.</dd>
+                <dd>Come As You Are.</dd>
               </div>
               <div className="flex items-baseline gap-3">
                 <dt className="serif w-24 shrink-0 font-bold text-white">
-                  Worship
+                  Preaching &amp; Praise
                 </dt>
-                <dd>Reverent, Bible-centered, about an hour.</dd>
+                <dd>Christ-Centered, Biblically-Correct</dd>
               </div>
               <div className="flex items-baseline gap-3">
                 <dt className="serif w-24 shrink-0 font-bold text-white">
-                  After
+                  After Service
                 </dt>
-                <dd>Stay for our Fellowship Feast — all welcome.</dd>
+                <dd>Join Us for our Fellowship Feast - All Welcome.</dd>
               </div>
             </dl>
           </div>
