@@ -39,11 +39,11 @@ const happeningToday: {
   alt: string;
 } = {
   enabled: true,
-  startsAt: "2026-06-08T00:00:00-04:00",
-  expiresAt: "2026-06-10T20:00:00-04:00",
-  title: "Happening This Wednesday",
-  image: "/weekof6-8-26.png",
-  alt: "Happening This Wednesday flyer for Still Water Christian Fellowship Bible Study at 10 AM and Disciple's Prayer Service at 6 PM",
+  startsAt: "2026-06-11T00:00:00-04:00",
+  expiresAt: "2026-06-15T06:00:00-04:00",
+  title: "Join Us This Sunday!",
+  image: "/6-14-26-sundaymorning.png",
+  alt: "Join Us This Sunday flyer for Still Water Christian Fellowship Sunday morning services on June 14, 2026",
 };
 
 export default function Home() {
