@@ -61,7 +61,7 @@ export default function SundaySaintsPage() {
               Sunday Photo Galleries
             </p>
             <h2 className="mt-3 text-3xl font-bold text-stone-950">
-              Photos, captions, descriptions, and dates from the Lord&apos;s Day
+              SWCF loves to Celebrate its Saints.
             </h2>
             <p className="mt-4 leading-7 text-stone-700">
               Each gallery below is prepared to hold multiple Sunday Saints photo cards over time. Every card can include a photo, caption, date, description, scripture theme, names, guest speaker notes, or a brief testimony from that Sunday moment.
