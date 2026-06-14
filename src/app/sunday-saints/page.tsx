@@ -52,7 +52,7 @@ export default function SundaySaintsPage() {
           className="absolute inset-0 bg-[url('/uploads/20250227_120337(1).jpg')] bg-cover bg-center opacity-25 mix-blend-soft-light"
         />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-sky-950/90 via-sky-900/85 to-sky-800/95" />
-        <div className="mx-auto max-w-5xl text-center">
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300">
             The Lord&apos;s Day at Still Water
           </p>
