@@ -77,8 +77,8 @@ function Hero() {
         sizes="100vw"
         className="object-cover object-[58%_48%]"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.95),rgba(13,75,105,0.72)_46%,rgba(94,183,222,0.2))]" />
-      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,43,62,0.84),rgba(58,155,197,0.1)_50%,rgba(8,43,62,0.34))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,10,18,0.96),rgba(75,31,93,0.78)_46%,rgba(214,168,79,0.24))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(15,10,18,0.88),rgba(122,74,18,0.14)_50%,rgba(36,16,45,0.42))]" />
 
       <div className="section-shell relative flex min-h-[84svh] flex-col justify-end pb-8 pt-32 sm:pb-10">
         <div className="grid gap-8 pb-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,440px)] lg:items-end">
