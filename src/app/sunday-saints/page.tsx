@@ -13,7 +13,7 @@ const gallerySections = [
   {
     title: "Children's Church Gallery",
     description:
-      "Children learning about Jesus through age-appropriate lessons, worship, and fellowship.",
+      "Children Learning about Jesus through age-appropriate Lessons, Activities, and Fellowship.",
   },
   {
     title: "Preaching and Praise Gallery",
