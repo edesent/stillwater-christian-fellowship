@@ -18,7 +18,7 @@ const gallerySections = [
   {
     title: "Preaching and Praise Gallery",
     description:
-      "Worship, prayer, praise, testimony, and the preaching of God's Word during the Sunday service.",
+      "SWCF's Worship is Centered upon The Saviour - The Lord Jesus Christ!",
   },
   {
     title: "Fellowship Feast Gallery",
