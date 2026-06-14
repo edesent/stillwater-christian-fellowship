@@ -47,6 +47,7 @@ export function isDropdown(item: NavItem): item is NavDropdown {
 export const navItems: readonly NavItem[] = [
   ["Visit", "/#visit"],
   ["Events", "/events"],
+  ["Sunday Saints", "/sunday-saints"],
   ["Ministries", "/#ministries"],
   ["Sermons", "/sermons"],
   {
