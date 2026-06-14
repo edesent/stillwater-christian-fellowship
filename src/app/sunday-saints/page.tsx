@@ -28,7 +28,7 @@ const gallerySections = [
   {
     title: "Sunday Specials Gallery",
     description:
-      "Special in-service events, guest speakers, celebrations, presentations, and other memorable Sunday moments.",
+      "We are often Blessed with opportunities to hear from Evangelists, Missionaries, and Special Ministries. We love to Celebrate God's Bestowed Blessings on His People.",
   },
 ];
 
