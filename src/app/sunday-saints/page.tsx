@@ -49,7 +49,7 @@ export default function SundaySaintsPage() {
       <section className="relative overflow-hidden bg-gradient-to-b from-sky-950 via-sky-900 to-sky-800 px-6 py-20 text-white">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[url('/uploads/20250227_120337(1).jpg')] bg-cover bg-center opacity-25 mix-blend-soft-light"
+          className="absolute inset-0 bg-[url('/uploads/backgroundlayerimage.png')] bg-cover bg-center opacity-25 mix-blend-soft-light"
         />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-sky-950/90 via-sky-900/85 to-sky-800/95" />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
