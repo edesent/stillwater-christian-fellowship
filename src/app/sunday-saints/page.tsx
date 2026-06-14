@@ -23,7 +23,7 @@ const gallerySections = [
   {
     title: "Fellowship Feast Gallery",
     description:
-      "The Still Water Family sharing food, conversation, encouragement, and joyful fellowship after worship.",
+      "The Still Water Family shares Food, Conversation, Encouragement, and Joyful Fellowship after our Sunday Morning Preaching and Praise Service.",
   },
   {
     title: "Sunday Specials Gallery",
