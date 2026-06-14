@@ -46,7 +46,12 @@ const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 export default function SundaySaintsPage() {
   return (
     <main className="min-h-screen bg-stone-50 text-stone-900">
-      <section className="bg-gradient-to-b from-sky-950 via-sky-900 to-sky-800 px-6 py-20 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-sky-950 via-sky-900 to-sky-800 px-6 py-20 text-white">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[url('/uploads/20250227_120337(1).jpg')] bg-cover bg-center opacity-25 mix-blend-soft-light"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-sky-950/90 via-sky-900/85 to-sky-800/95" />
         <div className="mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300">
             The Lord&apos;s Day at Still Water
