@@ -64,7 +64,7 @@ export default function SundaySaintsPage() {
               SWCF Loves To Celebrate Its Saints
             </h2>
             <p className="mt-4 leading-7 text-stone-700">
-              Each gallery below is prepared to hold multiple Sunday Saints photo cards over time. Every card can include a photo, caption, date, description, scripture theme, names, guest speaker notes, or a brief testimony from that Sunday moment.
+              Please peruse all of Our Galleries. Take some time to enjoy our Saints. The Pictures will hopefully Reflect the work that the Grace of God has done in all of us who have Trusted Jesus Christ as Saviour!
             </p>
           </div>
 
