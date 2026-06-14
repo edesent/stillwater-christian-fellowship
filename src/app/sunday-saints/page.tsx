@@ -32,6 +32,15 @@ const gallerySections = [
   },
 ];
 
+const quickLinks = [
+  ["Home", "/"],
+  ["Visit", "/#visit"],
+  ["Events", "/events"],
+  ["Ministries", "/#ministries"],
+  ["Sermons", "/sermons"],
+  ["Contact", "/#contact"],
+];
+
 const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 
 export default function SundaySaintsPage() {
@@ -51,6 +60,17 @@ export default function SundaySaintsPage() {
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-sky-100">
             On the Sunday Saints page, we will display as much as we can to give visitors to our website a taste of how the Still Water Family spends their Lord&apos;s Day.
           </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            {quickLinks.map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white hover:text-sky-950"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -101,6 +121,24 @@ export default function SundaySaintsPage() {
                 </div>
               </section>
             ))}
+          </div>
+
+          <div className="mt-14 rounded-3xl bg-sky-950 p-6 text-white shadow-sm md:p-8">
+            <h2 className="text-2xl font-bold">Continue Exploring Still Water</h2>
+            <p className="mt-3 max-w-3xl text-sky-100">
+              Return to the homepage or visit another area of the website.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {quickLinks.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="rounded-full border border-white/25 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.12em] text-white transition hover:bg-white hover:text-sky-950"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
