@@ -8,7 +8,7 @@ const gallerySections = [
   {
     title: "Adult Sunday School Gallery",
     description:
-      "Bible teaching, class discussion, and spiritual growth as adults gather around the Word of God.",
+      "Adult Sunday School is an Integral Part of SWCF's Discipleship Program.",
   },
   {
     title: "Children's Church Gallery",
