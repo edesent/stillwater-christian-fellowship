@@ -4,17 +4,17 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-libre);
 
-  --color-ink: #0c2b3d;
-  --color-ink-soft: #33596a;
-  --color-paper: #f8fcff;
-  --color-cream: #eaf7ff;
-  --color-mist: #d7effb;
-  --color-sky: #9edfff;
-  --color-fern: #2a83a8;
-  --color-moss: #17465c;
-  --color-clay: #1f9bd2;
-  --color-gold: #ffd36a;
-  --color-rule: #b8d9e7;
+  --color-ink: #0f0a12;
+  --color-ink-soft: #4a3f4f;
+  --color-paper: #fffaf0;
+  --color-cream: #f3e4c8;
+  --color-mist: #ead7b2;
+  --color-sky: #d6a84f;
+  --color-fern: #4b1f5d;
+  --color-moss: #24102d;
+  --color-clay: #7a4a12;
+  --color-gold: #d6a84f;
+  --color-rule: #d9c08d;
 }
 
 html {
