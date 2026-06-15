@@ -251,7 +251,7 @@ function RomansRoad() {
           ))}
         </ol>
 
-        <div className="mt-14 border-l-4 border-sky bg-mist/55 p-7 sm:p-10">
+        <div className="mt-14 border-l-4 border-gold bg-cream/70 p-7 shadow-sm sm:p-10">
           <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
             A Prayer of Faith
           </p>
