@@ -45,8 +45,8 @@ const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 
 export default function SundaySaintsPage() {
   return (
-    <main className="min-h-screen bg-stone-50 text-stone-900">
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-950 via-sky-900 to-sky-800 px-6 py-20 text-white">
+    <main className="min-h-screen bg-paper text-ink">
+      <section className="relative overflow-hidden bg-gradient-to-b from-ink via-fern to-moss px-6 py-20 text-white">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[url('/uploads/backgroundlayerimage.png')] bg-cover bg-center opacity-45 mix-blend-overlay"
