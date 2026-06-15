@@ -116,7 +116,7 @@ export default async function MinistryPage({
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.92),rgba(8,43,62,0.62),rgba(8,43,62,0.38))]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,10,18,0.94),rgba(75,31,93,0.66),rgba(214,168,79,0.22))]" />
 
           <div className="section-shell relative flex min-h-[52svh] flex-col justify-end py-16">
             <Link
