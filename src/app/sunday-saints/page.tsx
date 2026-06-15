@@ -51,7 +51,7 @@ export default function SundaySaintsPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-[url('/uploads/backgroundlayerimage.png')] bg-cover bg-center opacity-45 mix-blend-overlay"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-sky-950/90 via-sky-900/85 to-sky-800/95" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-ink/92 via-fern/86 to-moss/96" />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-amber-300">
             The Lord&apos;s Day at Still Water
