@@ -100,7 +100,7 @@ function Hero() {
             <div className="mt-9 flex flex-wrap gap-3">
               <a
                 href="#visit"
-                className="inline-flex items-center gap-2 bg-sky px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white"
+                className="inline-flex items-center gap-2 bg-gold px-5 py-3 text-sm font-black uppercase tracking-[0.12em] text-ink transition hover:bg-white hover:shadow-md"
               >
                 Plan Your Visit
                 <ArrowRight aria-hidden="true" className="size-4" />
