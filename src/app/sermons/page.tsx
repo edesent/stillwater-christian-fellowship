@@ -119,7 +119,7 @@ function Hero({
         sizes="100vw"
         className="object-contain object-top opacity-70"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,43,62,0.46),rgba(13,75,105,0.38)_50%,rgba(58,155,197,0.12))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,10,18,0.74),rgba(75,31,93,0.56)_50%,rgba(214,168,79,0.18))]" />
 
       <div className="section-shell relative pb-16 pt-32 sm:pb-20 sm:pt-40">
         <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
