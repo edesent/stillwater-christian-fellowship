@@ -146,11 +146,7 @@ function PastorInvitation() {
               {pastorLetter.eyebrow}
             </p>
             <h2 className="serif mt-4 text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              An invitation from a pastor who hopes you’ll{" "}
-              <span className="underline decoration-sky decoration-4 underline-offset-[6px]">
-                come and see
-              </span>
-              .
+              An Invitation Of Hope From A Christ-Driven Heart
             </h2>
 
             <blockquote className="mt-9 border-l-4 border-sky pl-6">
