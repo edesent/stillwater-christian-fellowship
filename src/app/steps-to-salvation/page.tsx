@@ -206,7 +206,7 @@ function RomansRoad() {
               The Romans Road
             </p>
             <h2 className="serif mt-4 max-w-3xl text-balance text-5xl font-bold leading-tight text-ink sm:text-6xl">
-              Seven verses that mark the way home.
+              Seven Verses That Map The Way Home
             </h2>
           </div>
           <p className="max-w-xl text-lg leading-8 text-ink-soft">
