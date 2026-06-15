@@ -15,7 +15,7 @@ export function EventCard({ event }: { event: ChurchEvent }) {
     <Link
       href="/events"
       className={`group flex h-full flex-col border bg-paper p-6 transition hover:shadow-lg ${
-        event.featured ? "border-sky/55 bg-mist/45" : "border-rule"
+        event.featured ? "border-gold/70 bg-cream/70 shadow-sm" : "border-rule"
       }`}
     >
       <div className="flex items-baseline justify-between gap-4">
