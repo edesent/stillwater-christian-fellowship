@@ -108,7 +108,7 @@ export default function SundaySaintsPage() {
                       className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 shadow-sm"
                     >
                       <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-cream to-gold/35 px-6 text-center">
-                        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-900">
+                        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-ink">
                           Photo Coming Soon
                         </span>
                       </div>
