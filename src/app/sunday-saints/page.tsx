@@ -52,6 +52,22 @@ const sundaySpecialsPhotoOne = {
     "It was a Blessing to Welcome and hear from David, Elizabeth, and Baby Grace. - Such a Comfort to see the Fruit of Answered Prayer!",
 };
 
+const sundaySpecialsPhotoTwo = {
+  images: [
+    {
+      src: "/acaciarach2-6-14-26.jpg",
+      alt: "Acacia celebrating her first birthday at Still Water Christian Fellowship",
+    },
+    {
+      src: "/acaciabdaycake-6-14-26-special.jpg",
+      alt: "Acacia's first birthday cake celebration at Still Water Christian Fellowship",
+    },
+  ],
+  date: "June 14, 2026",
+  title: "Photo Two",
+  description: "Happy 1st Birthday Acacia!",
+};
+
 export default function SundaySaintsPage() {
   return (
     <main className="min-h-screen bg-paper text-ink">
