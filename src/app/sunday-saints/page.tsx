@@ -43,6 +43,15 @@ const quickLinks = [
 
 const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 
+const sundaySpecialsPhotoOne = {
+  image: "/graceparentssanctuary2-6-14-26.jpeg",
+  alt: "David, Elizabeth, and Baby Grace visiting Still Water Christian Fellowship",
+  date: "June 14, 2026",
+  title: "Photo One",
+  description:
+    "It was a Blessing to Welcome and hear from David, Elizabeth, and Baby Grace. - Such a Comfort to see the Fruit of Answered Prayer!",
+};
+
 export default function SundaySaintsPage() {
   return (
     <main className="min-h-screen bg-paper text-ink">
