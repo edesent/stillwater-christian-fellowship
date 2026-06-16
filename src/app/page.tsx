@@ -39,11 +39,11 @@ const happeningToday: {
   alt: string;
 } = {
   enabled: true,
-  startsAt: "2026-06-11T00:00:00-04:00",
-  expiresAt: "2026-06-15T06:00:00-04:00",
-  title: "Join Us This Sunday!",
-  image: "/6-14-26-sundaymorning.png",
-  alt: "Join Us This Sunday flyer for Still Water Christian Fellowship Sunday morning services on June 14, 2026",
+  startsAt: "2026-06-16T00:00:00-04:00",
+  expiresAt: "2026-06-20T10:00:00-04:00",
+  title: "This Week At SWCF",
+  image: "/weekof6-15-26.png",
+  alt: "This Week At SWCF flyer for the week of June 15, 2026 at Still Water Christian Fellowship",
 };
 
 export default function Home() {
