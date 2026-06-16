@@ -126,7 +126,7 @@ export default function SundaySaintsPage() {
                           <img
                             src={sundaySpecialsPhoto.image}
                             alt={sundaySpecialsPhoto.alt}
-                            className="aspect-[4/3] w-full object-cover"
+                            className="aspect-[4/3] w-full bg-stone-100 object-contain"
                           />
                         ) : (
                           <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-cream to-gold/35 px-6 text-center">
