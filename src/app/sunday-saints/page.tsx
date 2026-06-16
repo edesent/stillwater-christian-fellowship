@@ -111,27 +111,46 @@ export default function SundaySaintsPage() {
                 </div>
 
                 <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {starterCards.map((card) => (
-                    <article
-                      key={`${section.title}-${card}`}
-                      className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 shadow-sm"
-                    >
-                      <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-cream to-gold/35 px-6 text-center">
-                        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-ink">
-                          Photo Coming Soon
-                        </span>
-                      </div>
-                      <div className="p-6">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
-                          Date to be added
-                        </p>
-                        <h3 className="mt-2 text-xl font-bold text-sky-950">{card}</h3>
-                        <p className="mt-3 text-sm leading-6 text-stone-700">
-                          Add a caption, description, names, scripture theme, or brief testimony from this Sunday moment.
-                        </p>
-                      </div>
-                    </article>
-                  ))}
+                  {starterCards.map((card) => {
+                    const sundaySpecialsPhoto =
+                      section.title === "Sunday Specials Gallery" && card === "Photo One"
+                        ? sundaySpecialsPhotoOne
+                        : null;
+
+                    return (
+                      <article
+                        key={`${section.title}-${card}`}
+                        className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 shadow-sm"
+                      >
+                        {sundaySpecialsPhoto ? (
+                          <img
+                            src={sundaySpecialsPhoto.image}
+                            alt={sundaySpecialsPhoto.alt}
+                            className="aspect-[4/3] w-full object-cover"
+                          />
+                        ) : (
+                          <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-cream to-gold/35 px-6 text-center">
+                            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-ink">
+                              Photo Coming Soon
+                            </span>
+                          </div>
+                        )}
+                        <div className="p-6">
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+                            {sundaySpecialsPhoto ? sundaySpecialsPhoto.date : "Date to be added"}
+                          </p>
+                          <h3 className="mt-2 text-xl font-bold text-sky-950">
+                            {sundaySpecialsPhoto ? sundaySpecialsPhoto.title : card}
+                          </h3>
+                          <p className="mt-3 text-sm leading-6 text-stone-700">
+                            {sundaySpecialsPhoto
+                              ? sundaySpecialsPhoto.description
+                              : "Add a caption, description, names, scripture theme, or brief testimony from this Sunday moment."}
+                          </p>
+                        </div>
+                      </article>
+                    );
+                  })}
                 </div>
               </section>
             ))}
