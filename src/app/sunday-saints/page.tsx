@@ -149,24 +149,16 @@ export default function SundaySaintsPage() {
                         className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 shadow-sm"
                       >
                         {sundaySpecialsPhoto ? (
-                          "images" in sundaySpecialsPhoto ? (
-                            <div className="grid aspect-[4/3] grid-cols-2 gap-1 bg-stone-100 p-1">
-                              {sundaySpecialsPhoto.images.map((image) => (
-                                <img
-                                  key={image.src}
-                                  src={image.src}
-                                  alt={image.alt}
-                                  className="h-full w-full object-contain"
-                                />
-                              ))}
-                            </div>
-                          ) : (
-                            <img
-                              src={sundaySpecialsPhoto.image}
-                              alt={sundaySpecialsPhoto.alt}
-                              className="aspect-[4/3] w-full bg-stone-100 object-contain"
-                            />
-                          )
+                          <div className="grid aspect-[4/3] grid-cols-2 gap-1 bg-stone-100 p-1">
+                            {sundaySpecialsPhoto.images.map((image) => (
+                              <img
+                                key={image.src}
+                                src={image.src}
+                                alt={image.alt}
+                                className="h-full w-full object-contain"
+                              />
+                            ))}
+                          </div>
                         ) : (
                           <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-cream to-gold/35 px-6 text-center">
                             <span className="text-sm font-semibold uppercase tracking-[0.2em] text-ink">
