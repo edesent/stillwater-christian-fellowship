@@ -44,8 +44,16 @@ const quickLinks = [
 const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 
 const sundaySpecialsPhotoOne = {
-  image: "/graceparentssanctuary2-6-14-26.jpeg",
-  alt: "David, Elizabeth, and Baby Grace visiting Still Water Christian Fellowship",
+  images: [
+    {
+      src: "/graceparentssanctuary2-6-14-26.jpeg",
+      alt: "David, Elizabeth, and Baby Grace visiting Still Water Christian Fellowship",
+    },
+    {
+      src: "/gracecake-6-14-26-special.jpg",
+      alt: "Celebration cake for Baby Grace at Still Water Christian Fellowship",
+    },
+  ],
   date: "June 14, 2026",
   title: "Photo One",
   description:
