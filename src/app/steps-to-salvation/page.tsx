@@ -70,8 +70,9 @@ function Hero() {
           Steps To Salvation
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/82 sm:text-xl">
-          A clear, Scripture-rooted walk through the Gospel — the Romans Road —
-          showing how anyone can come to know Jesus Christ as Saviour.
+          While it is said, &ldquo;all roads lead to Rome&rdquo;.. The Romans Road
+          of Scripture Leads To Christ! - Take a Tour, and see how Anyone can
+          come to know Jesus Christ as Saviour!
         </p>
         <blockquote className="mt-6 max-w-2xl border-l-4 border-sky pl-5 text-lg leading-8 text-white/82 sm:text-xl">
           <p>
