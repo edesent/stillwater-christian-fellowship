@@ -51,7 +51,7 @@ const happeningCards: {
     startsAt: "2026-06-18T00:00:00-04:00",
     expiresAt: "2026-06-22T09:00:00-04:00",
     title: "Join Us On Father's Day",
-    image: "/fathers-day-2026-invite.png",
+    image: "/6-21-26-morningservice-fathersday.png",
     alt: "Father's Day service invitation for Still Water Christian Fellowship",
   },
 ];
