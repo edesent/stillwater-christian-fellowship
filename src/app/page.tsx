@@ -30,21 +30,31 @@ import {
 
 export const revalidate = 3600;
 
-const happeningToday: {
+const happeningCards: {
   enabled: boolean;
   startsAt?: string;
   expiresAt?: string;
   title: string;
   image: string;
   alt: string;
-} = {
-  enabled: true,
-  startsAt: "2026-06-16T00:00:00-04:00",
-  expiresAt: "2026-06-20T10:00:00-04:00",
-  title: "This Week At SWCF",
-  image: "/weekof6-15-26.png",
-  alt: "This Week At SWCF flyer for the week of June 15, 2026 at Still Water Christian Fellowship",
-};
+}[] = [
+  {
+    enabled: true,
+    startsAt: "2026-06-16T00:00:00-04:00",
+    expiresAt: "2026-06-20T10:00:00-04:00",
+    title: "This Week At SWCF",
+    image: "/weekof6-15-26.png",
+    alt: "This Week At SWCF flyer for the week of June 15, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
+    startsAt: "2026-06-18T00:00:00-04:00",
+    expiresAt: "2026-06-22T09:00:00-04:00",
+    title: "Join Us On Father's Day",
+    image: "/fathers-day-2026-invite.png",
+    alt: "Father's Day service invitation for Still Water Christian Fellowship",
+  },
+];
 
 export default function Home() {
   return (
