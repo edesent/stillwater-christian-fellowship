@@ -125,7 +125,7 @@ function Hero() {
             </div>
           </div>
 
-          <HappeningTodayCard />
+          <HappeningCards />
         </div>
 
         <div className="grid border border-white/16 bg-white/10 backdrop-blur-md md:grid-cols-3">
