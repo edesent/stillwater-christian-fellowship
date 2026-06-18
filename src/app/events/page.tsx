@@ -42,7 +42,7 @@ function Hero({ count }: { count: number }) {
   return (
     <section className="relative bg-ink text-white">
       <Image
-        src="/stillwater/community.jpg"
+        src="/stillwater/2026-follow-on-to-know-the-lord.png"
         alt=""
         fill
         priority
