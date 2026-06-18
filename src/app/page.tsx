@@ -191,40 +191,43 @@ function Hero() {
   );
 }
 
-function HappeningTodayCard() {
-  if (!happeningToday.enabled) return null;
-
+function HappeningCards() {
   const now = new Date();
+  const activeCards = happeningCards.filter((card) => {
+    if (!card.enabled) return false;
+    if (card.startsAt && now < new Date(card.startsAt)) return false;
+    if (card.expiresAt && now >= new Date(card.expiresAt)) return false;
+    return true;
+  });
 
-  if (happeningToday.startsAt && now < new Date(happeningToday.startsAt)) {
-    return null;
-  }
+  if (activeCards.length === 0) return null;
 
-  if (happeningToday.expiresAt && now >= new Date(happeningToday.expiresAt)) {
-    return null;
-  }
-
-  const card = (
-    <article className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md lg:ml-auto lg:max-w-[440px]">
-      <div className="bg-sky px-5 py-3 text-ink">
-        <p className="text-xs font-black uppercase tracking-[0.22em]">
-          {happeningToday.title}
-        </p>
-      </div>
-      <div className="bg-mist">
-        <Image
-          src={happeningToday.image}
-          alt={happeningToday.alt}
-          width={1200}
-          height={1600}
-          sizes="(min-width: 1024px) 360px, 100vw"
-          className="h-auto max-h-[72vh] w-full object-contain"
-        />
-      </div>
-    </article>
+  return (
+    <div className="grid gap-4 md:grid-cols-2 xl:ml-auto xl:w-full">
+      {activeCards.map((card) => (
+        <article
+          key={card.title}
+          className="w-full overflow-hidden border border-sky/45 bg-white/95 text-ink shadow-2xl backdrop-blur-md"
+        >
+          <div className="bg-sky px-5 py-3 text-ink">
+            <p className="text-xs font-black uppercase tracking-[0.22em]">
+              {card.title}
+            </p>
+          </div>
+          <div className="bg-mist">
+            <Image
+              src={card.image}
+              alt={card.alt}
+              width={1200}
+              height={1600}
+              sizes="(min-width: 1280px) 390px, (min-width: 768px) 50vw, 100vw"
+              className="h-auto max-h-[72vh] w-full object-contain"
+            />
+          </div>
+        </article>
+      ))}
+    </div>
   );
-
-  return card;
 }
 
 function HeroDayStat({
