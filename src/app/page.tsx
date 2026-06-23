@@ -40,19 +40,11 @@ const happeningCards: {
 }[] = [
   {
     enabled: true,
-    startsAt: "2026-06-16T00:00:00-04:00",
-    expiresAt: "2026-06-20T10:00:00-04:00",
+    startsAt: "2026-06-23T00:00:00-04:00",
+    expiresAt: "2026-06-24T19:00:00-04:00",
     title: "This Week At SWCF",
-    image: "/weekof6-15-26.png",
-    alt: "This Week At SWCF flyer for the week of June 15, 2026 at Still Water Christian Fellowship",
-  },
-  {
-    enabled: true,
-    startsAt: "2026-06-18T00:00:00-04:00",
-    expiresAt: "2026-06-22T09:00:00-04:00",
-    title: "Join Us On Father's Day",
-    image: "/6-21-26-morningservice-fathersday.png",
-    alt: "Father's Day service invitation for Still Water Christian Fellowship",
+    image: "/week-of-6-24-26.png",
+    alt: "This Week At SWCF ministry opportunities for Wednesday June 24, 2026 at Still Water Christian Fellowship",
   },
 ];
 
