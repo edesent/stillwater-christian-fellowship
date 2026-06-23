@@ -43,7 +43,7 @@ const happeningCards: {
     startsAt: "2026-06-23T00:00:00-04:00",
     expiresAt: "2026-06-24T19:00:00-04:00",
     title: "This Week At SWCF",
-    image: "/week-of-6-24-26.png",
+    image: "/weekof6-22-26.png",
     alt: "This Week At SWCF ministry opportunities for Wednesday June 24, 2026 at Still Water Christian Fellowship",
   },
 ];
