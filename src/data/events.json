@@ -1,55 +1,5 @@
 [
   {
-    "id": "ladies-caring-sharing-may-2026",
-    "title": "Ladies Caring & Sharing",
-    "category": "Ladies Ministry",
-    "date": "2026-05-02",
-    "startTime": "12:00 PM",
-    "endTime": "2:00 PM",
-    "location": "Fellowship Hall",
-    "description": "A morning of prayer, encouragement, and fellowship for the ladies of the church. Light breakfast provided — please bring a friend."
-  },
-  {
-    "id": "mens-breakfast-june-2026",
-    "title": "Men's Discipleship Breakfast",
-    "category": "Men's Ministry",
-    "date": "2026-06-20",
-    "startTime": "8:30 AM",
-    "endTime": "10:00 AM",
-    "location": "Fellowship Hall",
-    "description": "Breakfast, Bible study, and Christ-centered fellowship for the men of Still Water. All visitors welcome.\nGuest Speaker: Pastor Bernie Norman - Prison Ministry Manager (CT, MA, RI) - Prison Fellowship Ministries."
-  },
-  {
-    "id": "providence-rescue-mission-may-2026",
-    "title": "Providence Rescue Mission",
-    "category": "Outreach",
-    "date": "2026-05-25",
-    "startTime": "5:30 PM",
-    "endTime": "8:00 PM",
-    "location": "Providence Rescue Mission, RI",
-    "description": "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence."
-  },
-  {
-    "id": "ladies-caring-sharing-june-2026",
-    "title": "Ladies Caring & Sharing",
-    "category": "Ladies Ministry",
-    "date": "2026-06-06",
-    "startTime": "12:00 PM",
-    "endTime": "2:00 PM",
-    "location": "Fellowship Hall",
-    "description": "A morning of prayer, encouragement, and fellowship for the ladies of the church. Light breakfast provided — please bring a friend."
-  },
-  {
-    "id": "mens-breakfast-july-2026",
-    "title": "Men's Discipleship Breakfast",
-    "category": "Men's Ministry",
-    "date": "2026-07-18",
-    "startTime": "8:30 AM",
-    "endTime": "10:00 AM",
-    "location": "Fellowship Hall",
-    "description": "Breakfast, Bible study, and Christ-centered fellowship for the men of Still Water. This recurring ministry meets every 3rd Saturday of each month. All visitors welcome."
-  },
-  {
     "id": "vbs-2026",
     "title": "Vacation Bible School",
     "category": "Children's Ministry",
