@@ -40,6 +40,16 @@
     "description": "A morning of prayer, encouragement, and fellowship for the ladies of the church. Light breakfast provided — please bring a friend."
   },
   {
+    "id": "mens-breakfast-july-2026",
+    "title": "Men's Discipleship Breakfast",
+    "category": "Men's Ministry",
+    "date": "2026-07-18",
+    "startTime": "8:30 AM",
+    "endTime": "10:00 AM",
+    "location": "Fellowship Hall",
+    "description": "Breakfast, Bible study, and Christ-centered fellowship for the men of Still Water. This recurring ministry meets every 3rd Saturday of each month. All visitors welcome."
+  },
+  {
     "id": "vbs-2026",
     "title": "Vacation Bible School",
     "category": "Children's Ministry",
