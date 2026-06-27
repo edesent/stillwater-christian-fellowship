@@ -1,11 +1,30 @@
 import Link from "next/link";
-import { CalendarRange, Clock, MapPin, Sparkles } from "lucide-react";
+import { CalendarRange, Clock, MapPin, Repeat, Sparkles } from "lucide-react";
 import {
   type ChurchEvent,
   formatEventBadge,
   formatEventDateLong,
   formatEventTimeRange,
 } from "@/lib/events";
+
+function EventBadges({ event }: { event: ChurchEvent }) {
+  return (
+    <>
+      {event.recurring ? (
+        <span className="inline-flex items-center gap-1 border border-gold/70 bg-gold/20 px-2 py-1 text-[0.65rem] font-black uppercase tracking-[0.16em] text-clay">
+          <Repeat aria-hidden="true" className="size-3" />
+          Recurring Ministry
+        </span>
+      ) : null}
+      {event.featured ? (
+        <span className="inline-flex items-center gap-1 border border-sky/55 bg-white px-2 py-1 text-[0.65rem] font-black uppercase tracking-[0.16em] text-fern">
+          <Sparkles aria-hidden="true" className="size-3" />
+          Featured
+        </span>
+      ) : null}
+    </>
+  );
+}
 
 export function EventCard({ event }: { event: ChurchEvent }) {
   const badge = formatEventBadge(event);
@@ -27,12 +46,9 @@ export function EventCard({ event }: { event: ChurchEvent }) {
             {badge.day}
           </p>
         </div>
-        {event.featured ? (
-          <span className="inline-flex items-center gap-1 border border-sky/55 bg-white px-2 py-1 text-[0.65rem] font-black uppercase tracking-[0.16em] text-fern">
-            <Sparkles aria-hidden="true" className="size-3" />
-            Featured
-          </span>
-        ) : null}
+        <div className="flex flex-wrap justify-end gap-2">
+          <EventBadges event={event} />
+        </div>
       </div>
 
       <p className="mt-6 text-xs font-black uppercase tracking-[0.18em] text-fern">
@@ -41,6 +57,12 @@ export function EventCard({ event }: { event: ChurchEvent }) {
       <h3 className="serif mt-2 text-2xl font-bold leading-tight text-ink">
         {event.title}
       </h3>
+      {event.recurrenceLabel ? (
+        <p className="mt-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay">
+          <Repeat aria-hidden="true" className="size-3.5" />
+          {event.recurrenceLabel}
+        </p>
+      ) : null}
 
       <dl className="mt-5 space-y-1.5 text-sm text-ink-soft">
         {time ? (
@@ -91,16 +113,17 @@ export function EventRow({ event }: { event: ChurchEvent }) {
           <p className="text-xs font-black uppercase tracking-[0.22em] text-fern">
             {event.category}
           </p>
-          {event.featured ? (
-            <span className="inline-flex items-center gap-1 border border-sky/55 bg-white px-2 py-0.5 text-[0.65rem] font-black uppercase tracking-[0.16em] text-fern">
-              <Sparkles aria-hidden="true" className="size-3" />
-              Featured
-            </span>
-          ) : null}
+          <EventBadges event={event} />
         </div>
         <h3 className="serif mt-3 text-balance text-3xl font-bold leading-tight text-ink sm:text-4xl">
           {event.title}
         </h3>
+        {event.recurrenceLabel ? (
+          <p className="mt-3 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-clay">
+            <Repeat aria-hidden="true" className="size-3.5" />
+            {event.recurrenceLabel}
+          </p>
+        ) : null}
         <div className="mt-4 space-y-2 text-base leading-7 text-ink-soft">
           {event.description.split("\n").map((line) => (
             <p key={line}>{line}</p>
