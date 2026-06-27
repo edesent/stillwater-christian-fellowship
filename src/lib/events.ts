@@ -11,6 +11,15 @@ export type ChurchEvent = {
   location: string;
   description: string;
   featured?: boolean;
+  recurring?: boolean;
+  recurrenceLabel?: string;
+};
+
+type RecurringMinistry = Omit<ChurchEvent, "id" | "date" | "featured" | "recurring"> & {
+  slug: string;
+  weekOfMonth: number;
+  weekday: number;
+  skipMonths?: number[];
 };
 
 const CHURCH_TIME_ZONE = "America/New_York";
@@ -30,9 +39,116 @@ export function todayInChurchTime(): string {
   return isoDateFormatter.format(new Date());
 }
 
-const events: ChurchEvent[] = (rawEvents as ChurchEvent[])
-  .slice()
-  .sort((a, b) => a.date.localeCompare(b.date));
+const recurringMinistries: RecurringMinistry[] = [
+  {
+    slug: "mens-discipleship-breakfast",
+    title: "Men's Discipleship Breakfast",
+    category: "Men's Ministry",
+    weekOfMonth: 3,
+    weekday: 6,
+    startTime: "8:30 AM",
+    endTime: "10:00 AM",
+    location: "Fellowship Hall",
+    recurrenceLabel: "Meets every 3rd Saturday",
+    description:
+      "Breakfast, Bible study, and Christ-centered fellowship for the men of Still Water. This recurring ministry meets every 3rd Saturday of each month. All visitors welcome.",
+  },
+  {
+    slug: "ladies-caring-sharing",
+    title: "Ladies Caring & Sharing",
+    category: "Ladies Ministry",
+    weekOfMonth: 1,
+    weekday: 6,
+    skipMonths: [7],
+    startTime: "12:00 PM",
+    endTime: "2:00 PM",
+    location: "Fellowship Hall",
+    recurrenceLabel: "Meets every 1st Saturday",
+    description:
+      "A time of prayer, encouragement, and fellowship for the ladies of the church. This recurring ministry meets every 1st Saturday of each month, except July. Please bring a friend.",
+  },
+  {
+    slug: "providence-rescue-mission",
+    title: "Providence Rescue Mission",
+    category: "Outreach",
+    weekOfMonth: 4,
+    weekday: 1,
+    startTime: "5:30 PM",
+    endTime: "8:00 PM",
+    location: "Providence Rescue Mission, RI",
+    recurrenceLabel: "Meets every 4th Monday",
+    description:
+      "Serving a home-cooked meal and sharing the life-changing Gospel with neighbors in Providence. This recurring ministry takes place every 4th Monday of each month.",
+  },
+];
+
+function isoDate(year: number, month: number, day: number) {
+  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function parts(iso: string) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return { y, m, d, dt: new Date(Date.UTC(y, m - 1, d)) };
+}
+
+function nthWeekdayOfMonth(year: number, month: number, weekday: number, weekOfMonth: number) {
+  const firstOfMonth = new Date(Date.UTC(year, month - 1, 1));
+  const firstWeekday = firstOfMonth.getUTCDay();
+  const offset = (weekday - firstWeekday + 7) % 7;
+  return 1 + offset + (weekOfMonth - 1) * 7;
+}
+
+function nextRecurringOccurrence(ministry: RecurringMinistry, todayIso: string): ChurchEvent {
+  const today = parts(todayIso);
+  let year = today.y;
+  let month = today.m;
+
+  for (let i = 0; i < 24; i += 1) {
+    const candidateMonth = ((month - 1 + i) % 12) + 1;
+    const candidateYear = year + Math.floor((month - 1 + i) / 12);
+
+    if (ministry.skipMonths?.includes(candidateMonth)) continue;
+
+    const day = nthWeekdayOfMonth(
+      candidateYear,
+      candidateMonth,
+      ministry.weekday,
+      ministry.weekOfMonth
+    );
+    const date = isoDate(candidateYear, candidateMonth, day);
+
+    if (date >= todayIso) {
+      return {
+        id: `${ministry.slug}-${date}`,
+        title: ministry.title,
+        category: ministry.category,
+        date,
+        startTime: ministry.startTime,
+        endTime: ministry.endTime,
+        location: ministry.location,
+        description: ministry.description,
+        recurring: true,
+        recurrenceLabel: ministry.recurrenceLabel,
+      };
+    }
+  }
+
+  throw new Error(`Unable to generate recurring event for ${ministry.title}`);
+}
+
+function buildEvents() {
+  const todayIso = todayInChurchTime();
+  const specialEvents = rawEvents as ChurchEvent[];
+  const generatedRecurringEvents = recurringMinistries.map((ministry) =>
+    nextRecurringOccurrence(ministry, todayIso)
+  );
+
+  return [...specialEvents, ...generatedRecurringEvents].sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
+}
+
+const events: ChurchEvent[] = buildEvents();
 
 export const allEvents: readonly ChurchEvent[] = events;
 
@@ -53,11 +169,6 @@ const MONTHS_LONG = [
 const WEEKDAYS_LONG = [
   "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
 ];
-
-function parts(iso: string) {
-  const [y, m, d] = iso.split("-").map(Number);
-  return { y, m, d, dt: new Date(Date.UTC(y, m - 1, d)) };
-}
 
 export function formatEventBadge(event: ChurchEvent) {
   const { m, d } = parts(event.date);
