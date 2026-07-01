@@ -51,10 +51,10 @@ const adultSundaySchoolPhotos = {
         alt: "Adult Sunday School gathering at Still Water Christian Fellowship",
       },
     ],
-    date: "Sunday Morning",
-    title: "Adult Sunday School",
+    date: "June 28, 2026",
+    title: "Teaching the Word of God",
     description:
-      "Our Adult Sunday School class gathers around the Word of God as part of SWCF's discipleship ministry.",
+      "\"Faith cometh by hearing, and hearing by the word of God.\" — Romans 10:17",
   },
   "Photo Two": {
     images: [
@@ -63,10 +63,10 @@ const adultSundaySchoolPhotos = {
         alt: "Adult Sunday School fellowship and Bible teaching at Still Water Christian Fellowship",
       },
     ],
-    date: "Sunday Morning",
-    title: "Adult Sunday School",
+    date: "June 28, 2026",
+    title: "Studying the Scriptures Together",
     description:
-      "A time of Bible study, fellowship, and spiritual growth before the morning preaching service.",
+      "Our Sunday School class gathers each Lord's Day to grow in grace and in the knowledge of our Lord Jesus Christ.",
   },
   "Photo Three": {
     images: [
@@ -75,10 +75,10 @@ const adultSundaySchoolPhotos = {
         alt: "Adult Sunday School ministry at Still Water Christian Fellowship",
       },
     ],
-    date: "Sunday Morning",
-    title: "Adult Sunday School",
+    date: "June 28, 2026",
+    title: "Growing Together in Christ",
     description:
-      "Still Water saints growing together through the teaching and application of Scripture.",
+      "Discipleship, fellowship, and a love for God's Word characterize our Adult Sunday School ministry.",
   },
 };
 
