@@ -176,11 +176,13 @@ export default function SundaySaintsPage() {
                 <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {starterCards.map((card) => {
                     const sundaySpecialsPhoto =
-                      section.title === "Sunday Specials Gallery" && card === "Photo One"
-                        ? sundaySpecialsPhotoOne
-                        : section.title === "Sunday Specials Gallery" && card === "Photo Two"
-                          ? sundaySpecialsPhotoTwo
-                          : null;
+                      section.title === "Adult Sunday School Gallery"
+                        ? adultSundaySchoolPhotos[card as keyof typeof adultSundaySchoolPhotos]
+                        : section.title === "Sunday Specials Gallery" && card === "Photo One"
+                          ? sundaySpecialsPhotoOne
+                          : section.title === "Sunday Specials Gallery" && card === "Photo Two"
+                            ? sundaySpecialsPhotoTwo
+                            : null;
 
                     return (
                       <article
