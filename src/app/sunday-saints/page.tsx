@@ -59,7 +59,7 @@ const adultSundaySchoolPhotos = {
   "Photo Two": {
     images: [
       {
-        src: "/sunday-saints/adult-sunday-school-2.jpg",
+        src: "/sunday-saints/6-28-26-studiousbunch1.jpg",
         alt: "Adult Sunday School fellowship and Bible teaching at Still Water Christian Fellowship",
       },
     ],
