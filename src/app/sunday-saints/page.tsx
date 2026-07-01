@@ -43,6 +43,45 @@ const quickLinks = [
 
 const starterCards = ["Photo One", "Photo Two", "Photo Three"];
 
+const adultSundaySchoolPhotos = {
+  "Photo One": {
+    images: [
+      {
+        src: "/sunday-saints/adult-sunday-school-1.jpg",
+        alt: "Adult Sunday School gathering at Still Water Christian Fellowship",
+      },
+    ],
+    date: "Sunday Morning",
+    title: "Adult Sunday School",
+    description:
+      "Our Adult Sunday School class gathers around the Word of God as part of SWCF's discipleship ministry.",
+  },
+  "Photo Two": {
+    images: [
+      {
+        src: "/sunday-saints/adult-sunday-school-2.jpg",
+        alt: "Adult Sunday School fellowship and Bible teaching at Still Water Christian Fellowship",
+      },
+    ],
+    date: "Sunday Morning",
+    title: "Adult Sunday School",
+    description:
+      "A time of Bible study, fellowship, and spiritual growth before the morning preaching service.",
+  },
+  "Photo Three": {
+    images: [
+      {
+        src: "/sunday-saints/adult-sunday-school-3.jpg",
+        alt: "Adult Sunday School ministry at Still Water Christian Fellowship",
+      },
+    ],
+    date: "Sunday Morning",
+    title: "Adult Sunday School",
+    description:
+      "Still Water saints growing together through the teaching and application of Scripture.",
+  },
+};
+
 const sundaySpecialsPhotoOne = {
   images: [
     {
