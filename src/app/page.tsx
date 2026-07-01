@@ -40,11 +40,11 @@ const happeningCards: {
 }[] = [
   {
     enabled: true,
-    startsAt: "2026-06-25T00:00:00-04:00",
-    expiresAt: "2026-07-01T19:00:00-04:00",
-    title: "Join Us On Wednesday!",
-    image: "/weekof6-29-26.png",
-    alt: "See You On Sunday morning service invitation for June 28, 2026 at Still Water Christian Fellowship",
+    startsAt: "2026-07-01T00:00:00-04:00",
+    expiresAt: "2026-07-06T09:00:00-04:00",
+    title: "Join Us This Coming Sunday!",
+    image: "/7-5-26-morningservice.png",
+    alt: "Sunday morning service invitation for July 5, 2026 at Still Water Christian Fellowship",
   },
 ];
 
