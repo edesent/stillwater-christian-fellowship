@@ -196,7 +196,7 @@ export default function SundaySaintsPage() {
                                 key={image.src}
                                 src={image.src}
                                 alt={image.alt}
-                                className="h-full w-full object-contain"
+                                className="h-full w-full object-cover"
                               />
                             ))}
                           </div>
