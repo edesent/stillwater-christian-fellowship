@@ -190,7 +190,11 @@ export default function SundaySaintsPage() {
                         className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 shadow-sm"
                       >
                         {sundaySpecialsPhoto ? (
-                          <div className="grid aspect-[4/3] grid-cols-2 gap-1 bg-stone-100 p-1">
+                          <div
+                            className={`grid aspect-[4/3] ${
+                              sundaySpecialsPhoto.images.length === 1 ? "grid-cols-1" : "grid-cols-2"
+                            } gap-1 bg-stone-100 p-1`}
+                          >
                             {sundaySpecialsPhoto.images.map((image) => (
                               <img
                                 key={image.src}
