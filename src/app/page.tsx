@@ -40,11 +40,11 @@ const happeningCards: {
 }[] = [
   {
     enabled: true,
-    startsAt: "2026-07-01T00:00:00-04:00",
-    expiresAt: "2026-07-06T09:00:00-04:00",
-    title: "God Bless America!",
-    image: "/7-5-26-morningservice.png",
-    alt: "Sunday morning service invitation for July 5, 2026 at Still Water Christian Fellowship",
+    startsAt: "2026-07-06T00:00:00-04:00",
+    expiresAt: "2026-07-08T19:15:00-04:00",
+    title: "Mid-Week Meetings",
+    image: "/weekof7-6-26.png",
+    alt: "Mid-week meeting schedule for the week of July 6, 2026 at Still Water Christian Fellowship",
   },
 ];
 
