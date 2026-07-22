@@ -46,6 +46,14 @@ const happeningCards: {
     image: "/weekof7-20-26.png",
     alt: "Weekly ministry opportunities for the week of July 20, 2026 at Still Water Christian Fellowship",
   },
+  {
+    enabled: true,
+    startsAt: "2026-07-22T00:00:00-04:00",
+    expiresAt: "2026-08-14T13:00:00-04:00",
+    title: "Vacation Bible School",
+    image: "/vbs26-imageforfinishedbanner-vacation-50-x-50-in-png-resized.png",
+    alt: "Vacation Bible School announcement at Still Water Christian Fellowship",
+  },
 ];
 
 export default function Home() {
