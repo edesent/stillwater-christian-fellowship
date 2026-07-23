@@ -221,7 +221,7 @@ function HappeningCards() {
               width={1200}
               height={1600}
               sizes="(min-width: 1280px) 390px, (min-width: 768px) 50vw, 100vw"
-              className="h-auto max-h-[72vh] w-full object-contain"
+              className="h-auto w-full object-contain"
             />
           </div>
         </article>
