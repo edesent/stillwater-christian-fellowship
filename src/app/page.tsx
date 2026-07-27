@@ -99,8 +99,8 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(15,10,18,0.88),rgba(122,74,18,0.14)_50%,rgba(36,16,45,0.42))]" />
 
       <div className="section-shell relative flex min-h-[84svh] flex-col justify-end pb-8 pt-32 sm:pb-10">
-        <div className="grid gap-8 pb-10 xl:grid-cols-[minmax(0,1fr)_minmax(560px,820px)] xl:items-end">
-          <div className="max-w-4xl">
+        <div className="grid gap-10 pb-10 xl:grid-cols-[minmax(0,1.35fr)_minmax(360px,520px)] xl:items-start">
+          <div className="max-w-5xl">
             <p className="mb-5 inline-flex items-center gap-2 border-l-4 border-sky pl-4 text-sm font-bold uppercase tracking-[0.2em] text-sky">
               <Sparkles aria-hidden="true" className="size-4" />
               Hope, Rhode Island
