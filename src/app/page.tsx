@@ -211,7 +211,7 @@ function HappeningCards() {
   if (activeCards.length === 0) return null;
 
   return (
-    <div className="grid items-start gap-4 md:grid-cols-2 xl:ml-auto xl:w-full">
+    <div className="grid items-start gap-4 md:grid-cols-2 xl:ml-auto xl:mt-28 xl:w-full xl:grid-cols-1">
       {activeCards.map((card) => (
         <article
           key={card.title}
