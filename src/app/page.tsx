@@ -48,6 +48,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-07-27T00:00:00-04:00",
+    expiresAt: "2026-08-01T15:00:00-04:00",
+    title: "This Week At SWCF",
+    image: "/weekof7-27-26.png",
+    alt: "This week's ministry opportunities at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
