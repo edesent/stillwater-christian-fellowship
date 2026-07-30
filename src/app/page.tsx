@@ -59,7 +59,7 @@ const happeningCards: {
     startsAt: "2026-07-30T00:00:00-04:00",
     expiresAt: "2026-08-03T09:00:00-04:00",
     title: "Join Us This Sunday!",
-    image: "/happening-sunday-service-august-2-2026.jpg",
+    image: "/8-2-26-sundaymorninginvite.png",
     alt: "Sunday morning invitation for August 2, 2026 at Still Water Christian Fellowship",
   },
   {
