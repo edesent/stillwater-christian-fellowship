@@ -67,7 +67,7 @@ const happeningCards: {
     startsAt: "2026-08-04T00:00:00-04:00",
     expiresAt: "2026-08-05T19:00:00-04:00",
     title: "This Week's Ministry Opportunities",
-    image: "/this-weeks-ministry-opportunities.jpg",
+    image: "/weekof8-3-26.png",
     alt: "This week's ministry opportunities at Still Water Christian Fellowship",
   },
   {
