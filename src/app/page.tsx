@@ -72,6 +72,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-08-06T00:00:00-04:00",
+    expiresAt: "2026-08-10T09:00:00-04:00",
+    title: "Please Join Us This Sunday!",
+    image: "/8-9-26-morningservice-justfb.png",
+    alt: "Sunday morning invitation for August 9, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
