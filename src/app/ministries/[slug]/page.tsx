@@ -181,9 +181,24 @@ export default async function MinistryPage({
 
               {ministry.slug === "childrens-ministry-vbs" ? (
                 <div className="grid gap-6 sm:grid-cols-2">
+                  <figure className="border border-rule bg-paper p-3 sm:col-span-2">
+                    <div className="relative aspect-square overflow-hidden bg-mist sm:aspect-[4/3]">
+                      <LightboxImage
+                        src="/uploads/openingcollage.png"
+                        alt="VBS 2026 opening collage — And We're Off!"
+                        fill
+                        sizes="(min-width: 1024px) 60vw, 100vw"
+                        className="object-contain"
+                        title="VBS 2026 — And We're Off!!"
+                        description={<p>VBS 2026 is underway at Still Water Christian Fellowship!</p>}
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
+                      VBS 2026 — ...And We're Off!!
+                    </figcaption>
+                  </figure>
                   <div className="aspect-[4/3] rounded-sm border border-dashed border-rule bg-paper/60" aria-label="Reserved for 2026 VBS photo" />
                   <div className="aspect-[4/3] rounded-sm border border-dashed border-rule bg-paper/60" aria-label="Reserved for 2026 VBS photo" />
-                  <div className="aspect-[16/9] rounded-sm border border-dashed border-rule bg-paper/60 sm:col-span-2" aria-label="Reserved for 2026 VBS photo" />
                 </div>
               ) : ministry.slug === "soul-winners-ministry" ? (
                 <div className="space-y-6">
