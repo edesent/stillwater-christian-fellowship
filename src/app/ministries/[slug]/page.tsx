@@ -180,100 +180,11 @@ export default async function MinistryPage({
               </div>
 
               {ministry.slug === "childrens-ministry-vbs" ? (
-                <figure className="border border-rule bg-paper p-3">
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                      <LightboxImage
-                        src="/uploads/img1.jpg"
-                        alt="Child wearing armour for Children's Ministry"
-                        fill
-                        sizes="(min-width: 1024px) 16vw, 50vw"
-                        className="object-contain object-top"
-                        title="Children's Ministry — The Armour of God"
-                        description={
-                          <>
-                            <p>
-                              The children of SWCF learning what it means to
-                              put on the whole armour of God.
-                            </p>
-                            <p className="mt-3 italic">
-                              “Put on the whole armour of God, that ye may be
-                              able to stand against the wiles of the devil.”
-                              <br />
-                              <span className="font-bold not-italic">
-                                — Ephesians 6:11
-                              </span>
-                            </p>
-                          </>
-                        }
-                      />
-                    </div>
-                    <div className="relative aspect-[3/4] overflow-hidden bg-mist">
-                      <LightboxImage
-                        src="/uploads/img2.jpg"
-                        alt="Child wearing armour for Children's Ministry"
-                        fill
-                        sizes="(min-width: 1024px) 16vw, 50vw"
-                        className="object-contain object-top"
-                        title="Children's Ministry — The Armour of God"
-                        description={
-                          <>
-                            <p>
-                              Suited up and ready to stand — our children
-                              learning the Christian soldier's armour piece by
-                              piece.
-                            </p>
-                            <p className="mt-3 italic">
-                              “Put on the whole armour of God, that ye may be
-                              able to stand against the wiles of the devil.”
-                              <br />
-                              <span className="font-bold not-italic">
-                                — Ephesians 6:11
-                              </span>
-                            </p>
-                          </>
-                        }
-                      />
-                    </div>
-                  </div>
-                  <figcaption className="mt-4 text-center text-sm italic leading-6 text-ink-soft">
-                    “Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.”<br />
-                    <span className="font-bold not-italic">- Ephesians 6:11</span>
-                  </figcaption>
-
-                  <figure className="mt-8 border-t border-rule pt-6">
-                    <div className="relative aspect-[5/3] overflow-hidden bg-mist">
-                      <LightboxImage
-                        src="/uploads/day3-batch1-start-teaching4.jpg"
-                        alt="Children hearing God's Word during VBS"
-                        fill
-                        sizes="(min-width: 1024px) 36vw, 100vw"
-                        className="object-cover"
-                        title="VBS — Teaching God's Word"
-                        description={
-                          <>
-                            <p>
-                              Children hearing the Word of God preached during
-                              Vacation Bible School at Still Water.
-                            </p>
-                            <p className="mt-3 italic">
-                              “faith cometh by hearing, and hearing by the word
-                              of God”
-                              <br />
-                              <span className="font-bold not-italic">
-                                — Romans 10:17
-                              </span>
-                            </p>
-                          </>
-                        }
-                      />
-                    </div>
-                    <figcaption className="mt-4 text-center text-sm italic leading-6 text-ink-soft">
-                      “faith cometh by hearing, and hearing by the word of God”<br />
-                      <span className="font-bold not-italic">- Romans 10:17</span>
-                    </figcaption>
-                  </figure>
-                </figure>
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <div className="aspect-[4/3] rounded-sm border border-dashed border-rule bg-paper/60" aria-label="Reserved for 2026 VBS photo" />
+                  <div className="aspect-[4/3] rounded-sm border border-dashed border-rule bg-paper/60" aria-label="Reserved for 2026 VBS photo" />
+                  <div className="aspect-[16/9] rounded-sm border border-dashed border-rule bg-paper/60 sm:col-span-2" aria-label="Reserved for 2026 VBS photo" />
+                </div>
               ) : ministry.slug === "soul-winners-ministry" ? (
                 <div className="space-y-6">
                   <div className="grid gap-6 sm:grid-cols-2">
