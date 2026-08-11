@@ -213,7 +213,22 @@ export default async function MinistryPage({
                       VBS '26 Day 2
                     </figcaption>
                   </figure>
-                  <div className="aspect-[4/3] rounded-sm border border-dashed border-rule bg-paper/60" aria-label="Reserved for VBS '26 Day 2 photo" />
+                  <figure className="border border-rule bg-paper p-3">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-mist">
+                      <LightboxImage
+                        src="/uploads/vbs-day2-groupsing.jpg"
+                        alt="VBS '26 Day 2"
+                        fill
+                        sizes="(min-width: 1024px) 30vw, 100vw"
+                        className="object-contain"
+                        title="VBS '26 Day 2"
+                        description={<p>VBS '26 Day 2</p>}
+                      />
+                    </div>
+                    <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
+                      VBS '26 Day 2
+                    </figcaption>
+                  </figure>
                 </div>
               ) : ministry.slug === "soul-winners-ministry" ? (
                 <div className="space-y-6">
