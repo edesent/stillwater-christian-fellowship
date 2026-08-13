@@ -80,6 +80,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-08-13T00:00:00-04:00",
+    expiresAt: "2026-08-17T09:00:00-04:00",
+    title: "See You This Sunday!",
+    image: "/8-16-26-morningservice.png",
+    alt: "Sunday morning invitation for August 16, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
