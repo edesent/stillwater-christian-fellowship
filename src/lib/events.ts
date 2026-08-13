@@ -109,12 +109,17 @@ function nextRecurringOccurrence(ministry: RecurringMinistry, todayIso: string):
 
     if (ministry.skipMonths?.includes(candidateMonth)) continue;
 
-    const day = nthWeekdayOfMonth(
+    const recurringDay = nthWeekdayOfMonth(
       candidateYear,
       candidateMonth,
       ministry.weekday,
       ministry.weekOfMonth
     );
+    const isAugust2026MensBreakfast =
+      ministry.slug === "mens-discipleship-breakfast" &&
+      candidateYear === 2026 &&
+      candidateMonth === 8;
+    const day = isAugust2026MensBreakfast ? 22 : recurringDay;
     const date = isoDate(candidateYear, candidateMonth, day);
 
     if (date >= todayIso) {
@@ -126,9 +131,13 @@ function nextRecurringOccurrence(ministry: RecurringMinistry, todayIso: string):
         startTime: ministry.startTime,
         endTime: ministry.endTime,
         location: ministry.location,
-        description: ministry.description,
+        description: isAugust2026MensBreakfast
+          ? `${ministry.description} August schedule change: due to a conflict with our VBS schedule, this month's breakfast will be held on the 4th Saturday, August 22, instead of the usual 3rd Saturday.`
+          : ministry.description,
         recurring: true,
-        recurrenceLabel: ministry.recurrenceLabel,
+        recurrenceLabel: isAugust2026MensBreakfast
+          ? "August 2026 only: Meets Saturday, August 22"
+          : ministry.recurrenceLabel,
       };
     }
   }
