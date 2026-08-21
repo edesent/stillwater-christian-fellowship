@@ -96,6 +96,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-08-21T18:00:00-04:00",
+    expiresAt: "2026-08-24T09:00:00-04:00",
+    title: "Join Us This Coming Lord's Day!",
+    image: "/8-23-26-sundaymorninginvite.png",
+    alt: "Sunday morning invitation for August 23, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
