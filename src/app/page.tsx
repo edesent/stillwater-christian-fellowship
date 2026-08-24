@@ -104,6 +104,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-08-24T19:48:00-04:00",
+    expiresAt: "2026-08-26T19:00:00-04:00",
+    title: "Midweek Ministry Opportunities",
+    image: "/weekof8-24-26.png",
+    alt: "Midweek ministry opportunities for Wednesday, August 26, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
