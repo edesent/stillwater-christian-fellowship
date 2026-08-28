@@ -104,6 +104,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-08-28T13:37:00-04:00",
+    expiresAt: "2026-08-31T09:00:00-04:00",
+    title: "See You On Sunday!",
+    image: "/8-30-26-morning-service-invite.png",
+    alt: "Sunday morning invitation for August 30, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-08-24T19:48:00-04:00",
     expiresAt: "2026-08-26T19:00:00-04:00",
     title: "Midweek Ministry Opportunities",
