@@ -120,6 +120,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-09-04T18:08:00-04:00",
+    expiresAt: "2026-09-07T09:00:00-04:00",
+    title: "Join Us This Sunday!",
+    image: "/9-6-26-sundaymorning.png",
+    alt: "Sunday morning service invitation for September 6, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-08-24T19:48:00-04:00",
     expiresAt: "2026-08-26T19:00:00-04:00",
     title: "Midweek Ministry Opportunities",
