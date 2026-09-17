@@ -139,7 +139,7 @@ const happeningCards: {
     startsAt: "2026-09-15T21:00:00-04:00",
     expiresAt: "2026-09-19T11:00:00-04:00",
     title: "This Week At Still Water",
-    image: "/weekof9-14-26-replacement.png",
+    image: "/weekof9-14-26.png",
     alt: "Weekly ministry opportunities at Still Water Christian Fellowship for the week of September 14, 2026",
   },
   {
