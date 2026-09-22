@@ -152,6 +152,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-09-22T09:54:00-04:00",
+    expiresAt: "2026-09-23T19:00:00-04:00",
+    title: "This Week's Ministry Meetings",
+    image: "/weekof9-21-26.png",
+    alt: "Bible Study and Prayer Meeting ministry opportunities for Wednesday, September 23, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-08-24T19:48:00-04:00",
     expiresAt: "2026-08-26T19:00:00-04:00",
     title: "Midweek Ministry Opportunities",
