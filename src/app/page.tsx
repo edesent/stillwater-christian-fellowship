@@ -152,6 +152,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-09-24T18:53:00-04:00",
+    expiresAt: "2026-09-28T09:00:00-04:00",
+    title: "Join Us To Discover the Truth which will Set you Free!",
+    image: "/9-27-26-sunday-service.png",
+    alt: "Sunday morning service invitation for September 27, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-09-22T09:54:00-04:00",
     expiresAt: "2026-09-23T19:00:00-04:00",
     title: "This Week's Ministry Meetings",
