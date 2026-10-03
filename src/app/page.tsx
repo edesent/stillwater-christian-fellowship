@@ -184,6 +184,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-10-03T10:59:00-04:00",
+    expiresAt: "2026-10-05T09:00:00-04:00",
+    title: "See You This Sunday!",
+    image: "/10-4-26-sunday-morning.png",
+    alt: "Sunday morning service invitation for October 4, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
