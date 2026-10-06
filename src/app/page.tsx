@@ -192,6 +192,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-10-06T12:53:00-04:00",
+    expiresAt: "2026-10-07T19:00:00-04:00",
+    title: "This Week @ SWCF",
+    image: "/file-0000000006e881fdae811ae3c6491613.png",
+    alt: "Midweek ministry opportunities at Still Water Christian Fellowship for Wednesday, October 7, 2026",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
