@@ -28,7 +28,8 @@ import {
   visitorNotes,
 } from "@/lib/site";
 
-export const revalidate = 3600;
+// Render the homepage on each request so time-limited Happening cards appear and expire promptly.
+export const dynamic = "force-dynamic";
 
 const happeningCards: {
   enabled: boolean;
