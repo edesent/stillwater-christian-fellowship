@@ -208,6 +208,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-10-13T17:01:00-04:00",
+    expiresAt: "2026-10-17T19:00:00-04:00",
+    title: "Busy Week at SWCF - Please Join Us!",
+    image: "/weekof10-12-26.png",
+    alt: "Weekly ministry opportunities for October 14 and October 17, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
