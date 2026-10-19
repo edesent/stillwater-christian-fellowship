@@ -194,7 +194,9 @@ export default function SundaySaintsPage() {
                           ? sundaySpecialsPhotoOne
                           : section.title === "Sunday Specials Gallery" && card === "Photo Two"
                             ? sundaySpecialsPhotoTwo
-                            : null;
+                            : section.title === "Sunday Specials Gallery" && card === "Photo Three"
+                              ? sundaySpecialsPhotoThree
+                              : null;
 
                     return (
                       <article
