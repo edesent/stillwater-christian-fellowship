@@ -225,6 +225,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-10-19T00:00:00-04:00",
+    expiresAt: "2026-10-24T12:00:00-04:00",
+    title: "Always Be Abounding In The Work of The Lord",
+    image: "/uploads/weekof10-19-26.png",
+    alt: "Weekly ministry opportunities for October 21 and 24, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-07-22T00:00:00-04:00",
     expiresAt: "2026-08-14T13:00:00-04:00",
     title: "Vacation Bible School",
