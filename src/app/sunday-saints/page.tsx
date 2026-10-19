@@ -106,6 +106,13 @@ const sundaySpecialsPhotoThree = {
   description: "Peter Blais Baptism Testimony",
 };
 
+const sundaySpecialsPhotoFour = {
+  images: [{ src: "/sunday-saints/10-18-26-baptism-additional.jpg", alt: "Additional baptism photograph at Still Water Christian Fellowship" }],
+  date: "October 18, 2026",
+  title: "Baptism Celebration",
+  description: "Celebrating baptism at Still Water Christian Fellowship.",
+};
+
 const sundaySpecialsPhotoTwo = {
   images: [
     {
