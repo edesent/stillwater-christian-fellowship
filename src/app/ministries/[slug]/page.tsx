@@ -107,7 +107,9 @@ export default async function MinistryPage({
             src={
               ministry.slug === "childrens-ministry-vbs"
                 ? "/uploads/day3-batch1-start-teaching4.jpg"
-                : ministry.image
+                : ministry.slug === "providence-rescue-mission"
+                  ? "/uploads/rescuemissionhero.png"
+                  : ministry.image
             }
             alt={ministry.title}
             fill
