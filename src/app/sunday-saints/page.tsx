@@ -107,10 +107,10 @@ const sundaySpecialsPhotoThree = {
 };
 
 const sundaySpecialsPhotoFour = {
-  images: [{ src: "/sunday-saints/10-18-26-baptism-additional.jpg", alt: "Additional baptism photograph at Still Water Christian Fellowship" }],
+  images: [{ src: "/sunday-saints/10-18-26-pastorpetebernie-cananythinggood2.jpeg", alt: "Pastor Bob, Pete, and Pastor Bernie celebrating baptism at Still Water Christian Fellowship" }],
   date: "October 18, 2026",
-  title: "Baptism Celebration",
-  description: "Celebrating baptism at Still Water Christian Fellowship.",
+  title: "Victory In Jesus",
+  description: "Victory In Jesus.. Pastor Bob, Pete, and Pastor Bernie",
 };
 
 const sundaySpecialsPhotoTwo = {
