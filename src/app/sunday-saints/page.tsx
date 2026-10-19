@@ -41,7 +41,7 @@ const quickLinks = [
   ["Contact", "/#contact"],
 ];
 
-const starterCards = ["Photo One", "Photo Two", "Photo Three"];
+const starterCards = ["Photo One", "Photo Two", "Photo Three", "Photo Four"];
 
 const adultSundaySchoolPhotos = {
   "Photo One": {
