@@ -100,18 +100,6 @@ const sundaySpecialsPhotoOne = {
 };
 
 const sundaySpecialsPhotoThree = {
-  images: [
-    {
-      src: "/sunday-saints/10-18-26-peteblaistestimonly-baptism.jpeg",
-      alt: "Pete Blais testimony and baptism at Still Water Christian Fellowship",
-    },
-  ],
-  date: "October 18, 2026",
-  title: "Pete Blais — Testimony and Baptism",
-  description: "A special Sunday at Still Water Christian Fellowship, celebrating Pete Blais's testimony and baptism.",
-};
-
-const sundaySpecialsPhotoThree = {
   images: [{ src: "/sunday-saints/10-18-26-peteblaistestimonly-baptism.jpeg", alt: "Peter Blais Baptism Testimony at Still Water Christian Fellowship" }],
   date: "October 18, 2026",
   title: "Peter Blais Baptism Testimony",
