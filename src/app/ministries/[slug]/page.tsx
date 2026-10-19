@@ -360,6 +360,24 @@ export default async function MinistryPage({
                 </div>
               ) : (
                 <div className="grid gap-6 sm:grid-cols-2">
+                  {ministry.slug === "providence-rescue-mission" && (
+                    <figure className="border border-rule bg-paper p-3 sm:col-span-2">
+                      <div className="relative aspect-[4/3] overflow-hidden bg-mist sm:aspect-[16/9]">
+                        <LightboxImage
+                          src="/uploads/luiscardona-provrescuemission.jpeg"
+                          alt="Brother Luis Cardona sharing the Providence Rescue Mission’s burden"
+                          fill
+                          sizes="(min-width: 1024px) 60vw, 100vw"
+                          className="object-contain"
+                          title="Providence Rescue Mission — Brother Luis Cardona"
+                          description={<p>October 17, 2026 — Brother Luis Cardona sharing the Rescue Mission&apos;s Burden.</p>}
+                        />
+                      </div>
+                      <figcaption className="mt-3 text-center text-sm italic leading-6 text-ink-soft">
+                        October 17, 2026 — Brother Luis Cardona sharing the Rescue Mission&apos;s Burden.
+                      </figcaption>
+                    </figure>
+                  )}
                   {ministry.slug === "mens-discipleship-breakfast-ministry" && (
                     <figure className="border border-rule bg-paper p-3 sm:col-span-2">
                       <div className="relative aspect-[4/3] overflow-hidden bg-mist sm:aspect-[16/9]">
