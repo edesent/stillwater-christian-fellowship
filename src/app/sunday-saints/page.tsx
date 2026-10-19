@@ -99,6 +99,18 @@ const sundaySpecialsPhotoOne = {
     "It was a Blessing to Welcome and hear from David, Elizabeth, and Baby Grace. - Such a Comfort to see the Fruit of Answered Prayer!",
 };
 
+const sundaySpecialsPhotoThree = {
+  images: [
+    {
+      src: "/sunday-saints/10-18-26-peteblaistestimonly-baptism.jpeg",
+      alt: "Pete Blais testimony and baptism at Still Water Christian Fellowship",
+    },
+  ],
+  date: "October 18, 2026",
+  title: "Pete Blais — Testimony and Baptism",
+  description: "A special Sunday at Still Water Christian Fellowship, celebrating Pete Blais's testimony and baptism.",
+};
+
 const sundaySpecialsPhotoTwo = {
   images: [
     {
