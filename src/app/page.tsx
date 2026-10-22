@@ -225,6 +225,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-10-22T12:40:00-04:00",
+    expiresAt: "2026-10-26T09:00:00-04:00",
+    title: "Please Join Us To Hear The Truth That Is Christ!",
+    image: "/10-25-26-sundaymorning.png",
+    alt: "Sunday morning service invitation for October 25, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
