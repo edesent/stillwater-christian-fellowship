@@ -249,6 +249,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-06T14:28:00-05:00",
+    expiresAt: "2026-11-09T09:00:00-05:00",
+    title: "Please Join Us!",
+    image: "/11-8-26-sunday-morning-service-ladiesmtg.png",
+    alt: "Dual invitation for Ladies Caring and Sharing on November 7 and Sunday Morning Service on November 8, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
