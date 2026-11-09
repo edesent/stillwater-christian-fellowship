@@ -257,6 +257,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-09T14:39:00-05:00",
+    expiresAt: "2026-11-11T19:00:00-05:00",
+    title: "This Week At SWCF!",
+    image: "/weekof11-9-26.png",
+    alt: "Weekly ministry opportunities for Wednesday November 11, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
