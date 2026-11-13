@@ -265,6 +265,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-13T12:21:00-05:00",
+    expiresAt: "2026-11-16T09:00:00-05:00",
+    title: "Seek Him While He May Be Found!",
+    image: "/11-15-26-sunday-morning-service-ladiesmtg.png",
+    alt: "Sunday morning service invitation for November 15, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
