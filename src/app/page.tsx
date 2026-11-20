@@ -281,6 +281,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-19T20:30:00-05:00",
+    expiresAt: "2026-11-23T09:00:00-05:00",
+    title: "My sheep hear My voice.. I give them Eternal Life",
+    image: "/11-22-26-sunday-morning-service.png",
+    alt: "Sunday morning service invitation for November 22, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
