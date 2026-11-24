@@ -289,6 +289,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-24T13:18:00-05:00",
+    expiresAt: "2026-11-25T19:00:00-05:00",
+    title: "Join Us For Our Thanksgiving Service!",
+    image: "/11-25-26-thanksgiving-service-at-still-water-church.png",
+    alt: "Thanksgiving service invitation for November 25, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
