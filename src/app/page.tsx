@@ -297,6 +297,14 @@ const happeningCards: {
   },
   {
     enabled: true,
+    startsAt: "2026-11-28T13:21:00-05:00",
+    expiresAt: "2026-11-30T09:00:00-05:00",
+    title: "Please Join Us This Sunday!",
+    image: "/11-29-26-sunday-morning-service.png",
+    alt: "Sunday morning service invitation for November 29, 2026 at Still Water Christian Fellowship",
+  },
+  {
+    enabled: true,
     startsAt: "2026-10-19T00:00:00-04:00",
     expiresAt: "2026-10-24T12:00:00-04:00",
     title: "Always Be Abounding In The Work of The Lord",
